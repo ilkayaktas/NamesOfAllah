@@ -1,4 +1,4 @@
-package com.mobss.islamic.namesofAllah;
+package com.mobss.namesofAllah;
 
 import org.junit.Test;
 
