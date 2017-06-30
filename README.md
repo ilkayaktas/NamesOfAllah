@@ -1,0 +1,1 @@
+This application shows names of Allah and their meanings.
