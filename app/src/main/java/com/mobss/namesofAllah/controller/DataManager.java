@@ -32,17 +32,12 @@ public class DataManager implements IDataManager {
 	}
 
 	@Override
-	public void doApiCall() {
-
-	}
-
-	@Override
 	public boolean getDatabaseCreatedStatus() {
-		return false;
+		return mIPreferenceHelper.getDatabaseCreatedStatus();
 	}
 
 	@Override
 	public void setDatabaseCreatedStatus() {
-
+		mIPreferenceHelper.setDatabaseCreatedStatus();
 	}
 }

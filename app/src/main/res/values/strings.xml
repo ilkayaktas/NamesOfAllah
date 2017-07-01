@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">NamesOfAllah</string>
-    <string name="error_message">Hata durumu oluştu.</string>
-    <string name="slogan">Sucre bir sağlık uygulamasıdır!</string>
+    <string name="all_errormessage">Hata durumu oluştu.</string>
+    <string name="splashscreen_slogan">Bu bir şablon uygulamadır!</string>
 </resources>

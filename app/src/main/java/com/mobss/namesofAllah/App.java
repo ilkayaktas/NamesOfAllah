@@ -4,6 +4,7 @@ import android.app.Application;
 
 import com.mobss.namesofAllah.controller.IDataManager;
 import com.mobss.namesofAllah.di.components.ApplicationComponent;
+import com.mobss.namesofAllah.di.components.DaggerApplicationComponent;
 import com.mobss.namesofAllah.di.modules.ApplicationModule;
 
 import javax.inject.Inject;

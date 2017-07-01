@@ -18,6 +18,7 @@ import com.mobss.namesofAllah.App;
 import com.mobss.namesofAllah.R;
 import com.mobss.namesofAllah.di.annotations.ActivityContext;
 import com.mobss.namesofAllah.di.components.ActivityComponent;
+import com.mobss.namesofAllah.di.components.DaggerActivityComponent;
 import com.mobss.namesofAllah.di.modules.ActivityModule;
 
 import javax.inject.Inject;
@@ -77,7 +78,7 @@ public class BaseActivity extends AppCompatActivity implements MvpView, BaseFrag
 		if (message != null) {
 			showSnackBar(message);
 		} else {
-			showSnackBar(getString(R.string.error_message));
+			showSnackBar(getString(R.string.all_errormessage));
 		}
 	}
 

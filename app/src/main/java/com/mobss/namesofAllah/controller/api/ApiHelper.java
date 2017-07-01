@@ -8,8 +8,4 @@ import javax.inject.Singleton;
 
 @Singleton
 public class ApiHelper implements IApiHelper {
-	@Override
-	public void doApiCall() {
-		
-	}
 }

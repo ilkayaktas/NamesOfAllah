@@ -22,5 +22,4 @@ package com.mobss.namesofAllah.controller.api;
 
 public interface IApiHelper {
 
-    void doApiCall();
 }

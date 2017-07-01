@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.mobss.islamic.namesofAllah.R;
+import com.mobss.namesofAllah.R;
 import com.mobss.namesofAllah.views.activities.base.BaseActivity;
 
 public class MainActivity extends BaseActivity implements MainMvpView {

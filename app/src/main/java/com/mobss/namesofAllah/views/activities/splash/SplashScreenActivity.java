@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.widget.TextView;
 
-import com.mobss.islamic.namesofAllah.R;
+import com.mobss.namesofAllah.R;
 import com.mobss.namesofAllah.views.activities.base.BaseActivity;
 import com.mobss.namesofAllah.views.activities.home.MainActivity;
 
@@ -24,7 +24,7 @@ public class SplashScreenActivity extends BaseActivity implements SplashScreenMv
 	@Inject
 	SplashScreenMvpPresenter<SplashScreenMvpView> mPresenter;
 
-	@BindView(R.id.slogan) TextView slogan;
+	@BindView(R.id.textview_splashscreen_slogan) TextView slogan;
 	
 	/** Duration of wait **/
 	private final int SPLASH_DISPLAY_LENGTH = 1000;
@@ -33,7 +33,7 @@ public class SplashScreenActivity extends BaseActivity implements SplashScreenMv
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		
-		setContentView(R.layout.activity_splash_screen);
+		setContentView(R.layout.activity_splashscreen);
 		
 		getActivityComponent().inject(this);
 		
