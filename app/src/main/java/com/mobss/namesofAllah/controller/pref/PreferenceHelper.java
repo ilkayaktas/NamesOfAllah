@@ -17,6 +17,7 @@ import javax.inject.Singleton;
 @Singleton
 public class PreferenceHelper implements IPreferenceHelper {
     public static final String SHARED_PREF_DBDREATED = "DatabaseCreated";
+    public static final String SHARED_PREF_APPLANGUAGE = "ApplicationLanguage";
     
     private final SharedPreferences mPrefs;
     
@@ -33,5 +34,15 @@ public class PreferenceHelper implements IPreferenceHelper {
     @Override
     public void setDatabaseCreatedStatus() {
         mPrefs.edit().putBoolean(SHARED_PREF_DBDREATED, true).apply();
+    }
+    
+    @Override
+    public String getPreferredLanguage() {
+        return mPrefs.getString(SHARED_PREF_APPLANGUAGE, "en");
+    }
+    
+    @Override
+    public void setPreferredLanguage(String language) {
+        mPrefs.edit().putString(SHARED_PREF_APPLANGUAGE, language);
     }
 }

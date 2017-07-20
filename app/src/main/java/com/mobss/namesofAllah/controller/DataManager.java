@@ -6,6 +6,9 @@ import com.mobss.namesofAllah.controller.api.IApiHelper;
 import com.mobss.namesofAllah.controller.db.IDbHelper;
 import com.mobss.namesofAllah.controller.pref.IPreferenceHelper;
 import com.mobss.namesofAllah.di.annotations.ApplicationContext;
+import com.mobss.namesofAllah.model.app.AllahinIsimleri;
+
+import java.util.List;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
@@ -39,5 +42,25 @@ public class DataManager implements IDataManager {
 	@Override
 	public void setDatabaseCreatedStatus() {
 		mIPreferenceHelper.setDatabaseCreatedStatus();
+	}
+	
+	@Override
+	public String getPreferredLanguage() {
+		return mIPreferenceHelper.getPreferredLanguage();
+	}
+	
+	@Override
+	public void setPreferredLanguage(String language) {
+		mIPreferenceHelper.setPreferredLanguage(language);
+	}
+	
+	@Override
+	public List<AllahinIsimleri> getTumIsimler() {
+		return mIDbHelper.getTumIsimler();
+	}
+	
+	@Override
+	public AllahinIsimleri getIsim(int sira) {
+		return mIDbHelper.getIsim(sira);
 	}
 }

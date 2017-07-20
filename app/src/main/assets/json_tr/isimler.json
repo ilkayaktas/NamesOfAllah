@@ -1,0 +1,596 @@
+[
+   {
+      "sira":1,
+      "isim":"ALLAH",
+      "aciklama":"O'nun zat ve özel ismidir. Diğer isimler fiilleri, sıfatları ve tecellileri ile ilgilidir",
+      "resim":"ic_01_allah"
+   },
+   {
+      "sira":2,
+      "isim":"ER-RAHMAN",
+      "aciklama":"Dünyada bütün mahlukata merhamet eden, şefkat gösteren, ihsan eden",
+      "resim":"ic_02_rahman"
+   },
+   {
+      "sira":3,
+      "isim":"ER-RAHİM",
+      "aciklama":"Ahirette, sadece müminlere acıyan, merhamet eden",
+      "resim":"ic_03_rahim"
+   },
+   {
+      "sira":4,
+      "isim":"EL-MELİK",
+      "aciklama":"Çok mülkü olan, her şeyin sahibi ve Maliki, onlara terbiye edip yetiştiren, mülk ve güç veren",
+      "resim":"ic_04_melik"
+   },
+   {
+      "sira":5,
+      "isim":"EL-KUDDÜS",
+      "aciklama":"Zatında, sıfatında, fiillerinde, isimlerinde, hükümlerinde her türlü lekeden, eksiklikten çok uzak, pek temiz olan",
+      "resim":"ic_05_kuddus"
+   },
+   {
+      "sira":6,
+      "isim":"ES-SELAM",
+      "aciklama":"Eksiksizlik, acizlik, hastalık, ölüm ve benzeri şeylerden salim olan, kullarına güven ve selamet veren",
+      "resim":"ic_06_selam"
+   },
+   {
+      "sira":7,
+      "isim":"EL-MÜ'MİN",
+      "aciklama":"Yarattıklarına güven veren",
+      "resim":"ic_07_mumin"
+   },
+   {
+      "sira":8,
+      "isim":"EL-MÜHEYMİN",
+      "aciklama":"İnsanların bütün yaptıklarını bilen, koruyan, görüp gözeten",
+      "resim":"ic_08_muheymin"
+   },
+   {
+      "sira":9,
+      "isim":"EL-AZÎZ",
+      "aciklama":"Üstün, güçlü, kuvvetli, galip, şerefli, değerli, melik",
+      "resim":"ic_09_aziz"
+   },
+   {
+      "sira":10,
+      "isim":"EL-CEBBAR",
+      "aciklama":"Emir ve yasaklarını, hükün ve kararlarını kullarına yaptırmaya gücü yeten, azgın ve zalimleri kahredici, dertlere derman olan, yaraları sarıp onaran, yarattıklarının hallerini düzelten",
+      "resim":"ic_10_cebbar"
+   },
+   {
+      "sira":11,
+      "isim":"EL-MÜTEKEBBİR",
+      "aciklama":"İhtiyaç ve noksanlığı gerektiren her şeyden münezzeh, pek yüce ve ulu",
+      "resim":"ic_11_mutekebbir"
+   },
+   {
+      "sira":12,
+      "isim":"EL-HÂLIK",
+      "aciklama":"Eşyayı bir takdir ve ölçü ile yaratan, yoktan var eden",
+      "resim":"ic_12_halik"
+   },
+   {
+      "sira":13,
+      "isim":"EL-BÂRİ",
+      "aciklama":"Yaratan, örneği olmadan varlıkları icat eden",
+      "resim":"ic_13_bari"
+   },
+   {
+      "sira":14,
+      "isim":"EL-MUSAVVİR",
+      "aciklama":"Yarattıklarına şekil ve özellik veren",
+      "resim":"ic_14_musavvir"
+   },
+   {
+      "sira":15,
+      "isim":"EL-GAFFAR",
+      "aciklama":"Mağfireti, bağışlaması pek çok olan",
+      "resim":"ic_15_gaffar"
+   },
+   {
+      "sira":16,
+      "isim":"EL-KAHHÂR",
+      "aciklama":"Yenilmeyen, daima galip gelen Kudretinin karşısında her şeyi aciz bırakan",
+      "resim":"ic_16_kahhar"
+   },
+   {
+      "sira":17,
+      "isim":"EL-VEHHAB",
+      "aciklama":"Karşılıksız çok nimet veren, ikram ve ihsanda devamlı olan lütfu, ihsanı ve rahmeti bütün kulları kuşatan",
+      "resim":"ic_17_vehhab"
+   },
+   {
+      "sira":18,
+      "isim":"ER-REZZAK",
+      "aciklama":"Bol nimet, maddi ve manevi rızık veren",
+      "resim":"ic_18_rezzak"
+   },
+   {
+      "sira":19,
+      "isim":"EL-FETTAH",
+      "aciklama":"En adil hüküm veren iyilik kapılarını açan zorlukları kolaylaştıran",
+      "resim":"ic_19_fettah"
+   },
+   {
+      "sira":20,
+      "isim":"EL-ALİM",
+      "aciklama":"Her şeyi çok iyi bilen, anlayan ve tanıyan",
+      "resim":"ic_20_alim"
+   },
+   {
+      "sira":21,
+      "isim":"EL-KÂBİD",
+      "aciklama":"Dilediğine rızkı daraltan, ölüm zamanı gelenlerin ruhlarını kabzeden",
+      "resim":"ic_21_kabid"
+   },
+   {
+      "sira":22,
+      "isim":"EL-BÂSIT",
+      "aciklama":"Dilediğine rızkı bol veren",
+      "resim":"ic_22_basit"
+   },
+   {
+      "sira":23,
+      "isim":"EL-HAFİD",
+      "aciklama":"Şan, şeref ve itibar bakımından kafirleri alçaltan, değersin yapan, cezalandıran",
+      "resim":"ic_23_hafid"
+   },
+   {
+      "sira":24,
+      "isim":"ER-RAFİ",
+      "aciklama":"Pergamber ve müminlerin itibar, şan ve şereflerini artıran, göğü yükselten",
+      "resim":"ic_24_rafi"
+   },
+   {
+      "sira":25,
+      "isim":"EL-MU'İZZ",
+      "aciklama":"Dilediğine izzet ve kuvvet veren, ilimden yükselten",
+      "resim":"ic_25_muizz"
+   },
+   {
+      "sira":26,
+      "isim":"EL-MÜZİLL",
+      "aciklama":"Dilediğini zelil kılıp rahmetinden uzaklaştıran. Hor ve hakir kılan",
+      "resim":"ic_26_muzill"
+   },
+   {
+      "sira":27,
+      "isim":"ES-SEMİ",
+      "aciklama":"Her sözü, bütün konuşulanları en iyi işiten, duyan",
+      "resim":"ic_27_semi"
+   },
+   {
+      "sira":28,
+      "isim":"EL-BASİR",
+      "aciklama":"Aydınlık ve karanlıkta küçük ve büyük her şeyi gören",
+      "resim":"ic_28_basir"
+   },
+   {
+      "sira":29,
+      "isim":"EL-HAKEM",
+      "aciklama":"Hüküm veren, son kararı veren",
+      "resim":"ic_29_hakem"
+   },
+   {
+      "sira":30,
+      "isim":"EL-ADL",
+      "aciklama":"Adil, insaflı, her şeyi yerli yerinde yapan, her şeyi hak ve doğru olan",
+      "resim":"ic_30_adl"
+   },
+   {
+      "sira":31,
+      "isim":"EL-LATİF",
+      "aciklama":"Yarattıklarına karşı yumuşak davranan, çok merhametli, çok lütufkar, ihsan sahibi, insanlara hak ettiklerinden fazlasını veren her şeyin detaylarını, sırlarını en iyi bilen, işleri çok hassas düzenleyen, gözle görülmeyen",
+      "resim":"ic_31_latif"
+   },
+   {
+      "sira":32,
+      "isim":"EL-HABÎR",
+      "aciklama":"Her şeyden haberdar olan, gizli aşikar her şeyi bilen, haber veren",
+      "resim":"ic_32_habir"
+   },
+   {
+      "sira":33,
+      "isim":"EL-HALİM",
+      "aciklama":"Acele etmeyen, günahkarların cezasını vermeye güç yetirdiği halde bunu acele yapmayıp, onlara yumuşak davranarak cezalarını geriye bırakan",
+      "resim":"ic_33_halim"
+   },
+   {
+      "sira":34,
+      "isim":"EL-AZİM",
+      "aciklama":"Zatı, isim, sıfat ve fiileri itibariyle pek ulu, büyük, yüce",
+      "resim":"ic_34_azim"
+   },
+   {
+      "sira":35,
+      "isim":"EL-GAFÛR",
+      "aciklama":"Çok affeden, çok bağışlayan",
+      "resim":"ic_35_gafur"
+   },
+   {
+      "sira":36,
+      "isim":"EŞ-ŞEKÛR",
+      "aciklama":"İbadet eden kullarının mükafatlarını bolca veren, az çok her itaati ödüllendiren",
+      "resim":"ic_36_sekur"
+   },
+   {
+      "sira":37,
+      "isim":"EL-ALİYY",
+      "aciklama":"Şanı, şerefi, izzeti ve kudreti yüce olan",
+      "resim":"ic_37_aliyy"
+   },
+   {
+      "sira":38,
+      "isim":"EL-KEBİR",
+      "aciklama":"Zatı, isim ve sıfatları, şanı ve şerefi, kadri ve kıymeti, değer ve izzeti pek yüce, ulu ve büyük",
+      "resim":"ic_38_kebir"
+   },
+   {
+      "sira":39,
+      "isim":"EL-HAFIZ",
+      "aciklama":"Varlıkları yok olmaktan koruyan",
+      "resim":"ic_39_hafiz"
+   },
+   {
+      "sira":40,
+      "isim":"EL-MUKİT",
+      "aciklama":"Her şeye gücü yeten, rızık veren, yapılanları bilen, amelleri zayi etmeyip koruyan, mükafat veren",
+      "resim":"ic_40_mukit"
+   },
+   {
+      "sira":41,
+      "isim":"EL-HASİB",
+      "aciklama":"Yarattıklarını sorgulayan, hesaba çeken",
+      "resim":"ic_41_hasib"
+   },
+   {
+      "sira":42,
+      "isim":"EL-CELİL",
+      "aciklama":"Ulu, kudretli, yüce, azamet ve Kibriya sahibi",
+      "resim":"ic_42_celil"
+   },
+   {
+      "sira":43,
+      "isim":"EL-KERİM",
+      "aciklama":"Değerli, şerefli, çok nimet veren, nimet ve ihsanı bol",
+      "resim":"ic_43_kerim"
+   },
+   {
+      "sira":44,
+      "isim":"ER-RAKÎB",
+      "aciklama":"İnsanların hallerini, sözleri, yaptıklarını ve davranışlarını bilen, haber alan, murakabe edip koruyan",
+      "resim":"ic_44_rakib"
+   },
+   {
+      "sira":45,
+      "isim":"EL-MUCİB",
+      "aciklama":"Duaları, istekleri, dilekleri kabul eden, ihtiyaçları karşılayan, sıkıntıları gideren",
+      "resim":"ic_45_mucib"
+   },
+   {
+      "sira":46,
+      "isim":"EL-VASİ",
+      "aciklama":"Güçlü, kuvvetli, ilim ve merameti her şeyi kuşatan, bütün yaratıklara rızık veren, nimet ve ihsanı bol olan",
+      "resim":"ic_46_vasi"
+   },
+   {
+      "sira":47,
+      "isim":"EL-HAKİM",
+      "aciklama":"Hikmet sahibi, her işi, emri ve yasağı yerli yerinde olan",
+      "resim":"ic_47_hakim"
+   },
+   {
+      "sira":48,
+      "isim":"EL-VEDÛD",
+      "aciklama":"Müminleri çok seven, kulları tarafından çok sevilen",
+      "resim":"ic_48_vedud"
+   },
+   {
+      "sira":49,
+      "isim":"EL-MECİD",
+      "aciklama":"Şan, şeref, büyüklük ve kudretinden dolayı yüce olan ve güzel işlerinden dolayı sevilip övülen",
+      "resim":"ic_49_mecid"
+   },
+   {
+      "sira":50,
+      "isim":"EL-BA'İS",
+      "aciklama":"Kıyamet kopunca ölüleri dirilten, mahşer yerine sevk eden, uyarıcı ve müjdeci olarak peygamber gönderen, kıyamette şahitler getiren",
+      "resim":"ic_50_bais"
+   },
+   {
+      "sira":51,
+      "isim":"EŞ-ŞEHİD",
+      "aciklama":"Her şeye muttali olan, her şeyi gören, her şeyi bilen, her şeyden haberdar olan, her yerde hazır nazır olan, hiçbir şey kendisinden gizlenemeyen, bütün sırlara vakıf olan, her şeyi murakabe eden",
+      "resim":"ic_51_sehid"
+   },
+   {
+      "sira":52,
+      "isim":"EL-HAKK",
+      "aciklama":"Varlığı, İlah ve Rab oluşu hak olan, eşyayı var eden hakkı ızhar eden, mülk sahibi, yok olmayan, varlığında şüphe bulunmayan, adil olan",
+      "resim":"ic_52_hakk"
+   },
+   {
+      "sira":53,
+      "isim":"EL-VEKİL",
+      "aciklama":"Güvenilen, koruyucu, yardım eden, görüp gözeten, her şeyin Malikî ve yöneticisi",
+      "resim":"ic_53_vekil"
+   },
+   {
+      "sira":54,
+      "isim":"EL-KAVİYY",
+      "aciklama":"Kuvvetli, kudretli, her şeye gücü yeten",
+      "resim":"ic_54_kaviyy"
+   },
+   {
+      "sira":55,
+      "isim":"EL-METİN",
+      "aciklama":"Çok kuvvetli, çok dayanıklı, âcizliği, za'fiyeti ve gevşekliği olmayan",
+      "resim":"ic_55_metin"
+   },
+   {
+      "sira":56,
+      "isim":"EL-VELİ ",
+      "aciklama":"Dost, seven, görüp gözeten, yardım eden",
+      "resim":"ic_56_veli"
+   },
+   {
+      "sira":57,
+      "isim":"EL-HAMİD",
+      "aciklama":"Çok övülen, övgüye layık olan",
+      "resim":"ic_57_hamid"
+   },
+   {
+      "sira":58,
+      "isim":"EL-MUHSÎ",
+      "aciklama":"İnsanların bütün yaptıklarını, olup biten herşeyi bilen ve koruyan, sonsuz düşünülse bile herşeyin sayısını her yönüyle bilen",
+      "resim":"ic_58_muhsi"
+   },
+   {
+      "sira":59,
+      "isim":"EL-MÜBDÎ",
+      "aciklama":"Varlıkları ilk defa yaratan",
+      "resim":"ic_59_mubdi"
+   },
+   {
+      "sira":60,
+      "isim":"EL-MU'ÎD",
+      "aciklama":"Canlı varlıkları ölümlerinden sonra dirilten, yeniden yaratan",
+      "resim":"ic_60_muid"
+   },
+   {
+      "sira":61,
+      "isim":"EL-MUHYÎ",
+      "aciklama":"Varlıklara hayat veren, onları yaşatan, ölümlerinden sonra dirilten",
+      "resim":"ic_61_muhyi"
+   },
+   {
+      "sira":62,
+      "isim":"EL-MÜMÎT ",
+      "aciklama":"Varlıkların hayatlarına son veren, canlarını alan",
+      "resim":"ic_62_mumit"
+   },
+   {
+      "sira":63,
+      "isim":"EL-HAYY",
+      "aciklama":"Yaşayan, diri, canlı, ölümsüz, ezelî ve ebedî olan",
+      "resim":"ic_63_hayy"
+   },
+   {
+      "sira":64,
+      "isim":"EL-KAYYÛM",
+      "aciklama":"Zatı ile kaim olan, ezelî ve ebedî, her şeyin varlığı kendisine bağlı, uykusu ve uyuklaması olmayan, varlıkları yöneten, koruyan, ihtiyaçlarını üstlenen",
+      "resim":"ic_64_kayyum"
+   },
+   {
+      "sira":65,
+      "isim":"EL-VÂCİD",
+      "aciklama":"Zengin, hiç bir şeye muhtaç olmayan, her şeyin sahibi, her şeye gücü yeten",
+      "resim":"ic_65_vacid"
+   },
+   {
+      "sira":66,
+      "isim":"EL-MACİD",
+      "aciklama":"Kerem ve müsâmahası sınırsız olan, insanlara iyilikle muamele edip onları himâye etme lütfunda bulunan, her türlü sıkıntılarını gideren",
+      "resim":"ic_66_macid"
+   },
+   {
+      "sira":67,
+      "isim":"EL-VAHİD",
+      "aciklama":"Zatında, isim ve sıfatlarında eşi ve benzeri bulunmayan, tek olan",
+      "resim":"ic_67_vahid"
+   },
+   {
+      "sira":68,
+      "isim":"ES-SAMED",
+      "aciklama":"Her şeyin kendisine muhtaç olduğu, yöneldiği, her dilek ve isteğin mercîi; hiç eksiği, kusuru ve ihtiyacı olmayan ulu, şanlı, dosdoğru, âdil ve güvenilir",
+      "resim":"ic_68_samed"
+   },
+   {
+      "sira":69,
+      "isim":"EL-KADÎR",
+      "aciklama":"Güçlü, kuvvetli, her şeye gücü yeten, istediğini istediği gibi eksiksiz, kusursuz ve tam yapabilen",
+      "resim":"ic_69_kadir"
+   },
+   {
+      "sira":70,
+      "isim":"EL-MUKTEDİR",
+      "aciklama":"Güçlü, kuvvetli, istediğini istediği gibi yapan",
+      "resim":"ic_70_muktedir"
+   },
+   {
+      "sira":71,
+      "isim":"EL-MUKADDİM",
+      "aciklama":"Her şeyden önce olan, dilediğini öne alan; dilediğine maddi ve manevi nimetler verip yükselten, öne geçiren, ilerlemelerini sağlayan",
+      "resim":"ic_71_mukaddim"
+   },
+   {
+      "sira":72,
+      "isim":"EL-MUAHHİR",
+      "aciklama":"Her şeyden sonra yine var olan; emir ve yasaklarına uymayanları zelil edip arkaya bırakan, istediğini geri koyandır. Sonunda yine sadece O var olarak kalacaktır",
+      "resim":"ic_72_muahhir"
+   },
+   {
+      "sira":73,
+      "isim":"EL-EVVEL",
+      "aciklama":"Öncesi olmayan, yaratılmamış, ezelî ve kadîm tek varlık",
+      "resim":"ic_73_evvel"
+   },
+   {
+      "sira":74,
+      "isim":"EL-AHİR",
+      "aciklama":"Varlığının sonu olmayan, ölümsüz, ebedî ve bâkî olan ",
+      "resim":"ic_74_ahir"
+   },
+   {
+      "sira":75,
+      "isim":"EZ-ZÂHİR",
+      "aciklama":"Varlığı her şeyden âşikâr olan, her şeye galip gelen her şeyden yüce olan",
+      "resim":"ic_75_zahir"
+   },
+   {
+      "sira":76,
+      "isim":"EL-BATIN",
+      "aciklama":"Gizli, cisim olarak görülmeyen, varlığı gizli olan, ancak varlığı da kesin olarak bilinen",
+      "resim":"ic_76_batin"
+   },
+   {
+      "sira":77,
+      "isim":"EL-VALÎ",
+      "aciklama":"İdare eden, bu büyük kâinatı ve onda her an olup bitenleri idare edip yönetendir. İdare etme yeteneği O'nundur",
+      "resim":"ic_77_vali"
+   },
+   {
+      "sira":78,
+      "isim":"EL-MUTE'AL",
+      "aciklama":"Yüksek ve yüce olan. Bilinenlerin ve bilinmeyenlerin en üstün olanı",
+      "resim":"ic_78_muteal"
+   },
+   {
+      "sira":79,
+      "isim":"EL-BERR",
+      "aciklama":"İyilik eden, çok lütüfkâr, çok merhametli, çok şefkatli olan",
+      "resim":"ic_79_berr"
+   },
+   {
+      "sira":80,
+      "isim":"ET-TEVVÂB",
+      "aciklama":"Tevbeleri çok kabul eden, sürekli tevbeleri kabul eden",
+      "resim":"ic_80_tevvab"
+   },
+   {
+      "sira":81,
+      "isim":"EL-MÜNTEKİM",
+      "aciklama":"İntikam alan, günahkârları, adaletiyle yargılayarak lâyık oldukları cezaya çarptıran",
+      "resim":"ic_81_muntekim"
+   },
+   {
+      "sira":82,
+      "isim":"EL-AFÜV",
+      "aciklama":"Merhametli, daima affeden, günâhlardan dilediğini affedip suçları bağışlayan",
+      "resim":"ic_82_afuv"
+   },
+   {
+      "sira":83,
+      "isim":"ER-RAÛF",
+      "aciklama":"Çok merhametli, çok şefkatli, çok acıyan",
+      "resim":"ic_83_rauf"
+   },
+   {
+      "sira":84,
+      "isim":"MALİKÜL MÜLK",
+      "aciklama":"Mülkün sahibi ",
+      "resim":"ic_84_malikulmulk"
+   },
+   {
+      "sira":85,
+      "isim":"ZÜLCELÂL-İ VE'L-İKRÂM",
+      "aciklama":"Celâl ve ululuk, ikram ve ihsan sahibi",
+      "resim":"ic_85_zulcelalivelikram"
+   },
+   {
+      "sira":86,
+      "isim":"EL-MUKSİT",
+      "aciklama":"Mazlumun hakkını zalimden alan. Haksızlıkları düzeltip hakkı yerine getiren. Kullarına muamelesi, tam adalet ve merhamet üzere olan",
+      "resim":"ic_86_muksit"
+   },
+   {
+      "sira":87,
+      "isim":"EL-CÂMİ",
+      "aciklama":"Derleyen, toplayan, her şeyi kudreti içinde bulundurup dilediğini istediği anda ve istediği yerde toplayan",
+      "resim":"ic_87_cami"
+   },
+   {
+      "sira":88,
+      "isim":"EL-GANÎ",
+      "aciklama":"Zengin, hiçbir şeye muhtaç olmayan ",
+      "resim":"ic_88_gani"
+   },
+   {
+      "sira":89,
+      "isim":"EL-MUĞNİ",
+      "aciklama":"İnsanlara mal mülk veren, onları zengin yapan, cömert, nimet sahibi olan",
+      "resim":"ic_89_mugni"
+   },
+   {
+      "sira":90,
+      "isim":"EL-MÂNİ",
+      "aciklama":"İstediği şeye engel olan, koruyan, kurtaran, yardım eden",
+      "resim":"ic_90_mani"
+   },
+   {
+      "sira":91,
+      "isim":"ED-DAR",
+      "aciklama":"Elem ve zarar verici şeyleri hikmetinin gereği olarak yaratan Yüce Allah, zarar veren şeyleri yaratmıştır. Fakat onlardan zarar görmemizi değil, aksine maddi-manevi bütün zararlardan sakınarak korunmamızı emretmiştir",
+      "resim":"ic_91_dar"
+   },
+   {
+      "sira":92,
+      "isim":"EN-NAFİ",
+      "aciklama":"Faydalı şeyleri yaratan, bütün yaratılanlara faydası olan",
+      "resim":"ic_92_nafi"
+   },
+   {
+      "sira":93,
+      "isim":"EN-NÛR",
+      "aciklama":"Alemleri, bütün kâinâtı nurlandıran, aydınlatan; istediği simalara, zihinlere ve gönüllere nur, aydınlık ihsan eden",
+      "resim":"ic_93_nur"
+   },
+   {
+      "sira":94,
+      "isim":"EL-HADÎ",
+      "aciklama":"Hidayet eden, doğru yolu gösteren",
+      "resim":"ic_94_hadi"
+   },
+   {
+      "sira":95,
+      "isim":"EL-BEDÎ",
+      "aciklama":"Eşi ve benzeri olmayan, Bir şeyi numunesi olmadan yaratan, vâr eden, îcât eden",
+      "resim":"ic_95_bedi"
+   },
+   {
+      "sira":96,
+      "isim":"EL-BÂKÎ",
+      "aciklama":"Sonlu ve ölümlü olmayan, varlığı sürekli olan, ebedî",
+      "resim":"ic_96_baki"
+   },
+   {
+      "sira":97,
+      "isim":"EL-VARİS ",
+      "aciklama":"Tüm varlıkların gerçek sahibi, varisidir. Servetlerin geçici sahipleri yok olduktan sonra da varlığı devam eden ve o servetlerin sahibi olan",
+      "resim":"ic_97_varis"
+   },
+   {
+      "sira":98,
+      "isim":"ER-REŞÎD",
+      "aciklama":"Her işinde isabetli olan, doğru yolu en iyi gösteren",
+      "resim":"ic_98_resid"
+   },
+   {
+      "sira":99,
+      "isim":"ES-SABÛR",
+      "aciklama":"Çok sabırlı, hiçbir şeyde acele etmeyen; kendine isyan edenleri cezalandırmada acele etmeyip, onlara süre verendir.",
+      "resim":"ic_99_sabur"
+   }
+]

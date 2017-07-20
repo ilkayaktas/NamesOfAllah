@@ -12,9 +12,18 @@ import com.mobss.namesofAllah.controller.db.IDbHelper;
 import com.mobss.namesofAllah.controller.db.crud.DatabaseManager;
 import com.mobss.namesofAllah.controller.db.crud.DatabaseMigration;
 import com.mobss.namesofAllah.controller.db.crud.RealmManager;
+import com.mobss.namesofAllah.controller.db.initializer.DatabaseCreator;
+import com.mobss.namesofAllah.controller.db.initializer.file.AssetsReader;
+import com.mobss.namesofAllah.controller.db.initializer.file.IFileReader;
+import com.mobss.namesofAllah.controller.db.initializer.inflator.Inflator;
+import com.mobss.namesofAllah.controller.db.initializer.inflator.IsimlerInflator;
+import com.mobss.namesofAllah.controller.db.initializer.parser.IFileParser;
+import com.mobss.namesofAllah.controller.db.initializer.parser.JsonIsimlerParser;
 import com.mobss.namesofAllah.controller.pref.IPreferenceHelper;
 import com.mobss.namesofAllah.controller.pref.PreferenceHelper;
 import com.mobss.namesofAllah.di.annotations.ApplicationContext;
+
+import java.util.Locale;
 
 import javax.inject.Singleton;
 
@@ -32,7 +41,8 @@ public class ApplicationModule {
 	
 	private final Application app;
 	private RealmConfiguration realmConfiguration = null;
-	private DatabaseManager databaseManager;
+	private DatabaseManager databaseManager = null;
+	private DataManager dataManager = null;
 	
 	public ApplicationModule(Application app) {
 		this.app = app;
@@ -52,7 +62,10 @@ public class ApplicationModule {
 	@Provides
 	@Singleton
 	IDataManager provideDataManager(@ApplicationContext Context context, IDbHelper mIDbHelper, IPreferenceHelper mIPreferenceHelper, IApiHelper mIApiHelper) {
-		return new DataManager( context, mIDbHelper, mIPreferenceHelper, mIApiHelper);
+		if(dataManager == null) {
+			dataManager = new DataManager(context, mIDbHelper, mIPreferenceHelper, mIApiHelper);
+		}
+		return dataManager;
 	}
 	
 	@Provides
@@ -64,7 +77,9 @@ public class ApplicationModule {
 	@Provides
 	@Singleton
 	DatabaseManager provideDatabaseManager(Realm realm){
-		databaseManager =  new RealmManager(realm);
+		if(databaseManager == null) {
+			databaseManager = new RealmManager(realm);
+		}
 		return databaseManager;
 	}
 	
@@ -100,4 +115,45 @@ public class ApplicationModule {
 		return new ApiHelper();
 	}
 	
+	@Provides
+	@Singleton
+	DatabaseCreator provideDatabaseCreator( Inflator isimInflator,
+	                                        IFileReader isimFileReader,
+	                                        IFileParser isimFileParser){
+		
+		return new DatabaseCreator(app,databaseManager,isimInflator,isimFileReader,isimFileParser);
+		
+	}
+	
+	@Provides
+	IFileReader provideKategoriFileReaderInterface(){
+		
+		String preSetLanguage = dataManager.getPreferredLanguage();
+		
+		if(preSetLanguage == null){
+			preSetLanguage = Locale.getDefault().getLanguage();
+		}
+		
+		// device language is Turkish
+		if (preSetLanguage.equals("tr")) {
+			dataManager.setPreferredLanguage("tr");
+			return new AssetsReader(app, "json_tr");
+		} else{
+			dataManager.setPreferredLanguage("en");
+			return new AssetsReader(app, "json_en");
+		}
+		
+	}
+	
+	
+	@Provides
+	IFileParser provideKategoriFileParser(){
+		return new JsonIsimlerParser();
+	}
+	
+	
+	@Provides
+	Inflator provideKavramInflator(){
+		return new IsimlerInflator();
+	}
 }

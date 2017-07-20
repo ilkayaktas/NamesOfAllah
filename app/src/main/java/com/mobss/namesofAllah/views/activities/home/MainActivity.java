@@ -32,6 +32,10 @@ public class MainActivity extends BaseActivity implements MainMvpView {
 		
 		// Attach presenter
 		mPresenter.onAttach(MainActivity.this);
+		
+		mPresenter.initiateNamesInDatabase();
+		
+		mPresenter.getTumIsimler();
 	}
 	
 	@Override

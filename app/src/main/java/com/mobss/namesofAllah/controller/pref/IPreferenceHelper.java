@@ -24,4 +24,8 @@ public interface IPreferenceHelper {
     boolean getDatabaseCreatedStatus();
 
     void setDatabaseCreatedStatus();
+    
+    String getPreferredLanguage();
+    
+    void setPreferredLanguage(String language);
 }

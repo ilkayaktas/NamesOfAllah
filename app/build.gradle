@@ -25,6 +25,12 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    packagingOptions{
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+    }
 }
 
 dependencies {
@@ -56,5 +62,12 @@ dependencies {
 
     // Lovely Dialog
     compile "com.yarolegovich:lovely-dialog:$rootProject.lovelydialog"
+
+    // Jackson
+    compile (
+            [group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.8.9'],
+            [group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: '2.8.9'],
+            [group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.8.9']
+    )
 
 }

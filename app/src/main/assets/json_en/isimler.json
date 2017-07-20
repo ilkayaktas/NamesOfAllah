@@ -1,0 +1,596 @@
+[
+   {
+      "sira":1,
+      "isim":"ALLAH",
+      "aciklama":"Allah is the Greatest One",
+      "resim":"ic_01_allah"
+   },
+   {
+      "sira":2,
+      "isim":"AR-RAHMAAN",
+      "aciklama":"The Beneficent. He who wills goodness and mercy for all His creatures",
+      "resim":"ic_02_rahman"
+   },
+   {
+      "sira":3,
+      "isim":"AR-RAHEEM",
+      "aciklama":"The Merciful. He who acts with extreme kindness",
+      "resim":"ic_03_rahim"
+   },
+   {
+      "sira":4,
+      "isim":"AL-MALIK",
+      "aciklama":"The Eternal Lord. The Sovereign Lord, The One with the complete Dominion, the One Whose Dominion is clear from imperfection",
+      "resim":"ic_04_melik"
+   },
+   {
+      "sira":5,
+      "isim":"AL-QUDDUS",
+      "aciklama":"The Most Sacred. The One who is pure from any imperfection and clear from children and adversaries",
+      "resim":"ic_05_kuddus"
+   },
+   {
+      "sira":6,
+      "isim":"AS-SALAM",
+      "aciklama":"The Embodiment of Peace. The One who is free from every imperfection.",
+      "resim":"ic_06_selam"
+   },
+   {
+      "sira":7,
+      "isim":"AL-MU’MIN",
+      "aciklama":"The Infuser of Faith. The One who witnessed for Himself that no one is God but Him. And He witnessed for His believers that they are truthful in their belief that no one is God but Him",
+      "resim":"ic_07_mumin"
+   },
+   {
+      "sira":8,
+      "isim":"AL-MUHAYMIN",
+      "aciklama":"The Preserver of Safety. The One who witnesses the saying and deeds of His creatures",
+      "resim":"ic_08_muheymin"
+   },
+   {
+      "sira":9,
+      "isim":"AL-AZIZ",
+      "aciklama":"The Mighty One. The Strong, The Defeater who is not defeated",
+      "resim":"ic_09_aziz"
+   },
+   {
+      "sira":10,
+      "isim":"AL-JABBAR",
+      "aciklama":"The Omnipotent One. The One that nothing happens in His Dominion except that which He willed",
+      "resim":"ic_10_cebbar"
+   },
+   {
+      "sira":11,
+      "isim":"AL-MUTAKABBIR",
+      "aciklama":"The Dominant One. The One who is clear from the attributes of the creatures and from resembling them.",
+      "resim":"ic_11_mutekebbir"
+   },
+   {
+      "sira":12,
+      "isim":"AL-KHAALIQ",
+      "aciklama":"The Creator. The One who brings everything from non-existence to existence",
+      "resim":"ic_12_halik"
+   },
+   {
+      "sira":13,
+      "isim":"AL-BAARI",
+      "aciklama":"The Evolver. The Maker, The Creator who has the Power to turn the entities.",
+      "resim":"ic_13_bari"
+   },
+   {
+      "sira":14,
+      "isim":"AL-MUSAWWIR",
+      "aciklama":"The Flawless Shaper. The One who forms His creatures in different pictures.",
+      "resim":"ic_14_musavvir"
+   },
+   {
+      "sira":15,
+      "isim":"AL-GHAFFAAR",
+      "aciklama":"The Great Forgiver. The Forgiver, The One who forgives the sins of His slaves time and time again.",
+      "resim":"ic_15_gaffar"
+   },
+   {
+      "sira":16,
+      "isim":"AL-QAHHAAR",
+      "aciklama":"The All-Prevailing One. The Dominant, The One who has the perfect Power and is not unable over anything.",
+      "resim":"ic_16_kahhar"
+   },
+   {
+      "sira":17,
+      "isim":"AL-WAHHAB",
+      "aciklama":"The Supreme Bestower. The One who is Generous in giving plenty without any return. He is everything that benefits whether Halal or Haram.",
+      "resim":"ic_17_vehhab"
+   },
+   {
+      "sira":18,
+      "isim":"AR-RAZZAQ",
+      "aciklama":"The Total Provider. The Sustainer, The Provider.",
+      "resim":"ic_18_rezzak"
+   },
+   {
+      "sira":19,
+      "isim":"AL-FATTAH",
+      "aciklama":"The Supreme Solver. The Opener, The Reliever, The Judge, The One who opens for His slaves the closed worldly and religious matters.",
+      "resim":"ic_19_fettah"
+   },
+   {
+      "sira":20,
+      "isim":"AL-ALIM",
+      "aciklama":"The All-Knowing One. The Knowledgeable; The One nothing is absent from His knowledge",
+      "resim":"ic_20_alim"
+   },
+   {
+      "sira":21,
+      "isim":"AL-QAABID",
+      "aciklama":"The Restricting One. The Constrictor, The Withholder, The One who constricts the sustenance by His wisdom and expands and widens it with His Generosity and Mercy.",
+      "resim":"ic_21_kabid"
+   },
+   {
+      "sira":22,
+      "isim":"AL-BAASIT",
+      "aciklama":"The Extender. The Englarger, The One who constricts the sustenance by His wisdom and expands and widens it with His Generosity and Mercy.",
+      "resim":"ic_22_basit"
+   },
+   {
+      "sira":23,
+      "isim":"AL-KHAAFID",
+      "aciklama":"The Reducer. The Abaser, The One who lowers whoever He willed by His Destruction and raises whoever He willed by His Endowment.",
+      "resim":"ic_23_hafid"
+   },
+   {
+      "sira":24,
+      "isim":"AR-RAFI",
+      "aciklama":"The Elevating One. The Exalter, The Elevator, The One who lowers whoever He willed by His Destruction and raises whoever He willed by His Endowment.",
+      "resim":"ic_24_rafi"
+   },
+   {
+      "sira":25,
+      "isim":"AL-MU’IZZ",
+      "aciklama":"The Honourer-Bestower. He gives esteem to whoever He willed, hence there is no one to degrade Him; And He degrades whoever He willed, hence there is no one to give Him esteem.",
+      "resim":"ic_25_muizz"
+   },
+   {
+      "sira":26,
+      "isim":"AL-MUZIL",
+      "aciklama":"The Abaser. The Dishonourer, The Humiliator, He gives esteem to whoever He willed, hence there is no one to degrade Him; And He degrades whoever He willed, hence there is no one to give Him esteem.",
+      "resim":"ic_26_muzill"
+   },
+   {
+      "sira":27,
+      "isim":"AS-SAMI’",
+      "aciklama":"The All-Hearer. The Hearer, The One who Hears all things that are heard by His Eternal Hearing without an ear, instrument or organ.",
+      "resim":"ic_27_semi"
+   },
+   {
+      "sira":28,
+      "isim":"AL-BASEER",
+      "aciklama":"The All-Seeing. The All-Noticing, The One who Sees all things that are seen by His Eternal Seeing without a pupil or any other instrument.",
+      "resim":"ic_28_basir"
+   },
+   {
+      "sira":29,
+      "isim":"AL-HAKAM",
+      "aciklama":"The Impartial Judge. The Judge, He is the Ruler and His judgment is His Word.",
+      "resim":"ic_29_hakem"
+   },
+   {
+      "sira":30,
+      "isim":"AL-ADL",
+      "aciklama":"The Embodiment of Justice. The Just, The One who is entitled to do what He does.",
+      "resim":"ic_30_adl"
+   },
+   {
+      "sira":31,
+      "isim":"AL-LATEEF",
+      "aciklama":"The Knower of Subtleties. The Subtle One, The Gracious, The One who is kind to His slaves and endows upon them.",
+      "resim":"ic_31_latif"
+   },
+   {
+      "sira":32,
+      "isim":"AL-KHABEER",
+      "aciklama":"The All-Aware One. The One who knows the truth of things.",
+      "resim":"ic_32_habir"
+   },
+   {
+      "sira":33,
+      "isim":"AL-HALEEM",
+      "aciklama":"The Clement One. The Forebearing, The One who delays the punishment for those who deserve it and then He might forgive them.",
+      "resim":"ic_33_halim"
+   },
+   {
+      "sira":34,
+      "isim":"AL-AZEEM",
+      "aciklama":"The Magnificent One. The Great One, The Mighty, The One deserving the attributes of Exaltment, Glory, Extolement, and Purity from all imperfection.",
+      "resim":"ic_34_azim"
+   },
+   {
+      "sira":35,
+      "isim":"AL-GHAFOOR",
+      "aciklama":"The Great Forgiver. The All-Forgiving, The Forgiving, The One who forgives a lot.",
+      "resim":"ic_35_gafur"
+   },
+   {
+      "sira":36,
+      "isim":"ASH-SHAKOOR",
+      "aciklama":"The Acknowledging One. The Grateful, The Appreciative, The One who gives a lot of reward for a little obedience.",
+      "resim":"ic_36_sekur"
+   },
+   {
+      "sira":37,
+      "isim":"AL-ALIYY",
+      "aciklama":"The Sublime One. The Most High, The One who is clear from the attributes of the creatures.",
+      "resim":"ic_37_aliyy"
+   },
+   {
+      "sira":38,
+      "isim":"AL-KABEER",
+      "aciklama":"The Great One. The Most Great, The Great, The One who is greater than everything in status.",
+      "resim":"ic_38_kebir"
+   },
+   {
+      "sira":39,
+      "isim":"AL-HAFIZ",
+      "aciklama":"The Guarding One. The Preserver, The Protector, The One who protects whatever and whoever He willed to protect.",
+      "resim":"ic_39_hafiz"
+   },
+   {
+      "sira":40,
+      "isim":"AL-MUQEET",
+      "aciklama":"The Sustaining One. The Maintainer, The Guardian, The Feeder, The One who has the Power.",
+      "resim":"ic_40_mukit"
+   },
+   {
+      "sira":41,
+      "isim":"AL-HASEEB",
+      "aciklama":"The Reckoning One. The Reckoner, The One who gives the satisfaction.",
+      "resim":"ic_41_hasib"
+   },
+   {
+      "sira":42,
+      "isim":"AL-JALEEL",
+      "aciklama":"The Majestic One. The Sublime One, The Beneficent, The One who is attributed with greatness of Power and Glory of status.",
+      "resim":"ic_42_celil"
+   },
+   {
+      "sira":43,
+      "isim":"AL-KAREEM",
+      "aciklama":"The Bountiful One. The Generous One, The Gracious, The One who is attributed with greatness of Power and Glory of status.",
+      "resim":"ic_43_kerim"
+   },
+   {
+      "sira":44,
+      "isim":"AR-RAQEEB",
+      "aciklama":"The Watchful One. The Watcher, The One that nothing is absent from Him. Hence it’s meaning is related to the attribute of Knowledge.",
+      "resim":"ic_44_rakib"
+   },
+   {
+      "sira":45,
+      "isim":"AL-MUJEEB",
+      "aciklama":"The Responding One. The Responsive, The Hearkener, The One who answers the one in need if he asks Him and rescues the yearner if he calls upon Him.",
+      "resim":"ic_45_mucib"
+   },
+   {
+      "sira":46,
+      "isim":"AL-WAASI’",
+      "aciklama":"The All-Pervading One. The Vast, The All-Embracing, The Knowledgeable.",
+      "resim":"ic_46_vasi"
+   },
+   {
+      "sira":47,
+      "isim":"AL-HAKEEM",
+      "aciklama":"The Wise One. The Wise, The Judge of Judges, The One who is correct in His doings.",
+      "resim":"ic_47_hakim"
+   },
+   {
+      "sira":48,
+      "isim":"AL-WADUD",
+      "aciklama":"The Loving One. The One who loves His believing slaves and His believing slaves love Him. His love to His slaves is His Will to be merciful to them and praise them",
+      "resim":"ic_48_vedud"
+   },
+   {
+      "sira":49,
+      "isim":"AL-MAJEED",
+      "aciklama":"The Glorious One. The Most Glorious One, The One who is with perfect Power, High Status, Compassion, Generosity and Kindness.",
+      "resim":"ic_49_mecid"
+   },
+   {
+      "sira":50,
+      "isim":"AL-BA’ITH",
+      "aciklama":"The Infuser of New Life. The Resurrector, The Raiser (from death), The One who resurrects His slaves after death for reward and/or punishment.",
+      "resim":"ic_50_bais"
+   },
+   {
+      "sira":51,
+      "isim":"ASH-SHAHEED",
+      "aciklama":"The All Observing Witness. The Witness, The One who nothing is absent from Him.",
+      "resim":"ic_51_sehid"
+   },
+   {
+      "sira":52,
+      "isim":"AL-HAQQ",
+      "aciklama":"The Embodiment of Truth. The Truth, The True, The One who truly exists.",
+      "resim":"ic_52_hakk"
+   },
+   {
+      "sira":53,
+      "isim":"AL-WAKEEL",
+      "aciklama":"The Universal Trustee. The Trustee, The One who gives the satisfaction and is relied upon.",
+      "resim":"ic_53_vekil"
+   },
+   {
+      "sira":54,
+      "isim":"AL-QAWWIYY",
+      "aciklama":"The Strong One. The Most Strong, The Strong, The One with the complete Power",
+      "resim":"ic_54_kaviyy"
+   },
+   {
+      "sira":55,
+      "isim":"AL-MATEEN",
+      "aciklama":"The Firm One. The One with extreme Power which is un-interrupted and He does not get tired.",
+      "resim":"ic_55_metin"
+   },
+   {
+      "sira":56,
+      "isim":"AL-WALIYY",
+      "aciklama":"The Protecting Associate. The Protecting Friend, The Supporter.",
+      "resim":"ic_56_veli"
+   },
+   {
+      "sira":57,
+      "isim":"AL-HAMEED",
+      "aciklama":"The Sole-Laudable One. The Praiseworthy, The praised One who deserves to be praised.",
+      "resim":"ic_57_hamid"
+   },
+   {
+      "sira":58,
+      "isim":"AL-MUHSEE",
+      "aciklama":"The All-Enumerating One. The Counter, The Reckoner, The One who the count of things are known to him.",
+      "resim":"ic_58_muhsi"
+   },
+   {
+      "sira":59,
+      "isim":"AL-MUBDI",
+      "aciklama":"The Originator. The One who started the human being. That is, He created him.",
+      "resim":"ic_59_mubdi"
+   },
+   {
+      "sira":60,
+      "isim":"AL-MUEED",
+      "aciklama":"The Restorer. The Reproducer, The One who brings back the creatures after death",
+      "resim":"ic_60_muid"
+   },
+   {
+      "sira":61,
+      "isim":"AL-MUHYI",
+      "aciklama":"The Maintainer of life. The Restorer, The Giver of Life, The One who took out a living human from semen that does not have a soul. He gives life by giving the souls back to the worn out bodies on the resurrection day and He makes the hearts alive by the light of knowledge.",
+      "resim":"ic_61_muhyi"
+   },
+   {
+      "sira":62,
+      "isim":"AL-MUMEET",
+      "aciklama":"The Inflictor of Death. The Creator of Death, The Destroyer, The One who renders the living dead.",
+      "resim":"ic_62_mumit"
+   },
+   {
+      "sira":63,
+      "isim":"AL-HAYY",
+      "aciklama":"The Eternally Living One. The Alive, The One attributed with a life that is unlike our life and is not that of a combination of soul, flesh or blood.",
+      "resim":"ic_63_hayy"
+   },
+   {
+      "sira":64,
+      "isim":"AL-QAYYOOM",
+      "aciklama":"The Self-Subsisting One. The One who remains and does not end.",
+      "resim":"ic_64_kayyum"
+   },
+   {
+      "sira":65,
+      "isim":"AL-WAAJID",
+      "aciklama":"The Pointing One. The Perceiver, The Finder, The Rich who is never poor. Al-Wajd is Richness.",
+      "resim":"ic_65_vacid"
+   },
+   {
+      "sira":66,
+      "isim":"AL-MAAJID",
+      "aciklama":"The All-Noble One. The Glorious, He who is Most Glorious.",
+      "resim":"ic_66_macid"
+   },
+   {
+      "sira":67,
+      "isim":"AL-WAAHID",
+      "aciklama":"The Only One. The Unique, The One, The One without a partner",
+      "resim":"ic_67_vahid"
+   },
+   {
+      "sira":68,
+      "isim":"AS-SAMAD",
+      "aciklama":"The Supreme Provider. The Eternal, The Independent, The Master who is relied upon in matters and reverted to in ones needs.",
+      "resim":"ic_68_samed"
+   },
+   {
+      "sira":69,
+      "isim":"AL-QAADIR",
+      "aciklama":"The Omnipotent One. The Able, The Capable, The One attributed with Power.",
+      "resim":"ic_69_kadir"
+   },
+   {
+      "sira":70,
+      "isim":"AL-MUQTADIR",
+      "aciklama":"The All Authoritative One. The Powerful, The Dominant, The One with the perfect Power that nothing is withheld from Him.",
+      "resim":"ic_70_muktedir"
+   },
+   {
+      "sira":71,
+      "isim":"AL-MUQADDIM",
+      "aciklama":"The Expediting One. The Expediter, The Promoter, The One who puts things in their right places. He makes ahead what He wills and delays what He wills.",
+      "resim":"ic_71_mukaddim"
+   },
+   {
+      "sira":72,
+      "isim":"AL-MU’AKHKHIR",
+      "aciklama":"The Procrastinator. The Delayer, the Retarder, The One who puts things in their right places. He makes ahead what He wills and delays what He wills.",
+      "resim":"ic_72_muahhir"
+   },
+   {
+      "sira":73,
+      "isim":"AL-AWWAL",
+      "aciklama":"The Very First. The First, The One whose Existence is without a beginning.",
+      "resim":"ic_73_evvel"
+   },
+   {
+      "sira":74,
+      "isim":"AL-AKHIR",
+      "aciklama":"The Infinite Last One. The Last, The One whose Existence is without an end.",
+      "resim":"ic_74_ahir"
+   },
+   {
+      "sira":75,
+      "isim":"AZ-ZAAHIR",
+      "aciklama":"The Perceptible. The Manifest, The One that nothing is above Him and nothing is underneath Him, hence He exists without a place. He, The Exalted, His Existence is obvious by proofs and He is clear from the delusions of attributes of bodies.",
+      "resim":"ic_75_zahir"
+   },
+   {
+      "sira":76,
+      "isim":"AL-BAATIN",
+      "aciklama":"The Imperceptible. The Hidden, The One that nothing is above Him and nothing is underneath Him, hence He exists without a place. He, The Exalted, His Existence is obvious by proofs and He is clear from the delusions of attributes of bodies.",
+      "resim":"ic_76_batin"
+   },
+   {
+      "sira":77,
+      "isim":"AL-WAALI",
+      "aciklama":"The Holder of Supreme Authority. The Governor, The One who owns things and manages them.",
+      "resim":"ic_77_vali"
+   },
+   {
+      "sira":78,
+      "isim":"AL-MUTA’ALI",
+      "aciklama":"The Extremely Exalted One. The Most Exalted, The High Exalted, The One who is clear from the attributes of the creation.",
+      "resim":"ic_78_muteal"
+   },
+   {
+      "sira":79,
+      "isim":"AL-BARR",
+      "aciklama":"The Fountain-Head of Truth. The Source of All Goodness, The Righteous, The One who is kind to His creatures, who covered them with His sustenance and specified whoever He willed among them by His support, protection, and special mercy.",
+      "resim":"ic_79_berr"
+   },
+   {
+      "sira":80,
+      "isim":"AT-TAWWAAB",
+      "aciklama":"The Ever-Acceptor of Repentance. The Relenting, The One who grants repentance to whoever He willed among His creatures and accepts his repentance.",
+      "resim":"ic_80_tevvab"
+   },
+   {
+      "sira":81,
+      "isim":"AL-MUNTAQIM",
+      "aciklama":"The Retaliator. The Avenger, The One who victoriously prevails over His enemies and punishes them for their sins. It may mean the One who destroys them.",
+      "resim":"ic_81_muntekim"
+   },
+   {
+      "sira":82,
+      "isim":"AL-AFUWW",
+      "aciklama":"The Supreme Pardoner. The Forgiver, The One with wide forgiveness.",
+      "resim":"ic_82_afuv"
+   },
+   {
+      "sira":83,
+      "isim":"AR-RA’OOF",
+      "aciklama":"The Benign One. The Compassionate, The One with extreme Mercy. The Mercy of Allah is His will to endow upon whoever He willed among His creatures.",
+      "resim":"ic_83_rauf"
+   },
+   {
+      "sira":84,
+      "isim":"MAALIK-UL-MULK",
+      "aciklama":"The Eternal Possessor of Sovereignty. The One who controls the Dominion and gives dominion to whoever He willed.",
+      "resim":"ic_84_malikulmulk"
+   },
+   {
+      "sira":85,
+      "isim":"ZUL-JALAALI-WAL-IKRAM",
+      "aciklama":"The Possessor of Majesty and Honour. The Lord of Majesty and Bounty, The One who deserves to be Exalted and not denied.",
+      "resim":"ic_85_zulcelalivelikram"
+   },
+   {
+      "sira":86,
+      "isim":"AL-MUQSIT",
+      "aciklama":"The Just One. The Equitable, The One who is Just in His judgment.",
+      "resim":"ic_86_muksit"
+   },
+   {
+      "sira":87,
+      "isim":"AL-JAAMI’",
+      "aciklama":"The Assembler of Scattered Creations. The Gatherer, The One who gathers the creatures on a day that there is no doubt about, that is the Day of Judgment.",
+      "resim":"ic_87_cami"
+   },
+   {
+      "sira":88,
+      "isim":"AL-GHANIYY",
+      "aciklama":"The Self-Sufficient One. The One who does not need the creation.",
+      "resim":"ic_88_gani"
+   },
+   {
+      "sira":89,
+      "isim":"AL-MUGHNI",
+      "aciklama":"The Bestower of Sufficiency. The Enricher, The One who satisfies the necessities of the creatures.",
+      "resim":"ic_89_mugni"
+   },
+   {
+      "sira":90,
+      "isim":"AL-MAANI’",
+      "aciklama":"The Preventer. The Withholder.",
+      "resim":"ic_90_mani"
+   },
+   {
+      "sira":91,
+      "isim":"AD-DAARR",
+      "aciklama":"The Distressor. The One who makes harm reach to whoever He willed and benefit to whoever He willed.",
+      "resim":"ic_91_dar"
+   },
+   {
+      "sira":92,
+      "isim":"AN-NAAFI’",
+      "aciklama":"The Bestower of Benefits. The Propitious, The One who makes harm reach to whoever He willed and benefit to whoever He willed.",
+      "resim":"ic_92_nafi"
+   },
+   {
+      "sira":93,
+      "isim":"AN-NOOR",
+      "aciklama":"The Prime Light. The Light, The One who guides.",
+      "resim":"ic_93_nur"
+   },
+   {
+      "sira":94,
+      "isim":"AL-HAADI",
+      "aciklama":"The Provider of Guidance. The Guide, The One whom with His Guidance His believers were guided, and with His Guidance the living beings have been guided to what is beneficial for them and protected from what is harmful to them.",
+      "resim":"ic_94_hadi"
+   },
+   {
+      "sira":95,
+      "isim":"AL-BADI’",
+      "aciklama":"The Unique One. The Incomparable, The One who created the creation and formed it without any preceding example.",
+      "resim":"ic_95_bedi"
+   },
+   {
+      "sira":96,
+      "isim":"AL-BAAQI",
+      "aciklama":"The Ever Surviving One. The Everlasting, The One that the state of non-existence is impossible for Him.",
+      "resim":"ic_96_baki"
+   },
+   {
+      "sira":97,
+      "isim":"AL-WAARIS",
+      "aciklama":"The Eternal Inheritor. The Heir, The One whose Existence remains.",
+      "resim":"ic_97_varis"
+   },
+   {
+      "sira":98,
+      "isim":"AR-RASHEED",
+      "aciklama":"The Guide to Path of Rectitude. The Guide to the Right Path, The One who guides.",
+      "resim":"ic_98_resid"
+   },
+   {
+      "sira":99,
+      "isim":"AS-SABOOR",
+      "aciklama":"The Extensively Enduring One. The Patient, The One who does not quickly punish the sinners.",
+      "resim":"ic_99_sabur"
+   }
+]

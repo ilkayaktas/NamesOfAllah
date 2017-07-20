@@ -62,4 +62,7 @@ ext {
 
     // Lovely Dialog
     lovelydialog = "1.0.7"
+
+    // Jackson
+    jacksonVersion = "2.8.9"
 }
