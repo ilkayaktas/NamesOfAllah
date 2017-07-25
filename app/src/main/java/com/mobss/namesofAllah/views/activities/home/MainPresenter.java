@@ -7,19 +7,17 @@ import com.mobss.namesofAllah.views.activities.base.BasePresenter;
 
 import java.util.List;
 
-import javax.inject.Inject;
-
 /**
  * Created by ilkay on 12/03/2017.
  */
 
 public class MainPresenter<V extends MainMvpView> extends BasePresenter<V>
 		implements MainMvpPresenter<V>{
-	@Inject
 	DatabaseCreator databaseCreator;
 	
-	public MainPresenter(com.mobss.namesofAllah.controller.IDataManager IDataManager) {
+	public MainPresenter(com.mobss.namesofAllah.controller.IDataManager IDataManager, DatabaseCreator databaseCreator) {
 		super(IDataManager);
+		this.databaseCreator = databaseCreator;
 	}
 	
 	@Override

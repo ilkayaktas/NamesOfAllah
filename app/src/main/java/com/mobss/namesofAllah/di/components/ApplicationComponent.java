@@ -6,6 +6,7 @@ import android.content.Context;
 
 import com.mobss.namesofAllah.App;
 import com.mobss.namesofAllah.controller.IDataManager;
+import com.mobss.namesofAllah.controller.db.crud.DatabaseManager;
 import com.mobss.namesofAllah.di.annotations.ApplicationContext;
 import com.mobss.namesofAllah.di.modules.ApplicationModule;
 
@@ -28,5 +29,7 @@ public interface ApplicationComponent {
     Application application();
     
     IDataManager getDataManager();
+    
+    DatabaseManager getDatabaseManager();
     
 }

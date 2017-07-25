@@ -1,12 +1,9 @@
 package com.mobss.namesofAllah.controller.db.initializer;
 
-import android.content.Context;
-
 import com.mobss.namesofAllah.controller.db.crud.DatabaseManager;
 import com.mobss.namesofAllah.controller.db.initializer.file.IFileReader;
 import com.mobss.namesofAllah.controller.db.initializer.inflator.Inflator;
 import com.mobss.namesofAllah.controller.db.initializer.parser.IFileParser;
-import com.mobss.namesofAllah.di.annotations.ApplicationContext;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
@@ -18,22 +15,17 @@ import javax.inject.Singleton;
 
 @Singleton
 public class DatabaseCreator {
-    Context context;
     DatabaseManager databaseManager;
-
-    
     Inflator isimInflator;
     IFileReader isimFileReader;
     IFileParser isimFileParser;
     
     @Inject
-    public DatabaseCreator(@ApplicationContext Context contex,
-                           DatabaseManager databaseManager,
+    public DatabaseCreator(DatabaseManager databaseManager,
                            Inflator isimInflator,
                            IFileReader isimFileReader,
                           IFileParser isimFileParser) {
 
-        this.context = contex;
         this.databaseManager = databaseManager;
         this.isimInflator = isimInflator;
         this.isimFileReader = isimFileReader;
