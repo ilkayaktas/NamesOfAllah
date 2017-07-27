@@ -70,4 +70,7 @@ dependencies {
             [group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.8.9']
     )
 
+    // Jelly Toolbar
+    compile "com.github.yalantis:jellytoolbar:$rootProject.jellyToolbar"
+
 }

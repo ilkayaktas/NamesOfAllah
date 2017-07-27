@@ -4,6 +4,10 @@
     <color name="colorPrimaryDark">@color/md_light_blue_700</color>
     <color name="colorAccent">#FF4081</color>
 
+    <color name="colorTransparent">#00ffffff</color>
+    <color name="colorStart">#cb5ed9</color>
+    <color name="colorEnd">#8463d4</color>
+
     <color name="mobss_color_white">#ffffff</color>
     <color name="mobss_color_white_d">#f6f6f6</color>
     <color name="mobss_color_black">#000000</color>
@@ -15,6 +19,10 @@
     <color name="mobss_color_blue">@color/md_light_blue_500</color>
     <color name="mobss_color_primary_blue">#ff3a90dc</color>
     <color name="mobss_color_secondary_blue">#ff81a1a7</color>
+
+    <color name="white_transparent">#7effffff</color>
+    <color name="black_transparent">#14000000</color>
+    <color name="black_transparent_image">#46000000</color>
 
     <!--reds-->
     <color name="md_red_50">#FFEBEE</color>

@@ -1,17 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:gradient="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:id="@+id/parent_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/mobss_color_light_gray"
+                tools:context=".views.activities.home.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <include  layout="@layout/toolbar_jellytoolbar"/>
+
+    <ImageView
+        android:id="@+id/imageview_main_background_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop" />
+
+    <View
+        android:id="@+id/view_main_background_image_overlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black_transparent_image"
+        android:visibility="gone" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager_main_isimler_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/framelayout_main_buttons_layout"
+        android:background="@android:color/transparent"
+        android:clipToPadding="false"
+        android:overScrollMode="never"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:paddingTop="30dp" />
+
+    <FrameLayout
+        android:id="@+id/framelayout_main_buttons_layout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
 
-</android.support.constraint.ConstraintLayout>
+        <TextView
+            android:id="@+id/textview_main_skip_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/main_rounded_button_selector"
+            android:elevation="4dp"
+            android:text="@string/main_button_finish"
+            android:textColor="@color/mobss_color_white"
+            android:textSize="16sp"
+            android:visibility="gone" />
+
+        <FrameLayout
+            android:id="@+id/framelayout_main_navigation_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp">
+
+            <ImageView
+                android:id="@+id/imageview_main_previous_button"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_gravity="left"
+                android:src="@mipmap/main_button_previous" />
+
+
+            <TextView
+                android:id="@+id/textview_main_numara"
+                android:layout_width="50dp"
+                android:layout_height="32dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="1"
+                android:textColor="@color/mobss_color_white"
+                android:background="@drawable/main_rounded_numara_selector"/>
+
+            <ImageView
+                android:id="@+id/imageview_main_next_button"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_gravity="right"
+                android:src="@mipmap/main_button_next" />
+
+        </FrameLayout>
+
+
+    </FrameLayout>
+
+
+
+</RelativeLayout>

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Application Name</string>
+    <string name="app_name">Names of Allah</string>
     <string name="all_errormessage">Error!</string>
     <string name="splashscreen_slogan">This is a template application!</string>
 
@@ -8,4 +8,6 @@
     <string name="rateme_dialog_ok">Rate Now</string>
     <string name="rateme_dialog_cancel">Remind Later</string>
     <string name="rateme_dialog_no">No, Thanks</string>
+
+    <string name="main_button_finish">FINISH</string>
 </resources>
