@@ -14,6 +14,7 @@ public class RealmIsim extends RealmObject {
     public String aciklama;
     public String resim;
     public int zikirSayisi;
+    public boolean isFavory;
 
     public RealmIsim clone(RealmIsim fromThisObject){
         RealmIsim newObj = new RealmIsim();
@@ -23,6 +24,7 @@ public class RealmIsim extends RealmObject {
         newObj.aciklama = fromThisObject.aciklama;
         newObj.resim = fromThisObject.resim;
         newObj.zikirSayisi = fromThisObject.zikirSayisi;
+        newObj.isFavory = fromThisObject.isFavory;
 
         return newObj;
     }

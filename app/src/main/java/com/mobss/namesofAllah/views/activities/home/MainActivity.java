@@ -11,12 +11,17 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.RelativeLayout;
 
+import com.gigamole.infinitecycleviewpager.HorizontalInfiniteCycleViewPager;
 import com.mobss.namesofAllah.R;
+import com.mobss.namesofAllah.adapters.HorizontalPagerAdapter;
+import com.mobss.namesofAllah.model.app.AllahinIsimleri;
 import com.mobss.namesofAllah.views.activities.base.BaseActivity;
 import com.mobss.namesofAllah.views.widgets.dialogs.rateme.Config;
 import com.mobss.namesofAllah.views.widgets.dialogs.rateme.RateMe;
 import com.yalantis.jellytoolbar.listener.JellyListener;
 import com.yalantis.jellytoolbar.widget.JellyToolbar;
+
+import java.util.List;
 
 import javax.inject.Inject;
 
@@ -27,6 +32,7 @@ public class MainActivity extends BaseActivity implements MainMvpView {
 
 	/******/
 	@BindView(R.id.parent_layout) RelativeLayout parent_layout;
+	@BindView(R.id.viewpager_main_isimler_container) HorizontalInfiniteCycleViewPager horizontalInfiniteCycleViewPager;
 
 	private JellyToolbar toolbar;
 	private AutoCompleteTextView editText;
@@ -60,12 +66,12 @@ public class MainActivity extends BaseActivity implements MainMvpView {
 		mPresenter.onAttach(MainActivity.this);
 		
 		mPresenter.initiateNamesInDatabase();
-		
-		mPresenter.getTumIsimler();
+
+		List<AllahinIsimleri> isimler = mPresenter.getTumIsimler();
 
 
 		/******/
-		toolbar = (JellyToolbar) findViewById(R.id.toolbar);
+		toolbar = (JellyToolbar) findViewById(R.id.jellytoolbar_main_toolbar);
 		toolbar.getToolbar().setNavigationIcon(R.mipmap.ic_launcher);
 		toolbar.setJellyListener(jellyListener);
 		toolbar.getToolbar().setPadding(0, getStatusBarHeight(), 0, 0);
@@ -83,6 +89,8 @@ public class MainActivity extends BaseActivity implements MainMvpView {
 						| View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
 
 		setGradientBackground(parent_layout);
+
+		horizontalInfiniteCycleViewPager.setAdapter(new HorizontalPagerAdapter(this, isimler));
 
 		/******/
 	}

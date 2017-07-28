@@ -10,4 +10,5 @@ public class AllahinIsimleri {
 	public String aciklama;
 	public String resim;
 	public int zikirSayisi;
+	public boolean isFavory;
 }

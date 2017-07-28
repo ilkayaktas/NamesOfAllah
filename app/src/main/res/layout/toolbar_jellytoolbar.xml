@@ -6,7 +6,7 @@
               android:orientation="vertical">
 
     <com.yalantis.jellytoolbar.widget.JellyToolbar
-        android:id="@+id/toolbar"
+        android:id="@+id/jellytoolbar_main_toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorEnd"

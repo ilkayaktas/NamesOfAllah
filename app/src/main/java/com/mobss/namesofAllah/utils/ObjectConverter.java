@@ -25,6 +25,7 @@ public class ObjectConverter {
         realmIsim.isim = jsonIsim.isim;
         realmIsim.resim = jsonIsim.resim;
         realmIsim.zikirSayisi = zikirSayisi;
+        realmIsim.isFavory = false;
 
         return realmIsim;
     }
@@ -37,6 +38,7 @@ public class ObjectConverter {
         AllahinIsimleri.isim = isim.isim;
         AllahinIsimleri.resim = isim.resim;
         AllahinIsimleri.zikirSayisi = isim.zikirSayisi;
+        AllahinIsimleri.isFavory = isim.isFavory;
 
         return AllahinIsimleri;
     }

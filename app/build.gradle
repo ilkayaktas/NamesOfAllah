@@ -73,4 +73,8 @@ dependencies {
     // Jelly Toolbar
     compile "com.github.yalantis:jellytoolbar:$rootProject.jellyToolbar"
 
+    // InfiniteCycleViewpager
+    compile "com.github.devlight:infinitecycleviewpager:$rootProject.infiniteCycleVersion"
+    compile "com.android.support:cardview-v7:$rootProject.supportLibraryVersion"
+
 }
