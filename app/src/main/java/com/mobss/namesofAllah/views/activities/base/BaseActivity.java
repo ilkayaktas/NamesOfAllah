@@ -12,6 +12,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.mobss.namesofAllah.App;
@@ -20,6 +21,7 @@ import com.mobss.namesofAllah.di.annotations.ActivityContext;
 import com.mobss.namesofAllah.di.components.ActivityComponent;
 import com.mobss.namesofAllah.di.components.DaggerActivityComponent;
 import com.mobss.namesofAllah.di.modules.ActivityModule;
+import com.mobss.namesofAllah.views.widgets.gradientbckg.FlowingGradient;
 
 import javax.inject.Inject;
 
@@ -143,5 +145,14 @@ public class BaseActivity extends AppCompatActivity implements MvpView, BaseFrag
 		
 		// yeni Acitivity başlat
 		startActivity(intent);
+	}
+
+	public void setGradientBackground(RelativeLayout relativeLayout) {
+
+		FlowingGradient grad = new FlowingGradient();
+		grad.setBackgroundResource(R.drawable.all_bggradienttranslate)
+				.onRelativeLayout(relativeLayout)
+				.setTransitionDuration(4000)
+				.start();
 	}
 }

@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.RelativeLayout;
 
 import com.mobss.namesofAllah.R;
 import com.mobss.namesofAllah.views.activities.base.BaseActivity;
@@ -19,9 +20,13 @@ import com.yalantis.jellytoolbar.widget.JellyToolbar;
 
 import javax.inject.Inject;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class MainActivity extends BaseActivity implements MainMvpView {
+
+	/******/
+	@BindView(R.id.parent_layout) RelativeLayout parent_layout;
 
 	private JellyToolbar toolbar;
 	private AutoCompleteTextView editText;
@@ -59,7 +64,7 @@ public class MainActivity extends BaseActivity implements MainMvpView {
 		mPresenter.getTumIsimler();
 
 
-		/**/
+		/******/
 		toolbar = (JellyToolbar) findViewById(R.id.toolbar);
 		toolbar.getToolbar().setNavigationIcon(R.mipmap.ic_launcher);
 		toolbar.setJellyListener(jellyListener);
@@ -76,6 +81,10 @@ public class MainActivity extends BaseActivity implements MainMvpView {
 		getWindow().getDecorView().setSystemUiVisibility(
 				View.SYSTEM_UI_FLAG_LAYOUT_STABLE
 						| View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
+
+		setGradientBackground(parent_layout);
+
+		/******/
 	}
 
 	private static final String[] COUNTRIES = new String[] {
