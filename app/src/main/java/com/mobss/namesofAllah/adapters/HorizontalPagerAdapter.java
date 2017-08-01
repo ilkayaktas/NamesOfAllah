@@ -1,6 +1,7 @@
 package com.mobss.namesofAllah.adapters;
 
 import android.support.v4.view.PagerAdapter;
+import android.text.method.ScrollingMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,8 +9,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.mobss.namesofAllah.R;
+import com.mobss.namesofAllah.events.FavorySelectedEvent;
 import com.mobss.namesofAllah.model.app.AllahinIsimleri;
 import com.mobss.namesofAllah.views.activities.base.BaseActivity;
+
+import org.greenrobot.eventbus.EventBus;
 
 import java.util.List;
 
@@ -23,21 +27,23 @@ import butterknife.ButterKnife;
 public class HorizontalPagerAdapter extends PagerAdapter {
 
     private BaseActivity activity;
-    private List<AllahinIsimleri> AllahinIsimleris;
+    private List<AllahinIsimleri> AllahinIsimleriList;
     private LayoutInflater mLayoutInflater;
     private int clickCounter = 0;
     private int previousPosition = -1;
     private View view = null;
-
+    private ViewHolder viewHolder;
+    
+    
     public HorizontalPagerAdapter(final BaseActivity activity, List<AllahinIsimleri> allahinIsimleri) {
         this.activity = activity;
-        this.AllahinIsimleris = allahinIsimleri;
+        this.AllahinIsimleriList = allahinIsimleri;
         mLayoutInflater = LayoutInflater.from(activity);
     }
 
     @Override
     public int getCount() {
-        return AllahinIsimleris.size();
+        return AllahinIsimleriList.size();
     }
 
     @Override
@@ -48,45 +54,29 @@ public class HorizontalPagerAdapter extends PagerAdapter {
     @Override
     public Object instantiateItem(final ViewGroup container, final int position) {
 
-        final ViewHolder viewHolder;
-
-            view = mLayoutInflater.inflate(R.layout.fragment_horizontal_item, container, false);
-            viewHolder = new ViewHolder(view);
-            view.setTag(viewHolder);
-
+        view = mLayoutInflater.inflate(R.layout.fragment_horizontal_item, container, false);
+        viewHolder = new ViewHolder(view);
+        view.setTag(viewHolder);
+        
         if(previousPosition != position){
             previousPosition = position;
             clickCounter = 0;
         }
+    
+        viewHolder.imageOfName.setImageResource(activity.getResources().getIdentifier(AllahinIsimleriList.get(position).resim, "drawable", activity.getPackageName()));
+        viewHolder.nameOfAllah.setText(AllahinIsimleriList.get(position).isim);
+        viewHolder.nameOfAllah.setTypeface(activity.regularText);
+        viewHolder.meaningOfName.setText(AllahinIsimleriList.get(position).aciklama);
+        viewHolder.meaningOfName.setTypeface(activity.regularText);
+        viewHolder.meaningOfName.setMovementMethod(new ScrollingMovementMethod());
+        viewHolder.meaningOfName.setClickable(false);
 
-
-
-
-
-        viewHolder.nameOfAllah.setText(AllahinIsimleris.get(position).isim);
-        viewHolder.imageOfName.setImageResource(R.drawable.ic_01_allah);
-        viewHolder.meaningOfName.setText(AllahinIsimleris.get(position).aciklama);
-
-        if(AllahinIsimleris.get(position).isFavory){
+        if(AllahinIsimleriList.get(position).isFavory){
             viewHolder.favoriIcon.setImageResource(R.drawable.ic_favoried);
         } else{
             viewHolder.favoriIcon.setImageResource(R.drawable.ic_favory);
         }
-
-        viewHolder.favoriIcon.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
-                if(AllahinIsimleris.get(position).isFavory){
-                    viewHolder.favoriIcon.setImageResource(R.drawable.ic_favory);
-                    AllahinIsimleris.get(position).isFavory = false;
-                } else{
-                    viewHolder.favoriIcon.setImageResource(R.drawable.ic_favoried);
-                    AllahinIsimleris.get(position).isFavory = true;
-                }
-
-//                EventBus.getDefault().post(new FavoriSelectedEvent(AllahinIsimleris.get(position)));
-            }
-        });
+        viewHolder.favoriIcon.setOnClickListener(new FavoriClicked(position));
 
         container.addView(view);
         return view;
@@ -113,4 +103,28 @@ public class HorizontalPagerAdapter extends PagerAdapter {
             ButterKnife.bind(this, view);
         }
     }
+    
+    class FavoriClicked implements View.OnClickListener{
+    
+        int position= -1;
+    
+        public FavoriClicked(int position) {
+            this.position = position;
+        }
+    
+        @Override
+        public void onClick(View v) {
+            if(AllahinIsimleriList.get(position).isFavory){
+                viewHolder.favoriIcon.setImageResource(R.drawable.ic_favory);
+                AllahinIsimleriList.get(position).isFavory = false;
+            } else{
+                viewHolder.favoriIcon.setImageResource(R.drawable.ic_favoried);
+                AllahinIsimleriList.get(position).isFavory = true;
+            }
+    
+            FavorySelectedEvent<AllahinIsimleri> event = new FavorySelectedEvent(AllahinIsimleriList.get(position));
+            EventBus.getDefault().post(event);
+        }
+    }
+    
 }

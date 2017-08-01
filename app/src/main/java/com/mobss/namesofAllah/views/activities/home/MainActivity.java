@@ -14,12 +14,16 @@ import android.widget.RelativeLayout;
 import com.gigamole.infinitecycleviewpager.HorizontalInfiniteCycleViewPager;
 import com.mobss.namesofAllah.R;
 import com.mobss.namesofAllah.adapters.HorizontalPagerAdapter;
+import com.mobss.namesofAllah.events.FavorySelectedEvent;
 import com.mobss.namesofAllah.model.app.AllahinIsimleri;
 import com.mobss.namesofAllah.views.activities.base.BaseActivity;
 import com.mobss.namesofAllah.views.widgets.dialogs.rateme.Config;
 import com.mobss.namesofAllah.views.widgets.dialogs.rateme.RateMe;
 import com.yalantis.jellytoolbar.listener.JellyListener;
 import com.yalantis.jellytoolbar.widget.JellyToolbar;
+
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 import java.util.List;
 
@@ -140,5 +144,10 @@ public class MainActivity extends BaseActivity implements MainMvpView {
 		} else {
 			return super.onKeyDown(keyCode, event);
 		}
+	}
+		
+	@Subscribe(threadMode = ThreadMode.MAIN)
+	public void onMessageEvent(FavorySelectedEvent<AllahinIsimleri> event) {
+		AllahinIsimleri isim = event.data;
 	}
 }

@@ -48,14 +48,14 @@ public class ActivityModule {
     @Provides
     @PerActivity
     Typeface provideTypeface(){
-        return Typeface.createFromAsset(activity.getAssets(), "fonts/Sketch.ttf");
+        return Typeface.createFromAsset(activity.getAssets(), "fonts/cardo.bold.ttf");
     }
     
     @Provides
     @PerActivity
     @ActivityContext
     Typeface provideTypefaceForActivity(){
-        return Typeface.createFromAsset(activity.getAssets(), "fonts/gothic.TTF");
+        return Typeface.createFromAsset(activity.getAssets(), "fonts/cardo.regular.ttf");
     }
     
     @Provides

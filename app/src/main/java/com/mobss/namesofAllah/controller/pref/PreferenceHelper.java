@@ -38,7 +38,7 @@ public class PreferenceHelper implements IPreferenceHelper {
     
     @Override
     public String getPreferredLanguage() {
-        return mPrefs.getString(SHARED_PREF_APPLANGUAGE, "en");
+        return mPrefs.getString(SHARED_PREF_APPLANGUAGE, null);
     }
     
     @Override

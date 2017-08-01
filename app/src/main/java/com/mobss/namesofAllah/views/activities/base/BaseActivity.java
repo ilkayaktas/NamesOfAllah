@@ -40,11 +40,11 @@ public class BaseActivity extends AppCompatActivity implements MvpView, BaseFrag
 	private Unbinder mUnBinder;
 
 	@Inject
-	public Typeface textFont;
+	public Typeface boldText;
 
 	@Inject
 	@ActivityContext
-	public Typeface typeface;
+	public Typeface regularText;
 
 	@Override
 	protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -128,7 +128,7 @@ public class BaseActivity extends AppCompatActivity implements MvpView, BaseFrag
 		TextView myActionBar = (TextView) findViewById(titleId);
 		if(myActionBar != null) {
 			myActionBar.setTextColor(Color.WHITE);
-			myActionBar.setTypeface(textFont);
+			myActionBar.setTypeface(regularText);
 			myActionBar.setTextSize(20);
 		}
 	}
