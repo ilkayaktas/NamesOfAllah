@@ -2,7 +2,13 @@ package com.mobss.namesofAllah.di.modules;
 
 import android.app.Activity;
 import android.graphics.Typeface;
+import android.text.TextUtils;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 
+import com.mobss.namesofAllah.R;
 import com.mobss.namesofAllah.controller.IDataManager;
 import com.mobss.namesofAllah.controller.db.crud.DatabaseManager;
 import com.mobss.namesofAllah.controller.db.initializer.DatabaseCreator;
@@ -22,6 +28,8 @@ import com.mobss.namesofAllah.views.activities.home.MainPresenter;
 import com.mobss.namesofAllah.views.activities.splash.SplashScreenMvpPresenter;
 import com.mobss.namesofAllah.views.activities.splash.SplashScreenMvpView;
 import com.mobss.namesofAllah.views.activities.splash.SplashScreenPresenter;
+import com.yalantis.jellytoolbar.listener.JellyListener;
+import com.yalantis.jellytoolbar.widget.JellyToolbar;
 
 import java.util.Locale;
 
@@ -119,5 +127,57 @@ public class ActivityModule {
     @PerActivity
     Inflator provideInflator(){
         return new IsimlerInflator();
+    }
+
+    @Provides
+    @PerActivity
+    JellyToolbar provideJellyToolbar(String[] searchList){
+        final JellyToolbar toolbar = (JellyToolbar) activity.findViewById(R.id.jellytoolbar_main_toolbar);;
+        final AutoCompleteTextView editText = (AutoCompleteTextView) LayoutInflater.from(activity).inflate(R.layout.edittext_toolbar, null);
+
+        JellyListener jellyListener = new JellyListener() {
+            @Override
+            public void onCancelIconClicked() {
+                if (TextUtils.isEmpty(editText.getText())) {
+                    toolbar.collapse();
+                } else {
+                    editText.getText().clear();
+                }
+            }
+        };
+
+        toolbar.getToolbar().setNavigationIcon(R.mipmap.ic_launcher);
+        toolbar.setJellyListener(jellyListener);
+        toolbar.getToolbar().setPadding(0, getStatusBarHeight(), 0, 0);
+
+        editText.setBackgroundResource(R.color.colorTransparent);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(activity,
+                android.R.layout.simple_dropdown_item_1line, searchList);
+        editText.setAdapter(adapter);
+
+        toolbar.setContentView(editText);
+
+        activity.getWindow().getDecorView().setSystemUiVisibility(
+                View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                        | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
+
+        return toolbar;
+    }
+
+    private int getStatusBarHeight() {
+        int result = 0;
+        int resourceId = activity.getResources().getIdentifier("status_bar_height", "dimen", "android");
+        if (resourceId > 0) {
+            result = activity.getResources().getDimensionPixelSize(resourceId);
+        }
+        return result;
+    }
+
+    @Provides
+    @PerActivity
+    String[] provideSearchList(){
+        return new String[] {
+                "Allah", "Rahman", "Rahim", "Gaffar", "Rauf"
+        };
     }
 }

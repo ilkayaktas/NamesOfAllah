@@ -15,12 +15,12 @@
         app:layout_constraintTop_toTopOf="parent"
         android:background="@drawable/main_rounded_numara_selector"
         android:gravity="center"
-        android:minWidth="30dp"
+        android:minWidth="35dp"
         android:layout_marginTop="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginStart="16dp"
         android:text="0"
-        android:textSize="20sp"
+        android:textSize="18sp"
         android:textColor="@color/mobss_color_white" />
 
     <ImageView
