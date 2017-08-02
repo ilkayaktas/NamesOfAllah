@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
@@ -129,7 +130,7 @@ public class MainActivity extends BaseActivity implements MainMvpView {
 				.onStart(new YoYo.AnimatorCallback() {
 					@Override
 					public void call(Animator animator) {
-						horizontalInfiniteCycleViewPager.setCurrentItem(0);
+//						horizontalInfiniteCycleViewPager.setCurrentItem(0);
 					}
 				})
 				.playOn(v);
@@ -159,7 +160,8 @@ public class MainActivity extends BaseActivity implements MainMvpView {
 					public void call(Animator animator) {
 						Random generator = new Random();
 						int i = generator.nextInt(100);
-						horizontalInfiniteCycleViewPager.setCurrentItem(i);
+						Toast.makeText(MainActivity.this, ""+i, Toast.LENGTH_SHORT).show();
+//						horizontalInfiniteCycleViewPager.setCurrentItem(i);
 					}
 				})
 				.playOn(v);

@@ -40,7 +40,7 @@ public class BaseActivity extends AppCompatActivity implements MvpView, BaseFrag
 	private Unbinder mUnBinder;
 
 	@Inject
-	public Typeface boldText;
+	public Typeface robotoThinText;
 
 	@Inject
 	@ActivityContext

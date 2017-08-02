@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Allah\'ın İsimleri</string>
     <string name="all_errormessage">Hata durumu oluştu.</string>
-    <string name="splashscreen_slogan">Bu bir şablon uygulamadır!</string>
+    <string name="splashscreen_slogan">\"Kalpler ancak Allah\'ı anmakla huzura kavuşur!\"\n\nRad Suresi 28</string>
 
     <string name="rateme_dialog_title">Bu Uygulamaya Puan Verin</string>
     <string name="rateme_dialog_message">Eğer uygulamamızdan memnun kaldıysanız, lütfen birkaç saniyenizi ayırarak bize puan verin. Desteğiniz için teşekkürler!</string>

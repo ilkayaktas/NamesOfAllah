@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Names of Allah</string>
     <string name="all_errormessage">Error!</string>
-    <string name="splashscreen_slogan">This is a template application!</string>
+    <string name="splashscreen_slogan">\"For without doubt in the remembrance of Allah do hearts find satisfaction!\"\n\n Al-Rad 28</string>
 
     <string name="rateme_dialog_title">Rate This Application</string>
     <string name="rateme_dialog_message">Would you mind rating our application? Thanks for your support!</string>

@@ -17,6 +17,7 @@ allprojects {
     repositories {
         jcenter()
         maven { url "https://jitpack.io" }
+        mavenCentral()
     }
 }
 
@@ -72,4 +73,7 @@ ext {
 
     // InfiniteCycleViewPager
     infiniteCycleVersion = "1.0.2"
+
+    // SlidingUp panel
+    slidingUpPanelVersion = "3.3.1"
 }

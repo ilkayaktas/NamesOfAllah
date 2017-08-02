@@ -25,6 +25,9 @@ import com.mobss.namesofAllah.di.annotations.PerActivity;
 import com.mobss.namesofAllah.views.activities.home.MainMvpPresenter;
 import com.mobss.namesofAllah.views.activities.home.MainMvpView;
 import com.mobss.namesofAllah.views.activities.home.MainPresenter;
+import com.mobss.namesofAllah.views.activities.another.AnotherMvpPresenter;
+import com.mobss.namesofAllah.views.activities.another.AnotherMvpView;
+import com.mobss.namesofAllah.views.activities.another.AnotherPresenter;
 import com.mobss.namesofAllah.views.activities.splash.SplashScreenMvpPresenter;
 import com.mobss.namesofAllah.views.activities.splash.SplashScreenMvpView;
 import com.mobss.namesofAllah.views.activities.splash.SplashScreenPresenter;
@@ -56,7 +59,7 @@ public class ActivityModule {
     @Provides
     @PerActivity
     Typeface provideTypeface(){
-        return Typeface.createFromAsset(activity.getAssets(), "fonts/cardo.bold.ttf");
+        return Typeface.createFromAsset(activity.getAssets(), "fonts/Roboto-Light.ttf");
     }
     
     @Provides
@@ -77,6 +80,13 @@ public class ActivityModule {
     MainMvpPresenter<MainMvpView> providesMainPresenter(IDataManager IDataManager, DatabaseCreator databaseCreator){
         return new MainPresenter<>(IDataManager, databaseCreator);
     }
+    
+    @Provides
+    @PerActivity
+    AnotherMvpPresenter<AnotherMvpView> providesSlideUpPanelPresenter(IDataManager IDataManager){
+        return new AnotherPresenter<>(IDataManager);
+    }
+    
     
     @Provides
     @PerActivity

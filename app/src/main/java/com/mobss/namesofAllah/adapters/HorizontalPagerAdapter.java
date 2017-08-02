@@ -67,7 +67,7 @@ public class HorizontalPagerAdapter extends PagerAdapter {
         viewHolder.nameOfAllah.setText(AllahinIsimleriList.get(position).isim);
         viewHolder.nameOfAllah.setTypeface(activity.regularText);
         viewHolder.meaningOfName.setText(AllahinIsimleriList.get(position).aciklama);
-        viewHolder.meaningOfName.setTypeface(activity.regularText);
+        viewHolder.meaningOfName.setTypeface(activity.robotoThinText);
         viewHolder.meaningOfName.setMovementMethod(new ScrollingMovementMethod());
         viewHolder.meaningOfName.setClickable(false);
 

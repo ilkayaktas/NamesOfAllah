@@ -20,6 +20,7 @@ import com.mobss.namesofAllah.di.annotations.PerActivity;
 import com.mobss.namesofAllah.di.modules.ActivityModule;
 import com.mobss.namesofAllah.views.activities.base.BaseActivity;
 import com.mobss.namesofAllah.views.activities.home.MainActivity;
+import com.mobss.namesofAllah.views.activities.another.AnotherActivity;
 import com.mobss.namesofAllah.views.activities.splash.SplashScreenActivity;
 
 import dagger.Component;
@@ -38,5 +39,5 @@ public interface ActivityComponent {
     
     void inject(SplashScreenActivity activity);
     
-
+    void inject(AnotherActivity activity);
 }

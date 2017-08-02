@@ -27,7 +27,7 @@ public class SplashScreenActivity extends BaseActivity implements SplashScreenMv
 	@BindView(R.id.textview_splashscreen_slogan) TextView slogan;
 	
 	/** Duration of wait **/
-	private final int SPLASH_DISPLAY_LENGTH = 1000;
+	private final int SPLASH_DISPLAY_LENGTH = 1500;
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -61,7 +61,7 @@ public class SplashScreenActivity extends BaseActivity implements SplashScreenMv
 	}
 	
 	private void changeUIFonts(){
-		slogan.setTypeface(regularText);
+		slogan.setTypeface(robotoThinText);
 	}
 	
 	@Override
