@@ -40,56 +40,57 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:background="@drawable/main_bottomframe_selector"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/textview_main_skip_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:background="@drawable/main_rounded_button_selector"
-            android:elevation="4dp"
-            android:text="@string/main_button_finish"
-            android:textColor="@color/mobss_color_white"
-            android:textSize="16sp"
-            android:visibility="gone" />
-
-        <FrameLayout
-            android:id="@+id/framelayout_main_navigation_layout"
+        <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginLeft="25dp"
-            android:layout_marginRight="25dp"
-            android:paddingTop="15dp"
-            android:paddingBottom="15dp">
+            android:layout_height="wrap_content">
 
             <ImageView
-                android:id="@+id/imageview_main_previous_button"
+                android:id="@+id/iv_main_goback"
                 android:layout_width="32dp"
                 android:layout_height="32dp"
-                android:layout_gravity="left"
-                android:src="@mipmap/main_button_previous" />
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:srcCompat="@drawable/ic_main_goback" />
 
+            <ImageView
+                android:id="@+id/iv_main_random"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                app:layout_constraintLeft_toRightOf="@+id/iv_main_goback"
+                app:layout_constraintRight_toLeftOf="@+id/textview_main_numara"
+                app:srcCompat="@drawable/ic_main_shuffle" />
 
             <TextView
                 android:id="@+id/textview_main_numara"
                 android:layout_width="50dp"
                 android:layout_height="32dp"
                 android:layout_gravity="center"
-                android:gravity="center"
                 android:text="1"
+                android:gravity="center"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
                 android:textColor="@color/mobss_color_white"
                 android:background="@drawable/main_rounded_numara_selector"/>
 
             <ImageView
-                android:id="@+id/imageview_main_next_button"
+                android:id="@+id/iv_main_favorites"
                 android:layout_width="32dp"
                 android:layout_height="32dp"
-                android:layout_gravity="right"
-                android:src="@mipmap/main_button_next" />
+                app:layout_constraintRight_toLeftOf="@+id/iv_main_list"
+                app:layout_constraintLeft_toRightOf="@+id/textview_main_numara"
+                app:srcCompat="@drawable/ic_main_favorites" />
 
-        </FrameLayout>
+            <ImageView
+                android:id="@+id/iv_main_list"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                app:layout_constraintRight_toRightOf="parent"
+                app:srcCompat="@drawable/ic_main_list" />
+
+        </android.support.constraint.ConstraintLayout>
+
 
 
     </FrameLayout>
