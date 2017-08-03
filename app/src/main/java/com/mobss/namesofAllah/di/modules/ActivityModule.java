@@ -5,10 +5,10 @@ import android.graphics.Typeface;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 
 import com.mobss.namesofAllah.R;
+import com.mobss.namesofAllah.adapters.AutoSuggestAdapter;
 import com.mobss.namesofAllah.controller.IDataManager;
 import com.mobss.namesofAllah.controller.db.crud.DatabaseManager;
 import com.mobss.namesofAllah.controller.db.initializer.DatabaseCreator;
@@ -22,18 +22,21 @@ import com.mobss.namesofAllah.controller.services.MobssAsyncTask;
 import com.mobss.namesofAllah.controller.strategy.Strategy;
 import com.mobss.namesofAllah.di.annotations.ActivityContext;
 import com.mobss.namesofAllah.di.annotations.PerActivity;
-import com.mobss.namesofAllah.views.activities.home.MainMvpPresenter;
-import com.mobss.namesofAllah.views.activities.home.MainMvpView;
-import com.mobss.namesofAllah.views.activities.home.MainPresenter;
+import com.mobss.namesofAllah.model.app.AllahinIsimleri;
 import com.mobss.namesofAllah.views.activities.another.AnotherMvpPresenter;
 import com.mobss.namesofAllah.views.activities.another.AnotherMvpView;
 import com.mobss.namesofAllah.views.activities.another.AnotherPresenter;
+import com.mobss.namesofAllah.views.activities.home.MainMvpPresenter;
+import com.mobss.namesofAllah.views.activities.home.MainMvpView;
+import com.mobss.namesofAllah.views.activities.home.MainPresenter;
 import com.mobss.namesofAllah.views.activities.splash.SplashScreenMvpPresenter;
 import com.mobss.namesofAllah.views.activities.splash.SplashScreenMvpView;
 import com.mobss.namesofAllah.views.activities.splash.SplashScreenPresenter;
 import com.yalantis.jellytoolbar.listener.JellyListener;
 import com.yalantis.jellytoolbar.widget.JellyToolbar;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 
 import dagger.Module;
@@ -46,7 +49,7 @@ import dagger.Provides;
 @Module
 public class ActivityModule {
     Activity activity;
-
+    
     public ActivityModule(Activity activity) {
         this.activity = activity;
     }
@@ -141,7 +144,7 @@ public class ActivityModule {
 
     @Provides
     @PerActivity
-    JellyToolbar provideJellyToolbar(String[] searchList){
+    JellyToolbar provideJellyToolbar(List<String> searchList){
         final JellyToolbar toolbar = (JellyToolbar) activity.findViewById(R.id.jellytoolbar_main_toolbar);;
         final AutoCompleteTextView editText = (AutoCompleteTextView) LayoutInflater.from(activity).inflate(R.layout.edittext_toolbar, null);
 
@@ -158,10 +161,11 @@ public class ActivityModule {
 
         toolbar.getToolbar().setNavigationIcon(R.mipmap.ic_launcher);
         toolbar.setJellyListener(jellyListener);
+        
         toolbar.getToolbar().setPadding(0, getStatusBarHeight(), 0, 0);
 
         editText.setBackgroundResource(R.color.colorTransparent);
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(activity,
+        AutoSuggestAdapter adapter = new AutoSuggestAdapter(activity,
                 android.R.layout.simple_dropdown_item_1line, searchList);
         editText.setAdapter(adapter);
 
@@ -170,7 +174,7 @@ public class ActivityModule {
         activity.getWindow().getDecorView().setSystemUiVisibility(
                 View.SYSTEM_UI_FLAG_LAYOUT_STABLE
                         | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
-
+    
         return toolbar;
     }
 
@@ -185,9 +189,13 @@ public class ActivityModule {
 
     @Provides
     @PerActivity
-    String[] provideSearchList(){
-        return new String[] {
-                "Allah", "Rahman", "Rahim", "Gaffar", "Rauf"
-        };
+    List<String> provideSearchList(IDataManager IDataManager){
+        List<AllahinIsimleri> list = IDataManager.getTumIsimler();
+        List<String> isimList = new ArrayList<>();
+        for (AllahinIsimleri isim: list) {
+            isimList.add(isim.isim);
+        }
+                
+        return isimList;
     }
 }

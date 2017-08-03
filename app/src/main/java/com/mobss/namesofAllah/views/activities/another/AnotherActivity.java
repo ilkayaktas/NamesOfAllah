@@ -9,8 +9,13 @@ import android.widget.LinearLayout;
 
 import com.mobss.namesofAllah.R;
 import com.mobss.namesofAllah.adapters.RecyclerViewAdapter;
+import com.mobss.namesofAllah.events.FavorySelectedEvent;
 import com.mobss.namesofAllah.model.app.AllahinIsimleri;
 import com.mobss.namesofAllah.views.activities.base.BaseActivity;
+import com.yalantis.jellytoolbar.widget.JellyToolbar;
+
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 import java.util.List;
 
@@ -27,7 +32,9 @@ public class AnotherActivity extends BaseActivity implements AnotherMvpView {
 	
 	@Inject
 	AnotherMvpPresenter<AnotherMvpView> mPresenter;
-
+	@Inject
+	JellyToolbar toolbar;
+	
 	@BindView(R.id.another_layout) LinearLayout another_layout;
 	@BindView(R.id.recycler_view) RecyclerView recyclerView;
 
@@ -68,13 +75,17 @@ public class AnotherActivity extends BaseActivity implements AnotherMvpView {
 
 	private void drawRecyclinView(){
 		List<AllahinIsimleri> isimler = mPresenter.getTumIsimler();
-
+		
+		RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(this, isimler);
+		
 		RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(this);
 		recyclerView.setLayoutManager(mLayoutManager);
-
-		RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(this, isimler, recyclerView);
-
 		recyclerView.setItemAnimator(new DefaultItemAnimator());
 		recyclerView.setAdapter(recyclerViewAdapter);
+	}
+	
+	@Subscribe(threadMode = ThreadMode.MAIN)
+	public void onMessageEvent(FavorySelectedEvent<AllahinIsimleri> event) {
+		AllahinIsimleri isim = event.data;
 	}
 }
