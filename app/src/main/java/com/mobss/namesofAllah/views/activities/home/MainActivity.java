@@ -16,6 +16,7 @@ import com.mobss.namesofAllah.R;
 import com.mobss.namesofAllah.adapters.HorizontalPagerAdapter;
 import com.mobss.namesofAllah.events.FavorySelectedEvent;
 import com.mobss.namesofAllah.model.app.AllahinIsimleri;
+import com.mobss.namesofAllah.views.activities.another.AnotherActivity;
 import com.mobss.namesofAllah.views.activities.base.BaseActivity;
 import com.mobss.namesofAllah.views.widgets.dialogs.rateme.Config;
 import com.mobss.namesofAllah.views.widgets.dialogs.rateme.RateMe;
@@ -144,7 +145,7 @@ public class MainActivity extends BaseActivity implements MainMvpView {
 				.onStart(new YoYo.AnimatorCallback() {
 					@Override
 					public void call(Animator animator) {
-
+						startActivity(AnotherActivity.class);
 					}
 				})
 				.playOn(v);

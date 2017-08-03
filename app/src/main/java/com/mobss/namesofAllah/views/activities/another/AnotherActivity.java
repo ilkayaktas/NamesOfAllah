@@ -1,13 +1,22 @@
 package com.mobss.namesofAllah.views.activities.another;
 
 import android.os.Bundle;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.KeyEvent;
+import android.widget.LinearLayout;
 
 import com.mobss.namesofAllah.R;
+import com.mobss.namesofAllah.adapters.RecyclerViewAdapter;
+import com.mobss.namesofAllah.model.app.AllahinIsimleri;
 import com.mobss.namesofAllah.views.activities.base.BaseActivity;
+
+import java.util.List;
 
 import javax.inject.Inject;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -18,7 +27,10 @@ public class AnotherActivity extends BaseActivity implements AnotherMvpView {
 	
 	@Inject
 	AnotherMvpPresenter<AnotherMvpView> mPresenter;
-	
+
+	@BindView(R.id.another_layout) LinearLayout another_layout;
+	@BindView(R.id.recycler_view) RecyclerView recyclerView;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -30,7 +42,10 @@ public class AnotherActivity extends BaseActivity implements AnotherMvpView {
 		
 		// Attach presenter
 		mPresenter.onAttach(AnotherActivity.this);
-		
+
+		drawRecyclinView();
+
+		setGradientBackground(another_layout);
 	}
 	
 	@Override
@@ -49,5 +64,17 @@ public class AnotherActivity extends BaseActivity implements AnotherMvpView {
 		} else {
 			return super.onKeyDown(keyCode, event);
 		}
+	}
+
+	private void drawRecyclinView(){
+		List<AllahinIsimleri> isimler = mPresenter.getTumIsimler();
+
+		RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(this);
+		recyclerView.setLayoutManager(mLayoutManager);
+
+		RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(this, isimler, recyclerView);
+
+		recyclerView.setItemAnimator(new DefaultItemAnimator());
+		recyclerView.setAdapter(recyclerViewAdapter);
 	}
 }

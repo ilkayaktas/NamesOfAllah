@@ -25,6 +25,11 @@
                   android:screenOrientation="portrait">
         </activity>
 
+        <activity android:name=".views.activities.another.AnotherActivity"
+                  android:screenOrientation="portrait">
+        </activity>
+
+
     </application>
 
 </manifest>

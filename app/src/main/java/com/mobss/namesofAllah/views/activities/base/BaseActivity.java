@@ -12,6 +12,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -152,6 +153,15 @@ public class BaseActivity extends AppCompatActivity implements MvpView, BaseFrag
 		FlowingGradient grad = new FlowingGradient();
 		grad.setBackgroundResource(R.drawable.all_bggradienttranslate)
 				.onRelativeLayout(relativeLayout)
+				.setTransitionDuration(4000)
+				.start();
+	}
+
+	public void setGradientBackground(LinearLayout linearLayout) {
+
+		FlowingGradient grad = new FlowingGradient();
+		grad.setBackgroundResource(R.drawable.all_bggradienttranslate)
+				.onLinearLayout(linearLayout)
 				.setTransitionDuration(4000)
 				.start();
 	}
