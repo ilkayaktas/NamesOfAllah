@@ -37,9 +37,9 @@ public class HorizontalPagerAdapter extends PagerAdapter {
     private ViewHolder viewHolder;
     
     
-    public HorizontalPagerAdapter(final BaseActivity activity, List<AllahinIsimleri> allahinIsimleri) {
+    public HorizontalPagerAdapter(final BaseActivity activity, List<AllahinIsimleri> AllahinIsimleri) {
         this.activity = activity;
-        this.AllahinIsimleriList = allahinIsimleri;
+        this.AllahinIsimleriList = AllahinIsimleri;
         mLayoutInflater = LayoutInflater.from(activity);
     }
 
@@ -74,7 +74,9 @@ public class HorizontalPagerAdapter extends PagerAdapter {
         viewHolder.meaningOfName.setMovementMethod(new ScrollingMovementMethod());
         viewHolder.meaningOfName.setClickable(false);
 
-        this.viewHolder.favoriIcon.setEventListener(new SparkEventListener(){
+        if(isim.isFavory)viewHolder.favoriIcon.setChecked(true);
+
+        viewHolder.favoriIcon.setEventListener(new SparkEventListener(){
             @Override
             public void onEvent(ImageView button, boolean buttonState) {
                 if(buttonState){
@@ -82,7 +84,7 @@ public class HorizontalPagerAdapter extends PagerAdapter {
                 } else{
                     isim.isFavory = false;
                 }
-                FavorySelectedEvent<AllahinIsimleri> event = new FavorySelectedEvent(isim);
+                FavorySelectedEvent<AllahinIsimleri> event = new FavorySelectedEvent<>(isim);
                 EventBus.getDefault().post(event);
             }
 

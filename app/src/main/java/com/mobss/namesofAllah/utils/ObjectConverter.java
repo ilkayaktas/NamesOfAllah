@@ -42,4 +42,16 @@ public class ObjectConverter {
 
         return AllahinIsimleri;
     }
+
+    public static RealmIsim convert(AllahinIsimleri isim) {
+        RealmIsim realmIsim = new RealmIsim();
+        realmIsim.sira = isim.sira;
+        realmIsim.isFavory = isim.isFavory;
+        realmIsim.aciklama = isim.aciklama;
+        realmIsim.isim = isim.isim;
+        realmIsim.resim = isim.resim;
+        realmIsim.zikirSayisi = isim.zikirSayisi;
+
+        return realmIsim;
+    }
 }

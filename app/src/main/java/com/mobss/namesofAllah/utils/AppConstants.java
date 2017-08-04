@@ -42,6 +42,11 @@ public final class AppConstants {
     
     public static final int REPORT_RECORD_HISTORY_COUNT = 10;
 
+    public static final String ACTIVITY_PARAM = "isFavoryScreen";
+
+    public static final String LANGUAGE_TR = "tr";
+
+    public static final String LANGUAGE_EN = "en";
     private AppConstants() {
         // This utility class is not publicly instantiable
     }

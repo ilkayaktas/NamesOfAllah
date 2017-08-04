@@ -59,28 +59,28 @@
                 android:layout_width="32dp"
                 android:layout_height="32dp"
                 app:layout_constraintLeft_toRightOf="@+id/iv_main_goback"
-                app:layout_constraintRight_toLeftOf="@+id/textview_main_numara"
+                app:layout_constraintRight_toLeftOf="@+id/iv_main_language"
                 app:srcCompat="@drawable/ic_main_shuffle" />
 
-            <TextView
-                android:id="@+id/textview_main_numara"
+            <com.varunest.sparkbutton.SparkButton
+                android:id="@+id/iv_main_language"
                 android:layout_width="50dp"
-                android:layout_height="32dp"
-                android:layout_gravity="center"
-                android:text="1"
-                android:textSize="18sp"
-                android:gravity="center"
+                android:layout_height="30dp"
+                android:layout_margin="10dp"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                android:textColor="@color/mobss_color_white"
-                android:background="@drawable/main_rounded_numara_selector"/>
+                app:sparkbutton_activeImage="@drawable/ic_turkish"
+                app:sparkbutton_inActiveImage="@drawable/ic_turkish"
+                app:sparkbutton_iconSize="50dp"
+                app:sparkbutton_primaryColor="@color/spark_primary_color"
+                app:sparkbutton_secondaryColor="@color/spark_secondary_color"/>
 
             <ImageView
                 android:id="@+id/iv_main_favorites"
                 android:layout_width="32dp"
                 android:layout_height="32dp"
                 app:layout_constraintRight_toLeftOf="@+id/iv_main_list"
-                app:layout_constraintLeft_toRightOf="@+id/textview_main_numara"
+                app:layout_constraintLeft_toRightOf="@+id/iv_main_language"
                 app:srcCompat="@drawable/ic_main_favorites" />
 
             <ImageView

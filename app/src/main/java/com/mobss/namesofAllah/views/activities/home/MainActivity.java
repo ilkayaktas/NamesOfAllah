@@ -1,13 +1,16 @@
 package com.mobss.namesofAllah.views.activities.home;
 
 import android.animation.Animator;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.view.KeyEvent;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
-import android.widget.Toast;
 
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
@@ -16,12 +19,16 @@ import com.mobss.namesofAllah.R;
 import com.mobss.namesofAllah.adapters.HorizontalPagerAdapter;
 import com.mobss.namesofAllah.events.FavorySelectedEvent;
 import com.mobss.namesofAllah.model.app.AllahinIsimleri;
+import com.mobss.namesofAllah.utils.AppConstants;
 import com.mobss.namesofAllah.views.activities.another.AnotherActivity;
 import com.mobss.namesofAllah.views.activities.base.BaseActivity;
 import com.mobss.namesofAllah.views.widgets.dialogs.rateme.Config;
 import com.mobss.namesofAllah.views.widgets.dialogs.rateme.RateMe;
+import com.varunest.sparkbutton.SparkButton;
+import com.varunest.sparkbutton.SparkEventListener;
 import com.yalantis.jellytoolbar.widget.JellyToolbar;
 
+import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
@@ -39,12 +46,13 @@ public class MainActivity extends BaseActivity implements MainMvpView {
 	/******/
 	@BindView(R.id.parent_layout) RelativeLayout parent_layout;
 	@BindView(R.id.viewpager_main_isimler_container) HorizontalInfiniteCycleViewPager horizontalInfiniteCycleViewPager;
+	@BindView(R.id.iv_main_language)SparkButton languageIcon;
 
 	@Inject
 	JellyToolbar toolbar;
 	@Inject
 	MainMvpPresenter<MainMvpView> mPresenter;
-	
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -61,12 +69,9 @@ public class MainActivity extends BaseActivity implements MainMvpView {
 		
 		mPresenter.initiateNamesInDatabase();
 
-		List<AllahinIsimleri> isimler = mPresenter.getTumIsimler();
-
 		setGradientBackground(parent_layout);
 
-		horizontalInfiniteCycleViewPager.setAdapter(new HorizontalPagerAdapter(this, isimler));
-
+		setOnClickListenerForSparkLanguageButton();
 	}
 
 	@Override
@@ -74,11 +79,13 @@ public class MainActivity extends BaseActivity implements MainMvpView {
 		super.onStart();
 		RateMe.onStart(this);
 		RateMe.showRateDialogIfNeeded(this);
+		EventBus.getDefault().register(this);
 	}
 	
 	@Override
 	protected void onStop() {
 		super.onStop();
+		EventBus.getDefault().unregister(this);
 	}
 	
 	@Override
@@ -86,7 +93,15 @@ public class MainActivity extends BaseActivity implements MainMvpView {
 		mPresenter.onDetach();
 		super.onDestroy();
 	}
-	
+
+	@Override
+	protected void onResume() {
+		super.onResume();
+		List<AllahinIsimleri> isimler = mPresenter.getTumIsimler();
+		HorizontalPagerAdapter adapter = new HorizontalPagerAdapter(this, isimler);
+		horizontalInfiniteCycleViewPager.setAdapter(adapter);
+	}
+
 	public static Intent getStartIntent(Context context) {
 		Intent intent = new Intent(context, MainActivity.class);
 		return intent;
@@ -107,20 +122,29 @@ public class MainActivity extends BaseActivity implements MainMvpView {
 	@Subscribe(threadMode = ThreadMode.MAIN)
 	public void onMessageEvent(FavorySelectedEvent<AllahinIsimleri> event) {
 		AllahinIsimleri isim = event.data;
+
+		mPresenter.updateIsim(isim);
 	}
 
-	@OnClick(R.id.iv_main_favorites)
-	public void bottombarFavoritesClicked(View v){
-		YoYo.with(Techniques.Tada)
-				.duration(200)
-				.repeat(1)
-				.onStart(new YoYo.AnimatorCallback() {
-					@Override
-					public void call(Animator animator) {
+	private void setOnClickListenerForSparkLanguageButton(){
 
-					}
-				})
-				.playOn(v);
+		languageIcon.setEventListener(new SparkEventListener(){
+			@Override
+			public void onEvent(ImageView button, boolean buttonState) {
+				createCustomDialog(R.layout.settings_dialog).show();
+			}
+
+			@Override
+			public void onEventAnimationEnd(ImageView button, boolean buttonState) {
+				languageIcon.setChecked(false);
+			}
+
+			@Override
+			public void onEventAnimationStart(ImageView button, boolean buttonState) {
+
+			}
+		});
+
 	}
 
 	@OnClick(R.id.iv_main_goback)
@@ -131,7 +155,39 @@ public class MainActivity extends BaseActivity implements MainMvpView {
 				.onStart(new YoYo.AnimatorCallback() {
 					@Override
 					public void call(Animator animator) {
-//						horizontalInfiniteCycleViewPager.setCurrentItem(0);
+						horizontalInfiniteCycleViewPager.setCurrentItem(0, false);
+					}
+				})
+				.playOn(v);
+	}
+
+	@OnClick(R.id.iv_main_random)
+	public void bottombarRandomClicked(View v){
+		YoYo.with(Techniques.Tada)
+				.duration(200)
+				.repeat(1)
+				.onStart(new YoYo.AnimatorCallback() {
+					@Override
+					public void call(Animator animator) {
+						Random generator = new Random();
+						int i = generator.nextInt(100);
+						horizontalInfiniteCycleViewPager.setCurrentItem(i, false);
+					}
+				})
+				.playOn(v);
+	}
+
+	@OnClick(R.id.iv_main_favorites)
+	public void bottombarFavoritesClicked(View v){
+		YoYo.with(Techniques.Tada)
+				.duration(200)
+				.repeat(1)
+				.onStart(new YoYo.AnimatorCallback() {
+					@Override
+					public void call(Animator animator) {
+						Intent intent = new Intent(MainActivity.this, AnotherActivity.class);
+						intent.putExtra(AppConstants.ACTIVITY_PARAM, true);
+						startActivity(intent);
 					}
 				})
 				.playOn(v);
@@ -151,20 +207,50 @@ public class MainActivity extends BaseActivity implements MainMvpView {
 				.playOn(v);
 	}
 
-	@OnClick(R.id.iv_main_random)
-	public void bottombarRandomClicked(View v){
-		YoYo.with(Techniques.Tada)
-				.duration(200)
-				.repeat(1)
-				.onStart(new YoYo.AnimatorCallback() {
-					@Override
-					public void call(Animator animator) {
-						Random generator = new Random();
-						int i = generator.nextInt(100);
-						Toast.makeText(MainActivity.this, ""+i, Toast.LENGTH_SHORT).show();
-//						horizontalInfiniteCycleViewPager.setCurrentItem(i);
-					}
-				})
-				.playOn(v);
+	private Dialog createCustomDialog(int layoutId){
+		AlertDialog.Builder builder = new AlertDialog.Builder(this);
+		// Get the layout inflater
+		LayoutInflater inflater = getLayoutInflater();
+
+		// Pass null as the parent view because its going in the dialog layout
+		View layoutview = inflater.inflate(layoutId, null);
+		builder.setView(layoutview);
+
+		final Dialog dialog = builder.create();
+
+		layoutview.findViewById(R.id.layoutEnglish).setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				dialog.dismiss();
+
+				mPresenter.setPreferredLanguage(AppConstants.LANGUAGE_EN);
+
+				languageIcon.setActiveImage(R.drawable.ic_english);
+				languageIcon.setInactiveImage(R.drawable.ic_english);
+
+				// Use the Builder class for convenient dialog construction
+				AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+				builder.setMessage("To change language, please restart application.").show();
+			}
+		});
+
+		layoutview.findViewById(R.id.layoutTurkce).setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				dialog.dismiss();
+
+				mPresenter.setPreferredLanguage(AppConstants.LANGUAGE_TR);
+
+				languageIcon.setActiveImage(R.drawable.ic_turkish);
+				languageIcon.setInactiveImage(R.drawable.ic_turkish);
+
+				// Use the Builder class for convenient dialog construction
+				AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+				builder.setMessage("Dili değiştirmek için lütfen uygulamayı yeniden başlatın.").show();
+			}
+		});
+
+		return dialog;
 	}
+
 }

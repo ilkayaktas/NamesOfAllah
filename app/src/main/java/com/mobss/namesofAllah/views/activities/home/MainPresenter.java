@@ -22,10 +22,14 @@ public class MainPresenter<V extends MainMvpView> extends BasePresenter<V>
 	
 	@Override
 	public void initiateNamesInDatabase() {
-		
-		// all necessary files are handled in dagger
-		databaseCreator.createDb();
-		
+
+		if(!getIDataManager().getDatabaseCreatedStatus()){
+			// all necessary files are handled in dagger
+			databaseCreator.createDb();
+
+			getIDataManager().setDatabaseCreatedStatus();
+		}
+
 	}
 	
 	@Override
@@ -33,7 +37,7 @@ public class MainPresenter<V extends MainMvpView> extends BasePresenter<V>
 		List<AllahinIsimleri> isimler = getIDataManager().getTumIsimler();
 		
 		for (AllahinIsimleri isim : isimler) {
-			System.out.println(isim.isim);
+			System.out.println(isim.isim + " " + isim.isFavory);
 			
 		}
 		return isimler;
@@ -42,5 +46,20 @@ public class MainPresenter<V extends MainMvpView> extends BasePresenter<V>
 	@Override
 	public AllahinIsimleri getIsim(int sira) {
 		return getIDataManager().getIsim(sira);
+	}
+
+	@Override
+	public void updateIsim(AllahinIsimleri isim) {
+		getIDataManager().updateIsim(isim);
+	}
+
+	@Override
+	public void setPreferredLanguage(String language) {
+		getIDataManager().setPreferredLanguage(language);
+	}
+
+	@Override
+	public String getPreferredLanguage() {
+		return getIDataManager().getPreferredLanguage();
 	}
 }

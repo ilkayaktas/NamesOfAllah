@@ -17,4 +17,10 @@ public interface MainMvpPresenter<V extends MainMvpView> extends MvpPresenter<V>
 	List<AllahinIsimleri> getTumIsimler();
 	
 	AllahinIsimleri getIsim(int sira);
+
+	void updateIsim(AllahinIsimleri isim);
+
+	void setPreferredLanguage(String language);
+
+	String getPreferredLanguage();
 }

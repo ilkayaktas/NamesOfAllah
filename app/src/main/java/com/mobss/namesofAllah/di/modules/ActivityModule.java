@@ -23,6 +23,7 @@ import com.mobss.namesofAllah.controller.strategy.Strategy;
 import com.mobss.namesofAllah.di.annotations.ActivityContext;
 import com.mobss.namesofAllah.di.annotations.PerActivity;
 import com.mobss.namesofAllah.model.app.AllahinIsimleri;
+import com.mobss.namesofAllah.utils.AppConstants;
 import com.mobss.namesofAllah.views.activities.another.AnotherMvpPresenter;
 import com.mobss.namesofAllah.views.activities.another.AnotherMvpView;
 import com.mobss.namesofAllah.views.activities.another.AnotherPresenter;
@@ -119,10 +120,10 @@ public class ActivityModule {
 
         // device language is Turkish
         if (preSetLanguage.equals("tr")) {
-            dataManager.setPreferredLanguage("tr");
+            dataManager.setPreferredLanguage(AppConstants.LANGUAGE_TR);
             return new AssetsReader(activity, "json_tr");
         } else{
-            dataManager.setPreferredLanguage("en");
+            dataManager.setPreferredLanguage(AppConstants.LANGUAGE_EN);
             return new AssetsReader(activity, "json_en");
         }
         

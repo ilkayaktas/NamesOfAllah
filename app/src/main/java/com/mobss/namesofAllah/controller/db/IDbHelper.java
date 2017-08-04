@@ -13,4 +13,8 @@ public interface IDbHelper {
 	List<AllahinIsimleri> getTumIsimler();
 	
 	AllahinIsimleri getIsim(int sira);
+
+	void updateIsim(AllahinIsimleri isim);
+
+	List<AllahinIsimleri> getFavoriIsimler();
 }

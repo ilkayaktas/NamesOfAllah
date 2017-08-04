@@ -21,8 +21,22 @@ public class AnotherPresenter<V extends AnotherMvpView> extends BasePresenter<V>
 		List<AllahinIsimleri> isimler = getIDataManager().getTumIsimler();
 
 		for (AllahinIsimleri isim : isimler) {
-			System.out.println(isim.isim);
+			System.out.println(isim.isim + " " + isim.isFavory);
+		}
+		return isimler;
+	}
 
+	@Override
+	public void updateIsim(AllahinIsimleri isim) {
+		getIDataManager().updateIsim(isim);
+	}
+
+	@Override
+	public List<AllahinIsimleri> getFavoriIsimler() {
+		List<AllahinIsimleri> isimler = getIDataManager().getFavoriIsimler();
+
+		for (AllahinIsimleri isim : isimler) {
+			System.out.println(isim.isim + " " + isim.isFavory);
 		}
 		return isimler;
 	}

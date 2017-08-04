@@ -16,6 +16,7 @@
         android:background="@drawable/main_rounded_numara_selector"
         android:gravity="center"
         android:minWidth="35dp"
+        android:visibility="gone"
         android:layout_marginTop="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginStart="16dp"

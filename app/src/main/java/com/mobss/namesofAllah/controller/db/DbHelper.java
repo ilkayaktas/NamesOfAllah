@@ -48,4 +48,20 @@ public class DbHelper implements IDbHelper {
 		}
 		return AllahinIsimleri.get(0);
 	}
+
+	@Override
+	public void updateIsim(AllahinIsimleri isim) {
+		RealmIsim realmIsim = ObjectConverter.convert(isim);
+		databaseManager.saveOrUpdate(realmIsim);
+	}
+
+	@Override
+	public List<AllahinIsimleri> getFavoriIsimler() {
+		List<RealmIsim> isimler = ((RealmResults)databaseManager.get(RealmIsim.class, "isFavory", true)).sort("sira");
+		List<AllahinIsimleri> AllahinIsimleri = new ArrayList<>();
+		for (RealmIsim isim : isimler) {
+			AllahinIsimleri.add(ObjectConverter.convert(isim));
+		}
+		return AllahinIsimleri;
+	}
 }

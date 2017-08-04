@@ -63,4 +63,14 @@ public class DataManager implements IDataManager {
 	public AllahinIsimleri getIsim(int sira) {
 		return mIDbHelper.getIsim(sira);
 	}
+
+	@Override
+	public void updateIsim(AllahinIsimleri isim) {
+		mIDbHelper.updateIsim(isim);
+	}
+
+	@Override
+	public List<AllahinIsimleri> getFavoriIsimler() {
+		return mIDbHelper.getFavoriIsimler();
+	}
 }

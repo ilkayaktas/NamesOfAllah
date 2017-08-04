@@ -58,6 +58,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter {
         this.viewHolder.meaning.setTypeface(activity.robotoThinText);
         this.viewHolder.meaning.setMovementMethod(new ScrollingMovementMethod());
 
+        if(isim.isFavory)this.viewHolder.favoriIcon.setChecked(true);
+
         this.viewHolder.favoriIcon.setEventListener(new SparkEventListener(){
             @Override
             public void onEvent(ImageView button, boolean buttonState) {
@@ -66,7 +68,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter {
                 } else{
                     isim.isFavory = false;
                 }
-                FavorySelectedEvent<AllahinIsimleri> event = new FavorySelectedEvent(isim);
+                FavorySelectedEvent<AllahinIsimleri> event = new FavorySelectedEvent<>(isim);
                 EventBus.getDefault().post(event);
             }
 

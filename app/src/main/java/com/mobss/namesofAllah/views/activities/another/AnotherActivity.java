@@ -11,9 +11,11 @@ import com.mobss.namesofAllah.R;
 import com.mobss.namesofAllah.adapters.RecyclerViewAdapter;
 import com.mobss.namesofAllah.events.FavorySelectedEvent;
 import com.mobss.namesofAllah.model.app.AllahinIsimleri;
+import com.mobss.namesofAllah.utils.AppConstants;
 import com.mobss.namesofAllah.views.activities.base.BaseActivity;
 import com.yalantis.jellytoolbar.widget.JellyToolbar;
 
+import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
@@ -38,11 +40,14 @@ public class AnotherActivity extends BaseActivity implements AnotherMvpView {
 	@BindView(R.id.another_layout) LinearLayout another_layout;
 	@BindView(R.id.recycler_view) RecyclerView recyclerView;
 
+	private boolean isFavoryScreen = false;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_another);
-		
+
+		getParameters();
+
 		getActivityComponent().inject(this);
 		
 		setUnBinder(ButterKnife.bind(this));
@@ -50,11 +55,29 @@ public class AnotherActivity extends BaseActivity implements AnotherMvpView {
 		// Attach presenter
 		mPresenter.onAttach(AnotherActivity.this);
 
-		drawRecyclinView();
+		drawRecyclinView(isFavoryScreen);
 
 		setGradientBackground(another_layout);
 	}
-	
+
+	private void getParameters(){
+		if(getIntent().getExtras() != null) {
+			isFavoryScreen = getIntent().getExtras().getBoolean(AppConstants.ACTIVITY_PARAM);
+		}
+	}
+
+	@Override
+	protected void onStart() {
+		super.onStart();
+		EventBus.getDefault().register(this);
+	}
+
+	@Override
+	protected void onStop() {
+		super.onStop();
+		EventBus.getDefault().unregister(this);
+	}
+
 	@Override
 	protected void onDestroy() {
 		mPresenter.onDetach();
@@ -73,9 +96,14 @@ public class AnotherActivity extends BaseActivity implements AnotherMvpView {
 		}
 	}
 
-	private void drawRecyclinView(){
-		List<AllahinIsimleri> isimler = mPresenter.getTumIsimler();
-		
+	private void drawRecyclinView(boolean isFavoryScreen){
+		List<AllahinIsimleri> isimler;
+		if(isFavoryScreen){
+			isimler = mPresenter.getFavoriIsimler();
+		} else{
+			isimler = mPresenter.getTumIsimler();
+		}
+
 		RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(this, isimler);
 		
 		RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(this);
@@ -87,5 +115,7 @@ public class AnotherActivity extends BaseActivity implements AnotherMvpView {
 	@Subscribe(threadMode = ThreadMode.MAIN)
 	public void onMessageEvent(FavorySelectedEvent<AllahinIsimleri> event) {
 		AllahinIsimleri isim = event.data;
+
+		mPresenter.updateIsim(isim);
 	}
 }

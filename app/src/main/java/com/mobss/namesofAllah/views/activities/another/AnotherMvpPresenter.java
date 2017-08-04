@@ -12,4 +12,8 @@ import java.util.List;
 public interface AnotherMvpPresenter<V extends AnotherMvpView> extends MvpPresenter<V> {
 
     List<AllahinIsimleri> getTumIsimler();
+
+    void updateIsim(AllahinIsimleri isim);
+
+    List<AllahinIsimleri> getFavoriIsimler();
 }
