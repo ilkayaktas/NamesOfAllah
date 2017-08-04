@@ -84,4 +84,7 @@ dependencies {
 
     // SlidingUp panel
     compile "com.sothree.slidinguppanel:library:$rootProject.slidingUpPanelVersion"
+
+    // Spark Button
+    compile "com.github.varunest:sparkbutton:1.0.5"
 }

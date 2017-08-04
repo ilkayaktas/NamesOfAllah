@@ -13,6 +13,8 @@ import com.mobss.namesofAllah.R;
 import com.mobss.namesofAllah.events.FavorySelectedEvent;
 import com.mobss.namesofAllah.model.app.AllahinIsimleri;
 import com.mobss.namesofAllah.views.activities.base.BaseActivity;
+import com.varunest.sparkbutton.SparkButton;
+import com.varunest.sparkbutton.SparkEventListener;
 
 import org.greenrobot.eventbus.EventBus;
 
@@ -45,7 +47,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter {
 
     @Override
     public void onBindViewHolder(final RecyclerView.ViewHolder viewHolder, final int position) {
-        AllahinIsimleri isim = isimler.get(position);
+        final AllahinIsimleri isim = isimler.get(position);
     
         this.viewHolder = (ViewHolder)viewHolder;
         
@@ -55,13 +57,29 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter {
         this.viewHolder.meaning.setText(isim.aciklama);
         this.viewHolder.meaning.setTypeface(activity.robotoThinText);
         this.viewHolder.meaning.setMovementMethod(new ScrollingMovementMethod());
-    
-        if(isim.isFavory){
-            this.viewHolder.favoriIcon.setImageResource(R.drawable.ic_favoried);
-        } else{
-            this.viewHolder.favoriIcon.setImageResource(R.drawable.ic_favory);
-        }
-        this.viewHolder.favoriIcon.setOnClickListener(new FavoriClicked(isim, position));
+
+        this.viewHolder.favoriIcon.setEventListener(new SparkEventListener(){
+            @Override
+            public void onEvent(ImageView button, boolean buttonState) {
+                if(buttonState){
+                    isim.isFavory = true;
+                } else{
+                    isim.isFavory = false;
+                }
+                FavorySelectedEvent<AllahinIsimleri> event = new FavorySelectedEvent(isim);
+                EventBus.getDefault().post(event);
+            }
+
+            @Override
+            public void onEventAnimationEnd(ImageView button, boolean buttonState) {
+
+            }
+
+            @Override
+            public void onEventAnimationStart(ImageView button, boolean buttonState) {
+
+            }
+        });
     
     }
     
@@ -75,7 +93,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter {
         @BindView(R.id.iv_carditem_imageOfName) ImageView imageOfName;
         @BindView(R.id.tv_carditem_nameOfAllah) TextView nameOfAllah;
         @BindView(R.id.tv_carditem_meaningOfName)TextView meaning;
-        @BindView(R.id.iv_carditem_favoriIcon) ImageView favoriIcon;
+        @BindView(R.id.iv_carditem_favoriIcon) SparkButton favoriIcon;
 
         ViewHolder(View view){
             super(view);
@@ -83,28 +101,4 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter {
         }
     }
     
-    class FavoriClicked implements View.OnClickListener{
-    
-        AllahinIsimleri isim;
-        int position= -1;
-        
-        public FavoriClicked(AllahinIsimleri isim, int position) {
-            this.isim = isim;
-            this.position = position;
-        }
-        
-        @Override
-        public void onClick(View v) {
-            if(isim.isFavory){
-                viewHolder.favoriIcon.setImageResource(R.drawable.ic_favory);
-                isim.isFavory = false;
-            } else{
-                viewHolder.favoriIcon.setImageResource(R.drawable.ic_favoried);
-                isim.isFavory = true;
-            }
-            
-            FavorySelectedEvent<AllahinIsimleri> event = new FavorySelectedEvent(isim);
-            EventBus.getDefault().post(event);
-        }
-    }
 }

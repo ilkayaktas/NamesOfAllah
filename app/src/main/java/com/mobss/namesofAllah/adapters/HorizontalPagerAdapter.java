@@ -12,6 +12,8 @@ import com.mobss.namesofAllah.R;
 import com.mobss.namesofAllah.events.FavorySelectedEvent;
 import com.mobss.namesofAllah.model.app.AllahinIsimleri;
 import com.mobss.namesofAllah.views.activities.base.BaseActivity;
+import com.varunest.sparkbutton.SparkButton;
+import com.varunest.sparkbutton.SparkEventListener;
 
 import org.greenrobot.eventbus.EventBus;
 
@@ -53,6 +55,7 @@ public class HorizontalPagerAdapter extends PagerAdapter {
 
     @Override
     public Object instantiateItem(final ViewGroup container, final int position) {
+        final AllahinIsimleri isim = AllahinIsimleriList.get(position);
 
         view = mLayoutInflater.inflate(R.layout.fragment_horizontal_item, container, false);
         viewHolder = new ViewHolder(view);
@@ -62,21 +65,37 @@ public class HorizontalPagerAdapter extends PagerAdapter {
             previousPosition = position;
             clickCounter = 0;
         }
-    
-        viewHolder.imageOfName.setImageResource(activity.getResources().getIdentifier(AllahinIsimleriList.get(position).resim, "drawable", activity.getPackageName()));
-        viewHolder.nameOfAllah.setText(AllahinIsimleriList.get(position).isim);
+
+        viewHolder.imageOfName.setImageResource(activity.getResources().getIdentifier(isim.resim, "drawable", activity.getPackageName()));
+        viewHolder.nameOfAllah.setText(isim.isim);
         viewHolder.nameOfAllah.setTypeface(activity.regularText);
-        viewHolder.meaningOfName.setText(AllahinIsimleriList.get(position).aciklama);
+        viewHolder.meaningOfName.setText(isim.aciklama);
         viewHolder.meaningOfName.setTypeface(activity.robotoThinText);
         viewHolder.meaningOfName.setMovementMethod(new ScrollingMovementMethod());
         viewHolder.meaningOfName.setClickable(false);
 
-        if(AllahinIsimleriList.get(position).isFavory){
-            viewHolder.favoriIcon.setImageResource(R.drawable.ic_favoried);
-        } else{
-            viewHolder.favoriIcon.setImageResource(R.drawable.ic_favory);
-        }
-        viewHolder.favoriIcon.setOnClickListener(new FavoriClicked(position));
+        this.viewHolder.favoriIcon.setEventListener(new SparkEventListener(){
+            @Override
+            public void onEvent(ImageView button, boolean buttonState) {
+                if(buttonState){
+                    isim.isFavory = true;
+                } else{
+                    isim.isFavory = false;
+                }
+                FavorySelectedEvent<AllahinIsimleri> event = new FavorySelectedEvent(isim);
+                EventBus.getDefault().post(event);
+            }
+
+            @Override
+            public void onEventAnimationEnd(ImageView button, boolean buttonState) {
+
+            }
+
+            @Override
+            public void onEventAnimationStart(ImageView button, boolean buttonState) {
+
+            }
+        });
 
         container.addView(view);
         return view;
@@ -94,7 +113,7 @@ public class HorizontalPagerAdapter extends PagerAdapter {
 
     public class ViewHolder{
         @BindView(R.id.textview_card_zikirSayisi) TextView zikirSayisi;
-        @BindView(R.id.imageview_card_favoriIcon)ImageView favoriIcon;
+        @BindView(R.id.imageview_card_favoriIcon)SparkButton favoriIcon;
         @BindView(R.id.imageview_card_imageOfName)ImageView imageOfName;
         @BindView(R.id.textview_card_nameOfAllah)TextView nameOfAllah;
         @BindView(R.id.textview_card_meaningOfName)TextView meaningOfName;
@@ -104,27 +123,5 @@ public class HorizontalPagerAdapter extends PagerAdapter {
         }
     }
     
-    class FavoriClicked implements View.OnClickListener{
-    
-        int position= -1;
-    
-        public FavoriClicked(int position) {
-            this.position = position;
-        }
-    
-        @Override
-        public void onClick(View v) {
-            if(AllahinIsimleriList.get(position).isFavory){
-                viewHolder.favoriIcon.setImageResource(R.drawable.ic_favory);
-                AllahinIsimleriList.get(position).isFavory = false;
-            } else{
-                viewHolder.favoriIcon.setImageResource(R.drawable.ic_favoried);
-                AllahinIsimleriList.get(position).isFavory = true;
-            }
-    
-            FavorySelectedEvent<AllahinIsimleri> event = new FavorySelectedEvent(AllahinIsimleriList.get(position));
-            EventBus.getDefault().post(event);
-        }
-    }
-    
+
 }

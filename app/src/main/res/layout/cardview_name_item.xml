@@ -64,15 +64,18 @@
         app:layout_constraintRight_toLeftOf="@+id/iv_carditem_favoriIcon"
         app:layout_constraintTop_toBottomOf="@+id/tv_carditem_nameOfAllah"/>
 
-    <ImageView
+    <com.varunest.sparkbutton.SparkButton
         android:id="@+id/iv_carditem_favoriIcon"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:scaleType="centerCrop"
         android:layout_margin="10dp"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:srcCompat="@drawable/ic_favory" />
+        app:sparkbutton_activeImage="@drawable/ic_favoried"
+        app:sparkbutton_inActiveImage="@drawable/ic_favory"
+        app:sparkbutton_iconSize="30dp"
+        app:sparkbutton_primaryColor="@color/spark_primary_color"
+        app:sparkbutton_secondaryColor="@color/spark_secondary_color"/>
 
 </android.support.constraint.ConstraintLayout>
