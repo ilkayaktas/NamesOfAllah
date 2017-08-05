@@ -27,7 +27,7 @@ public class MainPresenter<V extends MainMvpView> extends BasePresenter<V>
 			// all necessary files are handled in dagger
 			databaseCreator.createDb();
 
-			getIDataManager().setDatabaseCreatedStatus();
+			getIDataManager().setDatabaseCreatedStatus(true);
 		}
 
 	}
@@ -61,5 +61,10 @@ public class MainPresenter<V extends MainMvpView> extends BasePresenter<V>
 	@Override
 	public String getPreferredLanguage() {
 		return getIDataManager().getPreferredLanguage();
+	}
+	
+	@Override
+	public void setDatabaseCreatedStatus(boolean isCreated) {
+		getIDataManager().setDatabaseCreatedStatus(isCreated);
 	}
 }

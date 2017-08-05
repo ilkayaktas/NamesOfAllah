@@ -1,6 +1,5 @@
 package com.mobss.namesofAllah.adapters;
 
-import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.text.method.ScrollingMovementMethod;
 import android.view.LayoutInflater;
@@ -27,10 +26,9 @@ import butterknife.ButterKnife;
  * Created by iaktas on 26.05.2017.
  */
 
-public class RecyclerViewAdapter extends RecyclerView.Adapter {
+public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
     private BaseActivity activity;
     private List<AllahinIsimleri> isimler;
-    private ViewHolder viewHolder;
     
     public RecyclerViewAdapter(BaseActivity activity, List<AllahinIsimleri> isimler) {
         this.activity = activity;
@@ -39,28 +37,30 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter {
 
     @Override
     public RecyclerViewAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        LayoutInflater inflater = (LayoutInflater)activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        LayoutInflater inflater =  LayoutInflater.from(parent.getContext());
         View convertView = inflater.inflate(R.layout.cardview_name_item, parent, false);
 
         return new ViewHolder(convertView);
     }
 
     @Override
-    public void onBindViewHolder(final RecyclerView.ViewHolder viewHolder, final int position) {
+    public void onBindViewHolder(final ViewHolder viewHolder, final int position) {
         final AllahinIsimleri isim = isimler.get(position);
     
-        this.viewHolder = (ViewHolder)viewHolder;
-        
-        this.viewHolder.imageOfName.setImageResource(activity.getResources().getIdentifier(isim.resim, "drawable", activity.getPackageName()));
-        this.viewHolder.nameOfAllah.setText(isim.isim);
-        this.viewHolder.nameOfAllah.setTypeface(activity.regularText);
-        this.viewHolder.meaning.setText(isim.aciklama);
-        this.viewHolder.meaning.setTypeface(activity.robotoThinText);
-        this.viewHolder.meaning.setMovementMethod(new ScrollingMovementMethod());
+        viewHolder.imageOfName.setImageResource(activity.getResources().getIdentifier(isim.resim, "drawable", activity.getPackageName()));
+        viewHolder.nameOfAllah.setText(isim.isim);
+        viewHolder.nameOfAllah.setTypeface(activity.regularText);
+        viewHolder.meaning.setText(isim.aciklama);
+        viewHolder.meaning.setTypeface(activity.robotoThinText);
+        viewHolder.meaning.setMovementMethod(new ScrollingMovementMethod());
 
-        if(isim.isFavory)this.viewHolder.favoriIcon.setChecked(true);
+        if(isim.isFavory){
+            viewHolder.favoriIcon.setChecked(true);
+        } else{
+            viewHolder.favoriIcon.setChecked(false);
+        }
 
-        this.viewHolder.favoriIcon.setEventListener(new SparkEventListener(){
+        viewHolder.favoriIcon.setEventListener(new SparkEventListener(){
             @Override
             public void onEvent(ImageView button, boolean buttonState) {
                 if(buttonState){
@@ -97,7 +97,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter {
         @BindView(R.id.tv_carditem_meaningOfName)TextView meaning;
         @BindView(R.id.iv_carditem_favoriIcon) SparkButton favoriIcon;
 
-        ViewHolder(View view){
+        public ViewHolder(View view){
             super(view);
             ButterKnife.bind(this, view);
         }

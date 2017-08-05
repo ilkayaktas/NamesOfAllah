@@ -40,8 +40,8 @@ public class DataManager implements IDataManager {
 	}
 
 	@Override
-	public void setDatabaseCreatedStatus() {
-		mIPreferenceHelper.setDatabaseCreatedStatus();
+	public void setDatabaseCreatedStatus(boolean isCreated) {
+		mIPreferenceHelper.setDatabaseCreatedStatus(isCreated);
 	}
 	
 	@Override

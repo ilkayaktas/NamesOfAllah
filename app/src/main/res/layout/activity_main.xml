@@ -72,8 +72,8 @@
                 app:sparkbutton_activeImage="@drawable/ic_turkish"
                 app:sparkbutton_inActiveImage="@drawable/ic_turkish"
                 app:sparkbutton_iconSize="50dp"
-                app:sparkbutton_primaryColor="@color/spark_primary_color"
-                app:sparkbutton_secondaryColor="@color/spark_secondary_color"/>
+                app:sparkbutton_primaryColor="@color/md_red_300"
+                app:sparkbutton_secondaryColor="@color/md_red_800"/>
 
             <ImageView
                 android:id="@+id/iv_main_favorites"

@@ -14,4 +14,9 @@ public class SplashScreenPresenter <V extends SplashScreenMvpView> extends BaseP
 		super(IDataManager);
 	}
 	
+	@Override
+	public String getPreferredLanguage() {
+		return getIDataManager().getPreferredLanguage();
+	}
+	
 }

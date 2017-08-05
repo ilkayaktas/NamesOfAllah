@@ -23,6 +23,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.net.Uri;
+import android.os.Build;
 
 import com.mobss.namesofAllah.R;
 
@@ -116,7 +117,12 @@ public class RateMe {
      * @param context
      */
     public static void showRateDialog(final Context context) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        AlertDialog.Builder builder;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            builder = new AlertDialog.Builder(context, android.R.style.Theme_Material_Light_Dialog_Alert);
+        } else {
+            builder = new AlertDialog.Builder(context);
+        }
         int titleId = sConfig.mTitleId != 0 ? sConfig.mTitleId : R.string.rateme_dialog_title;
         int messageId = sConfig.mMessageId != 0 ? sConfig.mMessageId : R.string.rateme_dialog_message;
         builder.setTitle(titleId);
@@ -175,8 +181,5 @@ public class RateMe {
         editor.putBoolean(KEY_OPT_OUT, optOut);
         editor.commit();
     }
-
-
-
 
 }

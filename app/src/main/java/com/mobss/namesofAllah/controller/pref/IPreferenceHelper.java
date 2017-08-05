@@ -23,7 +23,7 @@ public interface IPreferenceHelper {
 
     boolean getDatabaseCreatedStatus();
 
-    void setDatabaseCreatedStatus();
+    void setDatabaseCreatedStatus(boolean isCreated);
     
     String getPreferredLanguage();
     

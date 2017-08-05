@@ -32,8 +32,8 @@ public class PreferenceHelper implements IPreferenceHelper {
     }
 
     @Override
-    public void setDatabaseCreatedStatus() {
-        mPrefs.edit().putBoolean(SHARED_PREF_DBDREATED, true).apply();
+    public void setDatabaseCreatedStatus(boolean isCreated) {
+        mPrefs.edit().putBoolean(SHARED_PREF_DBDREATED, isCreated).apply();
     }
     
     @Override
@@ -43,6 +43,6 @@ public class PreferenceHelper implements IPreferenceHelper {
     
     @Override
     public void setPreferredLanguage(String language) {
-        mPrefs.edit().putString(SHARED_PREF_APPLANGUAGE, language);
+        mPrefs.edit().putString(SHARED_PREF_APPLANGUAGE, language).apply();
     }
 }

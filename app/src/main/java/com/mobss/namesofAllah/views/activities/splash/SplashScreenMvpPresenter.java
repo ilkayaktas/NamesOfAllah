@@ -10,4 +10,5 @@ import com.mobss.namesofAllah.views.activities.base.MvpPresenter;
 
 @PerActivity
 public interface SplashScreenMvpPresenter<V extends SplashScreenMvpView> extends MvpPresenter<V> {
+	String getPreferredLanguage();
 }

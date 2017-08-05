@@ -72,6 +72,9 @@ public class MainActivity extends BaseActivity implements MainMvpView {
 		setGradientBackground(parent_layout);
 
 		setOnClickListenerForSparkLanguageButton();
+		
+		List<AllahinIsimleri> isimler = mPresenter.getTumIsimler();
+		horizontalInfiniteCycleViewPager.setAdapter(new HorizontalPagerAdapter(this, isimler));
 	}
 
 	@Override
@@ -97,9 +100,7 @@ public class MainActivity extends BaseActivity implements MainMvpView {
 	@Override
 	protected void onResume() {
 		super.onResume();
-		List<AllahinIsimleri> isimler = mPresenter.getTumIsimler();
-		HorizontalPagerAdapter adapter = new HorizontalPagerAdapter(this, isimler);
-		horizontalInfiniteCycleViewPager.setAdapter(adapter);
+		
 	}
 
 	public static Intent getStartIntent(Context context) {
@@ -127,7 +128,9 @@ public class MainActivity extends BaseActivity implements MainMvpView {
 	}
 
 	private void setOnClickListenerForSparkLanguageButton(){
-
+		
+		setLanguageIcon();
+				
 		languageIcon.setEventListener(new SparkEventListener(){
 			@Override
 			public void onEvent(ImageView button, boolean buttonState) {
@@ -149,13 +152,13 @@ public class MainActivity extends BaseActivity implements MainMvpView {
 
 	@OnClick(R.id.iv_main_goback)
 	public void bottombarGobackClicked(View v){
-		YoYo.with(Techniques.Tada)
+		YoYo.with(Techniques.FadeIn)
 				.duration(200)
 				.repeat(1)
-				.onStart(new YoYo.AnimatorCallback() {
+				.onEnd(new YoYo.AnimatorCallback() {
 					@Override
 					public void call(Animator animator) {
-						horizontalInfiniteCycleViewPager.setCurrentItem(0, false);
+						horizontalInfiniteCycleViewPager.setCurrentItem(0, true);
 					}
 				})
 				.playOn(v);
@@ -163,15 +166,15 @@ public class MainActivity extends BaseActivity implements MainMvpView {
 
 	@OnClick(R.id.iv_main_random)
 	public void bottombarRandomClicked(View v){
-		YoYo.with(Techniques.Tada)
+		YoYo.with(Techniques.FadeIn)
 				.duration(200)
 				.repeat(1)
-				.onStart(new YoYo.AnimatorCallback() {
+				.onEnd(new YoYo.AnimatorCallback() {
 					@Override
 					public void call(Animator animator) {
 						Random generator = new Random();
 						int i = generator.nextInt(100);
-						horizontalInfiniteCycleViewPager.setCurrentItem(i, false);
+						horizontalInfiniteCycleViewPager.setCurrentItem(i, true);
 					}
 				})
 				.playOn(v);
@@ -179,10 +182,10 @@ public class MainActivity extends BaseActivity implements MainMvpView {
 
 	@OnClick(R.id.iv_main_favorites)
 	public void bottombarFavoritesClicked(View v){
-		YoYo.with(Techniques.Tada)
+		YoYo.with(Techniques.FadeIn)
 				.duration(200)
 				.repeat(1)
-				.onStart(new YoYo.AnimatorCallback() {
+				.onEnd(new YoYo.AnimatorCallback() {
 					@Override
 					public void call(Animator animator) {
 						Intent intent = new Intent(MainActivity.this, AnotherActivity.class);
@@ -195,10 +198,10 @@ public class MainActivity extends BaseActivity implements MainMvpView {
 
 	@OnClick(R.id.iv_main_list)
 	public void bottombarListClicked(View v){
-		YoYo.with(Techniques.Tada)
+		YoYo.with(Techniques.FadeIn)
 				.duration(200)
 				.repeat(1)
-				.onStart(new YoYo.AnimatorCallback() {
+				.onEnd(new YoYo.AnimatorCallback() {
 					@Override
 					public void call(Animator animator) {
 						startActivity(AnotherActivity.class);
@@ -207,6 +210,17 @@ public class MainActivity extends BaseActivity implements MainMvpView {
 				.playOn(v);
 	}
 
+	private void setLanguageIcon(){
+		String lang = mPresenter.getPreferredLanguage();
+		if(lang.equals(AppConstants.LANGUAGE_EN)){
+			languageIcon.setActiveImage(R.drawable.ic_english);
+			languageIcon.setInactiveImage(R.drawable.ic_english);
+		} else if(lang.equals(AppConstants.LANGUAGE_TR)){
+			languageIcon.setActiveImage(R.drawable.ic_turkish);
+			languageIcon.setInactiveImage(R.drawable.ic_turkish);
+		}
+	}
+	
 	private Dialog createCustomDialog(int layoutId){
 		AlertDialog.Builder builder = new AlertDialog.Builder(this);
 		// Get the layout inflater
@@ -222,9 +236,10 @@ public class MainActivity extends BaseActivity implements MainMvpView {
 			@Override
 			public void onClick(View view) {
 				dialog.dismiss();
-
+				
+				mPresenter.setDatabaseCreatedStatus(false);
 				mPresenter.setPreferredLanguage(AppConstants.LANGUAGE_EN);
-
+				
 				languageIcon.setActiveImage(R.drawable.ic_english);
 				languageIcon.setInactiveImage(R.drawable.ic_english);
 
@@ -238,9 +253,10 @@ public class MainActivity extends BaseActivity implements MainMvpView {
 			@Override
 			public void onClick(View view) {
 				dialog.dismiss();
-
+				
+				mPresenter.setDatabaseCreatedStatus(false);
 				mPresenter.setPreferredLanguage(AppConstants.LANGUAGE_TR);
-
+				
 				languageIcon.setActiveImage(R.drawable.ic_turkish);
 				languageIcon.setInactiveImage(R.drawable.ic_turkish);
 
