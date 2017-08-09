@@ -1,4 +1,4 @@
-package com.mobss.namesofAllah.views.fragments.another;
+package com.mobss.namesofAllah.views.fragments.slidingviewpager;
 
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.CardView;

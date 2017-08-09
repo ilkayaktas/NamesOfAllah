@@ -1,4 +1,4 @@
-package com.mobss.namesofAllah.views.activities.another;
+package com.mobss.namesofAllah.views.activities.listview;
 
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -30,10 +30,10 @@ import butterknife.ButterKnife;
  * Created by ilkay on 02/08/2017.
  */
 
-public class AnotherActivity extends BaseActivity implements AnotherMvpView {
+public class ListViewActivity extends BaseActivity implements ListViewMvpView {
 	
 	@Inject
-	AnotherMvpPresenter<AnotherMvpView> mPresenter;
+	ListViewMvpPresenter<ListViewMvpView> mPresenter;
 	@Inject
 	JellyToolbar toolbar;
 	
@@ -53,7 +53,7 @@ public class AnotherActivity extends BaseActivity implements AnotherMvpView {
 		setUnBinder(ButterKnife.bind(this));
 		
 		// Attach presenter
-		mPresenter.onAttach(AnotherActivity.this);
+		mPresenter.onAttach(ListViewActivity.this);
 
 		drawRecyclinView(isFavoryScreen);
 

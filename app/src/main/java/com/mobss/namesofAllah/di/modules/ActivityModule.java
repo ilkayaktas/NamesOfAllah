@@ -24,18 +24,18 @@ import com.mobss.namesofAllah.di.annotations.ActivityContext;
 import com.mobss.namesofAllah.di.annotations.PerActivity;
 import com.mobss.namesofAllah.model.app.AllahinIsimleri;
 import com.mobss.namesofAllah.utils.AppConstants;
-import com.mobss.namesofAllah.views.activities.another.AnotherMvpPresenter;
-import com.mobss.namesofAllah.views.activities.another.AnotherMvpView;
-import com.mobss.namesofAllah.views.activities.another.AnotherPresenter;
+import com.mobss.namesofAllah.views.activities.listview.ListViewMvpPresenter;
+import com.mobss.namesofAllah.views.activities.listview.ListViewMvpView;
+import com.mobss.namesofAllah.views.activities.listview.ListViewPresenter;
 import com.mobss.namesofAllah.views.activities.home.MainMvpPresenter;
 import com.mobss.namesofAllah.views.activities.home.MainMvpView;
 import com.mobss.namesofAllah.views.activities.home.MainPresenter;
 import com.mobss.namesofAllah.views.activities.splash.SplashScreenMvpPresenter;
 import com.mobss.namesofAllah.views.activities.splash.SplashScreenMvpView;
 import com.mobss.namesofAllah.views.activities.splash.SplashScreenPresenter;
-import com.mobss.namesofAllah.views.fragments.another.AnotherFragmentMvpPresenter;
-import com.mobss.namesofAllah.views.fragments.another.AnotherFragmentMvpView;
-import com.mobss.namesofAllah.views.fragments.another.AnotherFragmentPresenter;
+import com.mobss.namesofAllah.views.fragments.slidingviewpager.SlidingViewPagerMvpPresenter;
+import com.mobss.namesofAllah.views.fragments.slidingviewpager.SlidingViewPagerMvpView;
+import com.mobss.namesofAllah.views.fragments.slidingviewpager.SlidingViewPagerPresenter;
 import com.yalantis.jellytoolbar.listener.JellyListener;
 import com.yalantis.jellytoolbar.widget.JellyToolbar;
 
@@ -90,14 +90,14 @@ public class ActivityModule {
     
     @Provides
     @PerActivity
-    AnotherMvpPresenter<AnotherMvpView> providesSlideUpPanelPresenter(IDataManager IDataManager){
-        return new AnotherPresenter<>(IDataManager);
+    ListViewMvpPresenter<ListViewMvpView> providesSlideUpPanelPresenter(IDataManager IDataManager){
+        return new ListViewPresenter<>(IDataManager);
     }
 
     @Provides
     @PerActivity
-    AnotherFragmentMvpPresenter<AnotherFragmentMvpView> providesAnotherMvpPresenter(IDataManager IDataManager){
-        return new AnotherFragmentPresenter<>(IDataManager);
+    SlidingViewPagerMvpPresenter<SlidingViewPagerMvpView> providesAnotherMvpPresenter(IDataManager IDataManager){
+        return new SlidingViewPagerPresenter<>(IDataManager);
     }
     
     @Provides

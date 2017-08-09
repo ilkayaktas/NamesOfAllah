@@ -1,4 +1,4 @@
-package com.mobss.namesofAllah.views.fragments.another;
+package com.mobss.namesofAllah.views.fragments.slidingviewpager;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -28,10 +28,10 @@ import butterknife.ButterKnife;
  * Created by iaktas on 14.03.2017.
  */
 
-public class AnotherFragment extends BaseFragment implements AnotherFragmentMvpView {
+public class SlidingViewPagerFragment extends BaseFragment implements SlidingViewPagerMvpView {
     private static final String BUNDLE_ISIM_NO = "bundle_isim_no";
     @Inject
-    AnotherFragmentMvpPresenter<AnotherFragmentMvpView> mPresenter;
+    SlidingViewPagerMvpPresenter<SlidingViewPagerMvpView> mPresenter;
 
     @BindView(R.id.cv_main_isimkarti) CardView cardView;
     @BindView(R.id.textview_card_zikirSayisi) TextView zikirSayisi;
@@ -40,10 +40,10 @@ public class AnotherFragment extends BaseFragment implements AnotherFragmentMvpV
     @BindView(R.id.textview_card_nameOfAllah)TextView nameOfAllah;
     @BindView(R.id.textview_card_meaningOfName)TextView meaningOfName;
 
-    public static AnotherFragment newInstance(AllahinIsimleri isim){
+    public static SlidingViewPagerFragment newInstance(AllahinIsimleri isim){
         Bundle args = new Bundle();
         args.putInt(BUNDLE_ISIM_NO, isim.sira);
-        AnotherFragment fragment = new AnotherFragment();
+        SlidingViewPagerFragment fragment = new SlidingViewPagerFragment();
         fragment.setArguments(args);
         return fragment;
     }

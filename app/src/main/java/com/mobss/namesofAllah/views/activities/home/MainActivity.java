@@ -20,9 +20,9 @@ import com.mobss.namesofAllah.adapters.SlidingViewPagerAdapter;
 import com.mobss.namesofAllah.events.FavorySelectedEvent;
 import com.mobss.namesofAllah.model.app.AllahinIsimleri;
 import com.mobss.namesofAllah.utils.AppConstants;
-import com.mobss.namesofAllah.views.activities.another.AnotherActivity;
+import com.mobss.namesofAllah.views.activities.listview.ListViewActivity;
 import com.mobss.namesofAllah.views.activities.base.BaseActivity;
-import com.mobss.namesofAllah.views.fragments.another.ShadowTransformer;
+import com.mobss.namesofAllah.views.fragments.slidingviewpager.ShadowTransformer;
 import com.mobss.namesofAllah.views.widgets.dialogs.rateme.Config;
 import com.mobss.namesofAllah.views.widgets.dialogs.rateme.RateMe;
 import com.varunest.sparkbutton.SparkButton;
@@ -202,7 +202,7 @@ public class MainActivity extends BaseActivity implements MainMvpView {
 				.onEnd(new YoYo.AnimatorCallback() {
 					@Override
 					public void call(Animator animator) {
-						Intent intent = new Intent(MainActivity.this, AnotherActivity.class);
+						Intent intent = new Intent(MainActivity.this, ListViewActivity.class);
 						intent.putExtra(AppConstants.ACTIVITY_PARAM, true);
 						startActivity(intent);
 					}
@@ -218,7 +218,7 @@ public class MainActivity extends BaseActivity implements MainMvpView {
 				.onEnd(new YoYo.AnimatorCallback() {
 					@Override
 					public void call(Animator animator) {
-						startActivity(AnotherActivity.class);
+						startActivity(ListViewActivity.class);
 					}
 				})
 				.playOn(v);

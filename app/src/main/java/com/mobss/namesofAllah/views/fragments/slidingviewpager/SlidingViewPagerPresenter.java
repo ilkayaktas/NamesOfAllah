@@ -1,4 +1,4 @@
-package com.mobss.namesofAllah.views.fragments.another;
+package com.mobss.namesofAllah.views.fragments.slidingviewpager;
 
 
 import com.mobss.namesofAllah.model.app.AllahinIsimleri;
@@ -8,8 +8,8 @@ import com.mobss.namesofAllah.views.activities.base.BasePresenter;
  * Created by iaktas on 14.03.2017.
  */
 
-public class AnotherFragmentPresenter<V extends AnotherFragmentMvpView> extends BasePresenter<V> implements AnotherFragmentMvpPresenter<V> {
-    public AnotherFragmentPresenter(com.mobss.namesofAllah.controller.IDataManager dataManager) {
+public class SlidingViewPagerPresenter<V extends SlidingViewPagerMvpView> extends BasePresenter<V> implements SlidingViewPagerMvpPresenter<V> {
+    public SlidingViewPagerPresenter(com.mobss.namesofAllah.controller.IDataManager dataManager) {
         super(dataManager);
     }
 

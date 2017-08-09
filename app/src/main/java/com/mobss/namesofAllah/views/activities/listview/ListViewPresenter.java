@@ -1,4 +1,4 @@
-package com.mobss.namesofAllah.views.activities.another;
+package com.mobss.namesofAllah.views.activities.listview;
 
 
 import com.mobss.namesofAllah.model.app.AllahinIsimleri;
@@ -10,9 +10,9 @@ import java.util.List;
  * Created by ilkay on 02/08/2017.
  */
 
-public class AnotherPresenter<V extends AnotherMvpView> extends BasePresenter<V>
-		implements AnotherMvpPresenter<V> {
-	public AnotherPresenter(com.mobss.namesofAllah.controller.IDataManager IDataManager) {
+public class ListViewPresenter<V extends ListViewMvpView> extends BasePresenter<V>
+		implements ListViewMvpPresenter<V> {
+	public ListViewPresenter(com.mobss.namesofAllah.controller.IDataManager IDataManager) {
 		super(IDataManager);
 	}
 

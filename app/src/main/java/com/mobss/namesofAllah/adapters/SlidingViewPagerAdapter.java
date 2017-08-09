@@ -9,8 +9,8 @@ import android.view.ViewGroup;
 
 import com.mobss.namesofAllah.model.app.AllahinIsimleri;
 import com.mobss.namesofAllah.views.activities.base.BaseActivity;
-import com.mobss.namesofAllah.views.fragments.another.AnotherFragment;
-import com.mobss.namesofAllah.views.fragments.another.ShadowTransformer;
+import com.mobss.namesofAllah.views.fragments.slidingviewpager.SlidingViewPagerFragment;
+import com.mobss.namesofAllah.views.fragments.slidingviewpager.ShadowTransformer;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,7 +19,7 @@ public class SlidingViewPagerAdapter extends FragmentStatePagerAdapter implement
 
     private BaseActivity activity;
     List<AllahinIsimleri> pages = new ArrayList<AllahinIsimleri>();
-    private List<AnotherFragment> mFragments = new ArrayList<>();
+    private List<SlidingViewPagerFragment> mFragments = new ArrayList<>();
 
     public SlidingViewPagerAdapter(BaseActivity activity, List<AllahinIsimleri> pages, FragmentManager fm) {
         super(fm);
@@ -43,7 +43,7 @@ public class SlidingViewPagerAdapter extends FragmentStatePagerAdapter implement
     @Override
     public Object instantiateItem(ViewGroup container, int position) {
         Object fragment = super.instantiateItem(container, position);
-        mFragments.set(position, (AnotherFragment) fragment);
+        mFragments.set(position, (SlidingViewPagerFragment) fragment);
         return fragment;
     }
 
@@ -58,7 +58,7 @@ public class SlidingViewPagerAdapter extends FragmentStatePagerAdapter implement
     }
 
     public void addCardFragment(AllahinIsimleri page) {
-        mFragments.add(AnotherFragment.newInstance(page));
+        mFragments.add(SlidingViewPagerFragment.newInstance(page));
     }
 
     @Override
