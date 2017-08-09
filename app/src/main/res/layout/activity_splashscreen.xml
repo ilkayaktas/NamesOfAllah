@@ -14,7 +14,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/ic_01_allah"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="@dimen/margin_splashscreen_welcometop"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         tools:layout_editor_absoluteY="60dp"
@@ -31,7 +31,8 @@
         app:layout_constraintStart_toStartOf="parent"
         android:gravity="center"
         android:textColor="@color/mobss_color_secondary_blue"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="@dimen/margin_splashscreen_slogantop"
+        android:padding="5dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"/>
 

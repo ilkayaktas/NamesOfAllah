@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="height_cardview_layoutheight">320dp</dimen>
+    <dimen name="height_cardview_imageofname">100dp</dimen>
+    <dimen name="textsize_cardview_nameofallah">26sp</dimen>
+    <dimen name="textsize_cardview_meaningofname">16sp</dimen>
+    <dimen name="margin_splashscreen_welcometop">10dp</dimen>
+    <dimen name="margin_splashscreen_slogantop">0dp</dimen>
+</resources>
