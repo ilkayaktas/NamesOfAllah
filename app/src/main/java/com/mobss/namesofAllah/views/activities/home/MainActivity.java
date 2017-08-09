@@ -5,6 +5,7 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AlertDialog;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -14,14 +15,14 @@ import android.widget.RelativeLayout;
 
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
-import com.gigamole.infinitecycleviewpager.HorizontalInfiniteCycleViewPager;
 import com.mobss.namesofAllah.R;
-import com.mobss.namesofAllah.adapters.HorizontalPagerAdapter;
+import com.mobss.namesofAllah.adapters.SlidingViewPagerAdapter;
 import com.mobss.namesofAllah.events.FavorySelectedEvent;
 import com.mobss.namesofAllah.model.app.AllahinIsimleri;
 import com.mobss.namesofAllah.utils.AppConstants;
 import com.mobss.namesofAllah.views.activities.another.AnotherActivity;
 import com.mobss.namesofAllah.views.activities.base.BaseActivity;
+import com.mobss.namesofAllah.views.fragments.another.ShadowTransformer;
 import com.mobss.namesofAllah.views.widgets.dialogs.rateme.Config;
 import com.mobss.namesofAllah.views.widgets.dialogs.rateme.RateMe;
 import com.varunest.sparkbutton.SparkButton;
@@ -45,7 +46,8 @@ public class MainActivity extends BaseActivity implements MainMvpView {
 
 	/******/
 	@BindView(R.id.parent_layout) RelativeLayout parent_layout;
-	@BindView(R.id.viewpager_main_isimler_container) HorizontalInfiniteCycleViewPager horizontalInfiniteCycleViewPager;
+//	@BindView(R.id.viewpager_main_isimler_container) HorizontalInfiniteCycleViewPager horizontalInfiniteCycleViewPager;
+	@BindView(R.id.vp_main_isimler_container) ViewPager slidingViewPagerViewPager;
 	@BindView(R.id.iv_main_language)SparkButton languageIcon;
 
 	@Inject
@@ -74,7 +76,8 @@ public class MainActivity extends BaseActivity implements MainMvpView {
 		setOnClickListenerForSparkLanguageButton();
 		
 		List<AllahinIsimleri> isimler = mPresenter.getTumIsimler();
-		horizontalInfiniteCycleViewPager.setAdapter(new HorizontalPagerAdapter(this, isimler));
+//		horizontalInfiniteCycleViewPager.setAdapter(new HorizontalPagerAdapter(this, isimler));
+		setOnboardPages(isimler);
 	}
 
 	@Override
@@ -150,6 +153,15 @@ public class MainActivity extends BaseActivity implements MainMvpView {
 
 	}
 
+	public void setOnboardPages(List<AllahinIsimleri> isimler) {
+
+		SlidingViewPagerAdapter fragmentAdapter = new SlidingViewPagerAdapter(this, isimler, getSupportFragmentManager());
+		ShadowTransformer mCardShadowTransformer = new ShadowTransformer(slidingViewPagerViewPager, fragmentAdapter);
+		mCardShadowTransformer.enableScaling(true);
+		slidingViewPagerViewPager.setAdapter(fragmentAdapter);
+		slidingViewPagerViewPager.setPageTransformer(false, mCardShadowTransformer);
+	}
+
 	@OnClick(R.id.iv_main_goback)
 	public void bottombarGobackClicked(View v){
 		YoYo.with(Techniques.FadeIn)
@@ -158,7 +170,8 @@ public class MainActivity extends BaseActivity implements MainMvpView {
 				.onEnd(new YoYo.AnimatorCallback() {
 					@Override
 					public void call(Animator animator) {
-						horizontalInfiniteCycleViewPager.setCurrentItem(0, true);
+//						horizontalInfiniteCycleViewPager.setCurrentItem(0, true);
+						slidingViewPagerViewPager.setCurrentItem(0);
 					}
 				})
 				.playOn(v);
@@ -174,7 +187,8 @@ public class MainActivity extends BaseActivity implements MainMvpView {
 					public void call(Animator animator) {
 						Random generator = new Random();
 						int i = generator.nextInt(100);
-						horizontalInfiniteCycleViewPager.setCurrentItem(i, true);
+//						horizontalInfiniteCycleViewPager.setCurrentItem(i, true);
+						slidingViewPagerViewPager.setCurrentItem(i);
 					}
 				})
 				.playOn(v);

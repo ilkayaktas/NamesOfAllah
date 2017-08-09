@@ -7,5 +7,6 @@ import com.mobss.namesofAllah.views.activities.base.MvpPresenter;
  * Created by iaktas on 14.03.2017.
  */
 
-public interface AnotherMvpPresenter<V extends AnotherMvpView> extends MvpPresenter<V> {
+public interface AnotherFragmentMvpPresenter<V extends AnotherFragmentMvpView> extends MvpPresenter<V> {
+    void getIsim(int sira);
 }

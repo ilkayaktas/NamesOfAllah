@@ -20,20 +20,32 @@
         app:title="@string/app_name"
         app:titleTextColor="@android:color/white" />
 
-    <com.gigamole.infinitecycleviewpager.HorizontalInfiniteCycleViewPager
-        android:id="@+id/viewpager_main_isimler_container"
+    <!--<com.gigamole.infinitecycleviewpager.HorizontalInfiniteCycleViewPager-->
+        <!--android:id="@+id/viewpager_main_isimler_container"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_below="@+id/jellytoolbar_main_toolbar"-->
+        <!--android:layout_above="@+id/framelayout_main_buttons_layout"-->
+        <!--app:icvp_interpolator="@android:anim/accelerate_decelerate_interpolator"-->
+        <!--app:icvp_scroll_duration="250"-->
+        <!--app:icvp_center_page_scale_offset="30dp"-->
+        <!--app:icvp_min_page_scale_offset="5dp"-->
+        <!--app:icvp_max_page_scale="0.90"-->
+        <!--app:icvp_min_page_scale="0.60"-->
+        <!--app:icvp_medium_scaled="false"/>-->
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp_main_isimler_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/jellytoolbar_main_toolbar"
         android:layout_above="@+id/framelayout_main_buttons_layout"
-        app:icvp_interpolator="@android:anim/accelerate_decelerate_interpolator"
-        app:icvp_scroll_duration="250"
-        app:icvp_center_page_scale_offset="30dp"
-        app:icvp_min_page_scale_offset="5dp"
-        app:icvp_max_page_scale="0.90"
-        app:icvp_min_page_scale="0.60"
-        app:icvp_medium_scaled="false"/>
-
+        android:background="@android:color/transparent"
+        android:clipToPadding="false"
+        android:overScrollMode="never"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:paddingTop="30dp" />
 
     <FrameLayout
         android:id="@+id/framelayout_main_buttons_layout"

@@ -33,6 +33,9 @@ import com.mobss.namesofAllah.views.activities.home.MainPresenter;
 import com.mobss.namesofAllah.views.activities.splash.SplashScreenMvpPresenter;
 import com.mobss.namesofAllah.views.activities.splash.SplashScreenMvpView;
 import com.mobss.namesofAllah.views.activities.splash.SplashScreenPresenter;
+import com.mobss.namesofAllah.views.fragments.another.AnotherFragmentMvpPresenter;
+import com.mobss.namesofAllah.views.fragments.another.AnotherFragmentMvpView;
+import com.mobss.namesofAllah.views.fragments.another.AnotherFragmentPresenter;
 import com.yalantis.jellytoolbar.listener.JellyListener;
 import com.yalantis.jellytoolbar.widget.JellyToolbar;
 
@@ -90,7 +93,12 @@ public class ActivityModule {
     AnotherMvpPresenter<AnotherMvpView> providesSlideUpPanelPresenter(IDataManager IDataManager){
         return new AnotherPresenter<>(IDataManager);
     }
-    
+
+    @Provides
+    @PerActivity
+    AnotherFragmentMvpPresenter<AnotherFragmentMvpView> providesAnotherMvpPresenter(IDataManager IDataManager){
+        return new AnotherFragmentPresenter<>(IDataManager);
+    }
     
     @Provides
     @PerActivity

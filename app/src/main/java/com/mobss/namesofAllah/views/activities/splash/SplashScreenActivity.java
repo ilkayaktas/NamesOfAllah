@@ -72,10 +72,12 @@ public class SplashScreenActivity extends BaseActivity implements SplashScreenMv
 		
 		String lang = mPresenter.getPreferredLanguage();
 		
-		if(lang.equals(AppConstants.LANGUAGE_EN)){
+		if(lang != null && lang.equals(AppConstants.LANGUAGE_EN)){
 			slogan.setText(getLocaleStringResource(new Locale(AppConstants.LANGUAGE_EN), R.string.splashscreen_slogan, this));
-		} else if(lang.equals(AppConstants.LANGUAGE_TR)){
+		} else if(lang != null && lang.equals(AppConstants.LANGUAGE_TR)){
 			slogan.setText(getLocaleStringResource(new Locale(AppConstants.LANGUAGE_TR), R.string.splashscreen_slogan, this));
+		} else{
+			slogan.setText(getLocaleStringResource(new Locale(AppConstants.LANGUAGE_EN), R.string.splashscreen_slogan, this));
 		}
 	}
 	
