@@ -6,7 +6,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@color/mobss_color_light_gray"
-                tools:context=".views.activities.home.MainActivity">
+                tools:context="com.mobss.islamic.namesofAllah.views.activities.home.MainActivity">
 
     <com.yalantis.jellytoolbar.widget.JellyToolbar
         android:id="@+id/jellytoolbar_main_toolbar"
@@ -18,7 +18,7 @@
         app:endColor="@color/colorEnd"
         app:startColor="@color/colorStart"
         app:title="@string/app_name"
-        app:titleTextColor="@android:color/white" />
+        app:titleTextColor="@android:color/white"/>
 
     <!--<com.gigamole.infinitecycleviewpager.HorizontalInfiniteCycleViewPager-->
         <!--android:id="@+id/viewpager_main_isimler_container"-->
