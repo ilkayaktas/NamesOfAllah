@@ -9,10 +9,10 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.widget.TextView;
 
+import com.mobss.islamic.namesofAllah.R;
 import com.mobss.islamic.namesofAllah.utils.AppConstants;
 import com.mobss.islamic.namesofAllah.views.activities.base.BaseActivity;
 import com.mobss.islamic.namesofAllah.views.activities.home.MainActivity;
-import com.mobss.namesofAllah.R;
 
 import java.util.Locale;
 

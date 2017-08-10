@@ -23,7 +23,7 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.provider.Settings;
 
-import com.mobss.namesofAllah.R;
+import com.mobss.islamic.namesofAllah.R;
 
 import java.io.IOException;
 import java.io.InputStream;

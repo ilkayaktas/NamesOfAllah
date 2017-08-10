@@ -10,10 +10,10 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.mobss.islamic.namesofAllah.R;
 import com.mobss.islamic.namesofAllah.events.FavorySelectedEvent;
 import com.mobss.islamic.namesofAllah.model.app.AllahinIsimleri;
 import com.mobss.islamic.namesofAllah.views.activities.base.BaseFragment;
-import com.mobss.namesofAllah.R;
 import com.varunest.sparkbutton.SparkButton;
 import com.varunest.sparkbutton.SparkEventListener;
 

@@ -17,6 +17,7 @@ import android.widget.RelativeLayout;
 
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
+import com.mobss.islamic.namesofAllah.R;
 import com.mobss.islamic.namesofAllah.adapters.SlidingViewPagerAdapter;
 import com.mobss.islamic.namesofAllah.events.FavorySelectedEvent;
 import com.mobss.islamic.namesofAllah.model.app.AllahinIsimleri;
@@ -27,7 +28,6 @@ import com.mobss.islamic.namesofAllah.views.activities.listview.ListViewActivity
 import com.mobss.islamic.namesofAllah.views.fragments.slidingviewpager.ShadowTransformer;
 import com.mobss.islamic.namesofAllah.views.widgets.dialogs.rateme.Config;
 import com.mobss.islamic.namesofAllah.views.widgets.dialogs.rateme.RateMe;
-import com.mobss.namesofAllah.R;
 import com.varunest.sparkbutton.SparkButton;
 import com.varunest.sparkbutton.SparkEventListener;
 import com.yalantis.jellytoolbar.widget.JellyToolbar;

@@ -17,12 +17,12 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.mobss.islamic.namesofAllah.App;
+import com.mobss.islamic.namesofAllah.R;
 import com.mobss.islamic.namesofAllah.di.annotations.ActivityContext;
 import com.mobss.islamic.namesofAllah.di.components.ActivityComponent;
 import com.mobss.islamic.namesofAllah.di.components.DaggerActivityComponent;
 import com.mobss.islamic.namesofAllah.di.modules.ActivityModule;
 import com.mobss.islamic.namesofAllah.views.widgets.gradientbckg.FlowingGradient;
-import com.mobss.namesofAllah.R;
 
 import javax.inject.Inject;
 

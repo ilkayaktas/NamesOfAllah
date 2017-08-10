@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AutoCompleteTextView;
 
+import com.mobss.islamic.namesofAllah.R;
 import com.mobss.islamic.namesofAllah.adapters.AutoSuggestAdapter;
 import com.mobss.islamic.namesofAllah.controller.IDataManager;
 import com.mobss.islamic.namesofAllah.controller.db.crud.DatabaseManager;
@@ -36,7 +37,6 @@ import com.mobss.islamic.namesofAllah.views.activities.splash.SplashScreenPresen
 import com.mobss.islamic.namesofAllah.views.fragments.slidingviewpager.SlidingViewPagerMvpPresenter;
 import com.mobss.islamic.namesofAllah.views.fragments.slidingviewpager.SlidingViewPagerMvpView;
 import com.mobss.islamic.namesofAllah.views.fragments.slidingviewpager.SlidingViewPagerPresenter;
-import com.mobss.namesofAllah.R;
 import com.yalantis.jellytoolbar.listener.JellyListener;
 import com.yalantis.jellytoolbar.widget.JellyToolbar;
 

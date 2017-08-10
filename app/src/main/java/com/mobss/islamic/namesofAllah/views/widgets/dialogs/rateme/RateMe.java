@@ -25,7 +25,7 @@ import android.content.SharedPreferences.Editor;
 import android.net.Uri;
 import android.os.Build;
 
-import com.mobss.namesofAllah.R;
+import com.mobss.islamic.namesofAllah.R;
 
 import java.util.Date;
 

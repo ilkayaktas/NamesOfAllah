@@ -10,13 +10,13 @@ import android.widget.AdapterView;
 import android.widget.AutoCompleteTextView;
 import android.widget.LinearLayout;
 
+import com.mobss.islamic.namesofAllah.R;
 import com.mobss.islamic.namesofAllah.adapters.RecyclerViewAdapter;
 import com.mobss.islamic.namesofAllah.events.FavorySelectedEvent;
 import com.mobss.islamic.namesofAllah.model.app.AllahinIsimleri;
 import com.mobss.islamic.namesofAllah.utils.AppConstants;
 import com.mobss.islamic.namesofAllah.utils.KeyboardUtils;
 import com.mobss.islamic.namesofAllah.views.activities.base.BaseActivity;
-import com.mobss.namesofAllah.R;
 import com.yalantis.jellytoolbar.widget.JellyToolbar;
 
 import org.greenrobot.eventbus.EventBus;
