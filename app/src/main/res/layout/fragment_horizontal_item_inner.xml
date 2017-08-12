@@ -60,7 +60,7 @@
         android:textColor="@color/mobss_color_black"
         android:textSize="@dimen/textsize_cardview_nameofallah"
         android:gravity="center"
-        android:text="Allah"
+        android:text="ZÜLCELALİ VELİKRAM"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageview_card_imageOfName"
