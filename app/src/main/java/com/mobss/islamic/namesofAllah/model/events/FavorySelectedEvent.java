@@ -1,4 +1,4 @@
-package com.mobss.islamic.namesofAllah.events;
+package com.mobss.islamic.namesofAllah.model.events;
 
 
 /**

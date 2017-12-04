@@ -28,4 +28,9 @@ public interface IPreferenceHelper {
     String getPreferredLanguage();
     
     void setPreferredLanguage(String language);
+
+    void setDailyNotification(boolean isAccepted);
+
+    boolean getDailyNotification();
+
 }

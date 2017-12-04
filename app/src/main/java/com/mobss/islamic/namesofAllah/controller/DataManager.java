@@ -1,17 +1,15 @@
 package com.mobss.islamic.namesofAllah.controller;
 
 import android.content.Context;
-
 import com.mobss.islamic.namesofAllah.controller.api.IApiHelper;
-import com.mobss.islamic.namesofAllah.controller.pref.IPreferenceHelper;
-import com.mobss.islamic.namesofAllah.model.app.AllahinIsimleri;
 import com.mobss.islamic.namesofAllah.controller.db.IDbHelper;
+import com.mobss.islamic.namesofAllah.controller.pref.IPreferenceHelper;
 import com.mobss.islamic.namesofAllah.di.annotations.ApplicationContext;
-
-import java.util.List;
+import com.mobss.islamic.namesofAllah.model.app.AllahinIsimleri;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
+import java.util.List;
 
 
 /**
@@ -53,7 +51,17 @@ public class DataManager implements IDataManager {
 	public void setPreferredLanguage(String language) {
 		mIPreferenceHelper.setPreferredLanguage(language);
 	}
-	
+
+	@Override
+	public void setDailyNotification(boolean isAccepted) {
+		mIPreferenceHelper.setDailyNotification(isAccepted);
+	}
+
+	@Override
+	public boolean getDailyNotification() {
+		return mIPreferenceHelper.getDailyNotification();
+	}
+
 	@Override
 	public List<AllahinIsimleri> getTumIsimler() {
 		return mIDbHelper.getTumIsimler();

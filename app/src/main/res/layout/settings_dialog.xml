@@ -18,6 +18,7 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp"
             android:background="@drawable/ic_english" />
 
         <TextView
@@ -25,6 +26,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp"
             android:text="English"
             android:textSize="20sp" />
 
@@ -44,6 +46,7 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp"
             android:background="@drawable/ic_turkish" />
 
         <TextView
@@ -51,7 +54,26 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp"
             android:text="Türkçe"
             android:textSize="20sp" />
     </LinearLayout>
+    <android.support.v7.widget.AppCompatCheckBox
+            android:id="@+id/cb_daily_notification"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp"
+            android:theme="@style/checkBoxStyle"
+            android:button="@null"
+            android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
+            android:drawableEnd="?android:attr/listChoiceIndicatorMultiple"
+            android:checked="true"
+            android:textSize="20sp"
+            android:textColor="@color/mobss_color_dark_gray"
+            android:text="@string/accept_daily_notification"/>
 </LinearLayout>

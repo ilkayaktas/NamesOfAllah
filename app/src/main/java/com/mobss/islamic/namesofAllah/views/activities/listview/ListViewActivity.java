@@ -12,7 +12,7 @@ import android.widget.LinearLayout;
 
 import com.mobss.islamic.namesofAllah.R;
 import com.mobss.islamic.namesofAllah.adapters.RecyclerViewAdapter;
-import com.mobss.islamic.namesofAllah.events.FavorySelectedEvent;
+import com.mobss.islamic.namesofAllah.model.events.FavorySelectedEvent;
 import com.mobss.islamic.namesofAllah.model.app.AllahinIsimleri;
 import com.mobss.islamic.namesofAllah.utils.AppConstants;
 import com.mobss.islamic.namesofAllah.utils.KeyboardUtils;

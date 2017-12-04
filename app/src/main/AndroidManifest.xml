@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.mobss.islamic.namesofAllah">
 
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
+
     <application
         android:name="com.mobss.islamic.namesofAllah.App"
         android:allowBackup="true"
@@ -31,7 +34,16 @@
                   android:windowSoftInputMode="stateHidden|adjustPan">
         </activity>
 
+        <receiver android:name=".controller.services.boradcastreceiver.BootCompletedReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
 
+        <service
+                android:name=".controller.alarms.notification.MobssCustomNotificationService"
+                android:enabled="true"
+                android:exported="false"/>
     </application>
 
 </manifest>

@@ -9,7 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.mobss.islamic.namesofAllah.R;
-import com.mobss.islamic.namesofAllah.events.FavorySelectedEvent;
+import com.mobss.islamic.namesofAllah.model.events.FavorySelectedEvent;
 import com.mobss.islamic.namesofAllah.model.app.AllahinIsimleri;
 import com.mobss.islamic.namesofAllah.views.activities.base.BaseActivity;
 import com.varunest.sparkbutton.SparkButton;

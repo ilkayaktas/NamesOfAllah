@@ -7,21 +7,23 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AlertDialog;
+import android.support.v7.widget.AppCompatCheckBox;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.AutoCompleteTextView;
-import android.widget.ImageView;
-import android.widget.RelativeLayout;
-
+import android.widget.*;
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
 import com.mobss.islamic.namesofAllah.R;
 import com.mobss.islamic.namesofAllah.adapters.SlidingViewPagerAdapter;
-import com.mobss.islamic.namesofAllah.events.FavorySelectedEvent;
+import com.mobss.islamic.namesofAllah.controller.alarms.notification.DailyNotificationAlarm;
 import com.mobss.islamic.namesofAllah.model.app.AllahinIsimleri;
+import com.mobss.islamic.namesofAllah.model.events.FavorySelectedEvent;
 import com.mobss.islamic.namesofAllah.utils.AppConstants;
+import com.mobss.islamic.namesofAllah.utils.DateUtils;
 import com.mobss.islamic.namesofAllah.utils.KeyboardUtils;
 import com.mobss.islamic.namesofAllah.views.activities.base.BaseActivity;
 import com.mobss.islamic.namesofAllah.views.activities.listview.ListViewActivity;
@@ -31,19 +33,13 @@ import com.mobss.islamic.namesofAllah.views.widgets.dialogs.rateme.RateMe;
 import com.varunest.sparkbutton.SparkButton;
 import com.varunest.sparkbutton.SparkEventListener;
 import com.yalantis.jellytoolbar.widget.JellyToolbar;
-
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
+import javax.inject.Inject;
 import java.util.List;
 import java.util.Random;
-
-import javax.inject.Inject;
-
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 public class MainActivity extends BaseActivity implements MainMvpView {
 
@@ -57,6 +53,8 @@ public class MainActivity extends BaseActivity implements MainMvpView {
 	JellyToolbar toolbar;
 	@Inject
 	MainMvpPresenter<MainMvpView> mPresenter;
+	private static final String TAG = "MainActivity";
+	private DailyNotificationAlarm dailyNotification;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -83,6 +81,11 @@ public class MainActivity extends BaseActivity implements MainMvpView {
 		List<AllahinIsimleri> isimler = mPresenter.getTumIsimler();
 //		horizontalInfiniteCycleViewPager.setAdapter(new HorizontalPagerAdapter(this, isimler));
 		setOnboardPages(isimler);
+
+		// set daily notification acceptance true
+		mPresenter.setDailyNotification(true);
+		dailyNotification = new DailyNotificationAlarm(MainActivity.this);
+		dailyNotification.set(DateUtils.getCalendar(12,0));
 	}
 
 	@Override
@@ -108,7 +111,6 @@ public class MainActivity extends BaseActivity implements MainMvpView {
 	@Override
 	protected void onResume() {
 		super.onResume();
-		
 	}
 
 	public static Intent getStartIntent(Context context) {
@@ -299,6 +301,18 @@ public class MainActivity extends BaseActivity implements MainMvpView {
 				// Use the Builder class for convenient dialog construction
 				AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
 				builder.setMessage("Dili değiştirmek için lütfen uygulamayı yeniden başlatın.").show();
+			}
+		});
+
+		((AppCompatCheckBox)layoutview.findViewById(R.id.cb_daily_notification)).setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+			@Override
+			public void onCheckedChanged(CompoundButton compoundButton, boolean isAccepted) {
+				mPresenter.setDailyNotification(isAccepted);
+				if(isAccepted){
+					dailyNotification.set(DateUtils.getCalendar(12,0));
+				} else{
+					dailyNotification.cancel();
+				}
 			}
 		});
 

@@ -10,4 +10,9 @@
         <item name="android:windowTranslucentStatus">true</item>
     </style>
 
+    <style name="checkBoxStyle" parent="Base.Theme.AppCompat">
+        <item name="colorAccent">@color/mobss_color_black</item>
+        <item name="android:textColorSecondary">@color/mobss_color_black</item>
+        <item name="android:textColor">@color/mobss_color_black</item>
+    </style>
 </resources>

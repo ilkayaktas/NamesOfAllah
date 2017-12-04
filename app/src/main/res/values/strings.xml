@@ -9,4 +9,6 @@
     <string name="rateme_dialog_cancel">Remind Later</string>
     <string name="rateme_dialog_no">No, Thanks</string>
 
+    <string name="accept_daily_notification">Daily Reminder</string>
+
 </resources>

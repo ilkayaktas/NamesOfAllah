@@ -1,12 +1,12 @@
 package com.mobss.islamic.namesofAllah.di.modules;
 
 import android.app.Activity;
+import android.content.Context;
 import android.graphics.Typeface;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AutoCompleteTextView;
-
 import com.mobss.islamic.namesofAllah.R;
 import com.mobss.islamic.namesofAllah.adapters.AutoSuggestAdapter;
 import com.mobss.islamic.namesofAllah.controller.IDataManager;
@@ -39,13 +39,12 @@ import com.mobss.islamic.namesofAllah.views.fragments.slidingviewpager.SlidingVi
 import com.mobss.islamic.namesofAllah.views.fragments.slidingviewpager.SlidingViewPagerPresenter;
 import com.yalantis.jellytoolbar.listener.JellyListener;
 import com.yalantis.jellytoolbar.widget.JellyToolbar;
+import dagger.Module;
+import dagger.Provides;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
-
-import dagger.Module;
-import dagger.Provides;
 
 /**
  * Created by ilkay on 10/03/2017.
@@ -54,9 +53,15 @@ import dagger.Provides;
 @Module
 public class ActivityModule {
     Activity activity;
+
+    Context context;
     
     public ActivityModule(Activity activity) {
         this.activity = activity;
+    }
+
+    public ActivityModule(Context context){
+
     }
 
     @Provides

@@ -16,14 +16,14 @@
 package com.mobss.islamic.namesofAllah.di.components;
 
 
+import com.mobss.islamic.namesofAllah.controller.alarms.notification.MobssCustomNotificationService;
 import com.mobss.islamic.namesofAllah.di.annotations.PerActivity;
+import com.mobss.islamic.namesofAllah.di.modules.ActivityModule;
 import com.mobss.islamic.namesofAllah.views.activities.base.BaseActivity;
 import com.mobss.islamic.namesofAllah.views.activities.home.MainActivity;
-import com.mobss.islamic.namesofAllah.di.modules.ActivityModule;
 import com.mobss.islamic.namesofAllah.views.activities.listview.ListViewActivity;
 import com.mobss.islamic.namesofAllah.views.activities.splash.SplashScreenActivity;
 import com.mobss.islamic.namesofAllah.views.fragments.slidingviewpager.SlidingViewPagerFragment;
-
 import dagger.Component;
 
 /**
@@ -43,4 +43,6 @@ public interface ActivityComponent {
     void inject(ListViewActivity activity);
 
     void inject(SlidingViewPagerFragment fragment);
+
+    void inject(MobssCustomNotificationService service);
 }

@@ -68,7 +68,17 @@ public class MainPresenter<V extends MainMvpView> extends BasePresenter<V>
 	public String getPreferredLanguage() {
 		return getIDataManager().getPreferredLanguage();
 	}
-	
+
+	@Override
+	public void setDailyNotification(boolean isAccepted) {
+		getIDataManager().setDailyNotification(isAccepted);
+	}
+
+	@Override
+	public boolean getDailyNotification() {
+		return getIDataManager().getDailyNotification();
+	}
+
 	@Override
 	public void setDatabaseCreatedStatus(boolean isCreated) {
 		getIDataManager().setDatabaseCreatedStatus(isCreated);

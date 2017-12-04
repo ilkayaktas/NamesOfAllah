@@ -18,7 +18,8 @@ import javax.inject.Singleton;
 public class PreferenceHelper implements IPreferenceHelper {
     public static final String SHARED_PREF_DBDREATED = "DatabaseCreated";
     public static final String SHARED_PREF_APPLANGUAGE = "ApplicationLanguage";
-    
+    public static final String SHARED_PREF_DAILYNOTIFICATION = "DailyNotification";
+
     private final SharedPreferences mPrefs;
     
     @Inject
@@ -45,4 +46,16 @@ public class PreferenceHelper implements IPreferenceHelper {
     public void setPreferredLanguage(String language) {
         mPrefs.edit().putString(SHARED_PREF_APPLANGUAGE, language).apply();
     }
+
+    @Override
+    public void setDailyNotification(boolean isAccepted) {
+        mPrefs.edit().putBoolean(SHARED_PREF_DAILYNOTIFICATION, isAccepted);
+    }
+
+    @Override
+    public boolean getDailyNotification() {
+        return mPrefs.getBoolean(SHARED_PREF_DAILYNOTIFICATION, true);
+    }
+
+
 }

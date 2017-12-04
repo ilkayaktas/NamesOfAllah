@@ -25,6 +25,10 @@ public interface MainMvpPresenter<V extends MainMvpView> extends MvpPresenter<V>
 	void setPreferredLanguage(String language);
 
 	String getPreferredLanguage();
+
+	void setDailyNotification(boolean isAccepted);
+
+	boolean getDailyNotification();
 	
 	void setDatabaseCreatedStatus(boolean isCreated);
 }
