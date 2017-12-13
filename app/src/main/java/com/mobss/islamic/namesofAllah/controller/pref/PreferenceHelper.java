@@ -49,12 +49,17 @@ public class PreferenceHelper implements IPreferenceHelper {
 
     @Override
     public void setDailyNotification(boolean isAccepted) {
-        mPrefs.edit().putBoolean(SHARED_PREF_DAILYNOTIFICATION, isAccepted);
+        mPrefs.edit().putBoolean(SHARED_PREF_DAILYNOTIFICATION, isAccepted).apply();
     }
 
     @Override
     public boolean getDailyNotification() {
         return mPrefs.getBoolean(SHARED_PREF_DAILYNOTIFICATION, true);
+    }
+
+    @Override
+    public boolean containsDailyNotification() {
+        return mPrefs.contains(SHARED_PREF_DAILYNOTIFICATION);
     }
 
 

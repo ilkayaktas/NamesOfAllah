@@ -33,4 +33,6 @@ public interface IPreferenceHelper {
 
     boolean getDailyNotification();
 
+    boolean containsDailyNotification();
+
 }

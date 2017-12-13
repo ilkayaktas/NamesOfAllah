@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.AppCompatCheckBox;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -82,10 +83,9 @@ public class MainActivity extends BaseActivity implements MainMvpView {
 //		horizontalInfiniteCycleViewPager.setAdapter(new HorizontalPagerAdapter(this, isimler));
 		setOnboardPages(isimler);
 
-		// set daily notification acceptance true
-		mPresenter.setDailyNotification(true);
-		dailyNotification = new DailyNotificationAlarm(MainActivity.this);
-		dailyNotification.set(DateUtils.getCalendar(12,0));
+		manageDailyNotification();
+
+		onNewIntent(getIntent());
 	}
 
 	@Override
@@ -102,7 +102,7 @@ public class MainActivity extends BaseActivity implements MainMvpView {
 		if(extras != null){
 			if(extras.containsKey("paramId")) {
 				int id = extras.getInt("paramId");
-				slidingViewPagerViewPager.setCurrentItem(id);
+				slidingViewPagerViewPager.setCurrentItem(id-1);
 			}
 		}
 	}
@@ -320,7 +320,7 @@ public class MainActivity extends BaseActivity implements MainMvpView {
 			public void onCheckedChanged(CompoundButton compoundButton, boolean isAccepted) {
 				mPresenter.setDailyNotification(isAccepted);
 				if(isAccepted){
-					dailyNotification.set(DateUtils.getCalendar(12,0));
+					dailyNotification.setAt12();
 				} else{
 					dailyNotification.cancel();
 				}
@@ -330,4 +330,14 @@ public class MainActivity extends BaseActivity implements MainMvpView {
 		return dialog;
 	}
 
+	private void manageDailyNotification(){
+
+		if (!mPresenter.containsDailyNotification()){
+			// set daily notification acceptance true
+			mPresenter.setDailyNotification(true);
+
+			dailyNotification = new DailyNotificationAlarm(MainActivity.this);
+			dailyNotification.setAt12();
+		}
+	}
 }

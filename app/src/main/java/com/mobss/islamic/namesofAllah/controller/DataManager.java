@@ -63,6 +63,11 @@ public class DataManager implements IDataManager {
 	}
 
 	@Override
+	public boolean containsDailyNotification() {
+		return mIPreferenceHelper.containsDailyNotification();
+	}
+
+	@Override
 	public List<AllahinIsimleri> getTumIsimler() {
 		return mIDbHelper.getTumIsimler();
 	}

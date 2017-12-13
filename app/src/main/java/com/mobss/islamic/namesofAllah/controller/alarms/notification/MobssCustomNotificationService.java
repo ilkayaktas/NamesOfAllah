@@ -46,7 +46,7 @@ public class MobssCustomNotificationService extends Service {
                 .context(this)
                 .invocationActivity(MainActivity.class)
                 .remoteViews(contentView)
-                .smallIcon(R.mipmap.ic_launcher)
+                .smallIcon(getResources().getIdentifier(isim.resim, "drawable", getPackageName()))
                 .paramId(isim.sira)
                 .build();
     }

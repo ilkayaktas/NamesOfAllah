@@ -80,6 +80,11 @@ public class MainPresenter<V extends MainMvpView> extends BasePresenter<V>
 	}
 
 	@Override
+	public boolean containsDailyNotification() {
+		return getIDataManager().containsDailyNotification();
+	}
+
+	@Override
 	public void setDatabaseCreatedStatus(boolean isCreated) {
 		getIDataManager().setDatabaseCreatedStatus(isCreated);
 	}

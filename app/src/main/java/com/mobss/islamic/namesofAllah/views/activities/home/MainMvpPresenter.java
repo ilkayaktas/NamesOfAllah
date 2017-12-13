@@ -29,6 +29,8 @@ public interface MainMvpPresenter<V extends MainMvpView> extends MvpPresenter<V>
 	void setDailyNotification(boolean isAccepted);
 
 	boolean getDailyNotification();
+
+	boolean containsDailyNotification();
 	
 	void setDatabaseCreatedStatus(boolean isCreated);
 }
