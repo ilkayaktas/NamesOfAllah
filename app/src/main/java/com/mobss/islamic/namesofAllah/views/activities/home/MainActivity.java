@@ -95,7 +95,18 @@ public class MainActivity extends BaseActivity implements MainMvpView {
 		RateMe.showRateDialogIfNeeded(this);
 		EventBus.getDefault().register(this);
 	}
-	
+
+	@Override
+	public void onNewIntent(Intent intent){
+		Bundle extras = intent.getExtras();
+		if(extras != null){
+			if(extras.containsKey("paramId")) {
+				int id = extras.getInt("paramId");
+				slidingViewPagerViewPager.setCurrentItem(id);
+			}
+		}
+	}
+
 	@Override
 	protected void onStop() {
 		super.onStop();

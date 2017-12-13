@@ -15,7 +15,7 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-
+import butterknife.Unbinder;
 import com.mobss.islamic.namesofAllah.App;
 import com.mobss.islamic.namesofAllah.R;
 import com.mobss.islamic.namesofAllah.di.annotations.ActivityContext;
@@ -25,8 +25,6 @@ import com.mobss.islamic.namesofAllah.di.modules.ActivityModule;
 import com.mobss.islamic.namesofAllah.views.widgets.gradientbckg.FlowingGradient;
 
 import javax.inject.Inject;
-
-import butterknife.Unbinder;
 
 /**
  * Created by ilkay on 09/03/2017.

@@ -16,7 +16,6 @@
 package com.mobss.islamic.namesofAllah.di.components;
 
 
-import com.mobss.islamic.namesofAllah.controller.alarms.notification.MobssCustomNotificationService;
 import com.mobss.islamic.namesofAllah.di.annotations.PerActivity;
 import com.mobss.islamic.namesofAllah.di.modules.ActivityModule;
 import com.mobss.islamic.namesofAllah.views.activities.base.BaseActivity;
@@ -44,5 +43,4 @@ public interface ActivityComponent {
 
     void inject(SlidingViewPagerFragment fragment);
 
-    void inject(MobssCustomNotificationService service);
 }
