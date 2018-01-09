@@ -80,7 +80,7 @@ public class MainActivity extends BaseActivity implements MainMvpView {
 		setOnClickListenerForJellyToolbarSelection();
 
 		List<AllahinIsimleri> isimler = mPresenter.getTumIsimler();
-//		horizontalInfiniteCycleViewPager.setAdapter(new HorizontalPagerAdapter(this, isimler));
+
 		setOnboardPages(isimler);
 
 		manageDailyNotification();

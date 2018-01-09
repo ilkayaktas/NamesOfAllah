@@ -15,14 +15,17 @@ import java.util.Calendar;
 
 public class DailyNotificationAlarm {
     private static final String TAG = "DailyNotificationAlarm";
+    public static final int REQUEST_CODE = 147412;
     private AlarmManager alarmManager = null;
     private PendingIntent pendingIntent = null;
+    private Context context = null;
+    private final Intent intent;
 
     public DailyNotificationAlarm(Context context) {
+        this.context = context;
         this.alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
 
-        Intent intent = new Intent(context, MobssCustomNotificationService.class);
-        pendingIntent = PendingIntent.getService(context, 147411, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+        intent = new Intent(context, MobssCustomNotificationService.class);
     }
 
     public void set(Calendar calendar){
@@ -32,10 +35,17 @@ public class DailyNotificationAlarm {
             calendar.setTimeInMillis( calendar.getTimeInMillis() + AlarmManager.INTERVAL_DAY);
         }
 
-        // Sets an alarm - note this alarm will be lost if the phone is turned off and on again
-        alarmManager.setInexactRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), AlarmManager.INTERVAL_DAY, pendingIntent);
+        if(PendingIntent.getService(context, REQUEST_CODE, intent, PendingIntent.FLAG_NO_CREATE) == null){
+            pendingIntent = PendingIntent.getService(context, REQUEST_CODE, intent, PendingIntent.FLAG_UPDATE_CURRENT);
 
-        Log.d(TAG, "Alarm is set: " + calendar.getTime().toString());
+            // Sets an alarm - note this alarm will be lost if the phone is turned off and on again
+            alarmManager.setInexactRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), AlarmManager.INTERVAL_DAY, pendingIntent);
+
+            Log.d(TAG, "Alarm is set: " + calendar.getTime().toString());
+        } else{
+            Log.d(TAG, "Alarm is already set!");
+        }
+
     }
 
     public void setAt01(){

@@ -51,7 +51,7 @@ public class MobssNotification {
                 .setAutoCancel(true)
                 .setVibrate(new long[]{100, 300, 200})
                 .setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION))
-                .setLights(Color.BLUE,400,200)
+                .setLights(Color.GREEN,400,200)
                 .setOngoing(onGoing);
 
         if(remoteViews != null) {
