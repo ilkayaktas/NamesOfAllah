@@ -1,11 +1,11 @@
 package com.mobss.islamic.namesofAllah;
 
 import android.app.Application;
-
+import com.evernote.android.job.JobManager;
+import com.mobss.islamic.namesofAllah.controller.job.MobssJobCreator;
 import com.mobss.islamic.namesofAllah.di.components.ApplicationComponent;
 import com.mobss.islamic.namesofAllah.di.components.DaggerApplicationComponent;
 import com.mobss.islamic.namesofAllah.di.modules.ApplicationModule;
-
 import io.realm.Realm;
 
 public class App extends Application {
@@ -19,6 +19,8 @@ public class App extends Application {
 		Realm.init(this);
 		
 		initializeInjector();
+
+		JobManager.create(this).addJobCreator(new MobssJobCreator());
 		
 	}
 	
