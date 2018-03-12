@@ -88,4 +88,6 @@ dependencies {
 
     // Spark Button
     compile "com.github.varunest:sparkbutton:1.0.5"
+
+    compile 'com.evernote:android-job:1.2.4'
 }
