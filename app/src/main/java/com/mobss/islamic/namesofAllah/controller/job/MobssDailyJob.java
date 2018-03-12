@@ -1,9 +1,11 @@
 package com.mobss.islamic.namesofAllah.controller.job;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import com.evernote.android.job.DailyJob;
 import com.evernote.android.job.JobManager;
 import com.evernote.android.job.JobRequest;
+import com.mobss.islamic.namesofAllah.controller.alarms.notification.MobssCustomNotificationService;
 
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
@@ -15,11 +17,10 @@ import java.util.concurrent.TimeUnit;
 public class MobssDailyJob extends DailyJob {
     public static final String TAG = "daily_remainder_job";
 
-
-
     @NonNull
     @Override
     protected DailyJobResult onRunDailyJob(@NonNull Params params) {
+        getContext().startService(new Intent(getContext(), MobssCustomNotificationService.class));
         return DailyJobResult.SUCCESS;
     }
 

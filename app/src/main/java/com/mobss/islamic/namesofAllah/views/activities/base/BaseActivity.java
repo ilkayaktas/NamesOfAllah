@@ -64,7 +64,6 @@ public class BaseActivity extends AppCompatActivity implements MvpView, BaseFrag
 	@Override
 	public void showLoading() {
 		hideLoading();
-//		progressDialog = CommonUtils.showLoadingDialog(this);
 	}
 
 	@Override
