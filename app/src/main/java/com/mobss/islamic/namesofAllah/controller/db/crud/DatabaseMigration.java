@@ -15,6 +15,13 @@ public class DatabaseMigration implements RealmMigration {
 
         RealmSchema schema = realm.getSchema();
 
+        if(oldVersion == 1){
+            schema.get("RealmIsim")
+                    .addField("uzun_aciklama", String.class);
+
+            oldVersion++;
+        }
+
     }
 
 

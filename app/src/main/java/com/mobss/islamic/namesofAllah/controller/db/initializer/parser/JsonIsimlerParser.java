@@ -63,7 +63,6 @@ public class JsonIsimlerParser implements IFileParser {
 
             mapper.enable(SerializationFeature.INDENT_OUTPUT);
 
-
             // create array for return value
             JsonIsim[] jsonIsimler = new JsonIsim[jsonArray.length()];
 

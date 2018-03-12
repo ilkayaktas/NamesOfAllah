@@ -21,6 +21,7 @@ import com.daimajia.androidanimations.library.YoYo;
 import com.mobss.islamic.namesofAllah.R;
 import com.mobss.islamic.namesofAllah.adapters.SlidingViewPagerAdapter;
 import com.mobss.islamic.namesofAllah.controller.alarms.notification.DailyNotificationAlarm;
+import com.mobss.islamic.namesofAllah.controller.job.MobssDailyJob;
 import com.mobss.islamic.namesofAllah.controller.job.MobssJob;
 import com.mobss.islamic.namesofAllah.model.app.AllahinIsimleri;
 import com.mobss.islamic.namesofAllah.model.events.FavorySelectedEvent;
@@ -84,11 +85,11 @@ public class MainActivity extends BaseActivity implements MainMvpView {
 
 		setOnboardPages(isimler);
 
-		manageDailyNotification();
+	//	manageDailyNotification();
 
 		onNewIntent(getIntent());
 
-        MobssJob.scheduleJob();
+        MobssDailyJob.scheduleJob();
 	}
 
 	@Override
@@ -340,7 +341,8 @@ public class MainActivity extends BaseActivity implements MainMvpView {
 			mPresenter.setDailyNotification(true);
 
 			dailyNotification = new DailyNotificationAlarm(MainActivity.this);
-			dailyNotification.setAt12();
+			dailyNotification.setAt14();
+
 		}
 	}
 }

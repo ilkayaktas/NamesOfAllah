@@ -14,6 +14,7 @@ public class JsonIsim implements Serializable {
     public int sira;
     public String isim;
     public String aciklama;
+    public String uzun_aciklama;
     public String resim;
 
 }

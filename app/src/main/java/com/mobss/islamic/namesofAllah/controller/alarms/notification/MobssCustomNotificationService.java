@@ -3,7 +3,6 @@ package com.mobss.islamic.namesofAllah.controller.alarms.notification;
 import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
-import android.support.annotation.Nullable;
 import android.widget.RemoteViews;
 import com.mobss.islamic.namesofAllah.App;
 import com.mobss.islamic.namesofAllah.R;
@@ -46,12 +45,10 @@ public class MobssCustomNotificationService extends Service {
                 .context(this)
                 .invocationActivity(MainActivity.class)
                 .remoteViews(contentView)
-                .smallIcon(getResources().getIdentifier(isim.resim, "drawable", getPackageName()))
                 .paramId(isim.sira)
                 .build();
     }
 
-    @Nullable
     @Override
     public IBinder onBind(Intent intent) {
         return null;

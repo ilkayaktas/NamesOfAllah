@@ -32,8 +32,8 @@ public class MobssDailyJob extends DailyJob {
 
         // schedule between 1 and 6 AM
         DailyJob.schedule(new JobRequest.Builder(TAG),
-                TimeUnit.HOURS.toMillis(1),
-                TimeUnit.HOURS.toMillis(6));
+                TimeUnit.HOURS.toMillis(11),
+                TimeUnit.HOURS.toMillis(13));
     }
 
 }

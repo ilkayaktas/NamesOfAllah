@@ -23,7 +23,7 @@ public class BootCompletedReceiver extends BroadcastReceiver{
 
     private void setAlarm(Context context){
         if (new PreferenceHelper(context).getDailyNotification()){
-            new DailyNotificationAlarm(context).setAt12();
+            new DailyNotificationAlarm(context).setAt14();
         }
 
     }

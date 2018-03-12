@@ -8,6 +8,7 @@ public class AllahinIsimleri {
 	public int sira;
 	public String isim;
 	public String aciklama;
+	public String uzun_aciklama;
 	public String resim;
 	public int zikirSayisi;
 	public boolean isFavory;

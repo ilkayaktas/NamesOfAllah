@@ -12,6 +12,7 @@ public class RealmIsim extends RealmObject {
     public int sira;
     public String isim;
     public String aciklama;
+    public String uzun_aciklama;
     public String resim;
     public int zikirSayisi;
     public boolean isFavory;
@@ -22,6 +23,7 @@ public class RealmIsim extends RealmObject {
         newObj.sira = fromThisObject.sira;
         newObj.isim = fromThisObject.isim;
         newObj.aciklama = fromThisObject.aciklama;
+        newObj.uzun_aciklama = fromThisObject.uzun_aciklama;
         newObj.resim = fromThisObject.resim;
         newObj.zikirSayisi = fromThisObject.zikirSayisi;
         newObj.isFavory = fromThisObject.isFavory;
