@@ -9,8 +9,8 @@ import android.graphics.Color;
 import android.media.RingtoneManager;
 import android.support.v4.app.NotificationCompat;
 import android.widget.RemoteViews;
-import com.ilkayaktas.projectname.annotaionprocessing.annotations.BuilderPattern;
 import com.mobss.islamic.namesofAllah.R;
+import lombok.Builder;
 
 import java.util.Random;
 
@@ -20,7 +20,7 @@ import static android.content.Context.NOTIFICATION_SERVICE;
  * Created by iaktas on 27.11.2017 at 16:29.
  */
 
-@BuilderPattern
+@Builder
 public class MobssNotification {
     public Context context = null;
     public String message = "Notification message";

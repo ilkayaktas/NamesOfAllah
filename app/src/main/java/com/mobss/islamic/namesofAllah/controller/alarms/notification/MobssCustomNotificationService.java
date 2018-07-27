@@ -10,7 +10,6 @@ import com.mobss.islamic.namesofAllah.controller.DataManager;
 import com.mobss.islamic.namesofAllah.model.app.AllahinIsimleri;
 import com.mobss.islamic.namesofAllah.views.activities.home.MainActivity;
 import com.mobss.islamic.namesofAllah.views.widgets.notification.MobssNotification;
-import com.mobss.islamic.namesofAllah.views.widgets.notification.MobssNotificationBuilder;
 
 import javax.inject.Inject;
 import java.util.Random;
@@ -41,7 +40,7 @@ public class MobssCustomNotificationService extends Service {
         contentView.setTextViewText(R.id.title, isim.isim);
         contentView.setTextViewText(R.id.text, isim.aciklama);
 
-        notification = MobssNotificationBuilder.instance()
+        notification = MobssNotification.builder()
                 .context(this)
                 .invocationActivity(MainActivity.class)
                 .remoteViews(contentView)
