@@ -116,6 +116,7 @@ obj/
 .idea/scopes/scope_settings.xml
 .idea/vcs.xml
 .idea/jsLibraryMappings.xml
+.idea/runConfigurations.xml
 .idea/datasources.xml
 .idea/dataSources.ids
 .idea/sqlDataSources.xml
