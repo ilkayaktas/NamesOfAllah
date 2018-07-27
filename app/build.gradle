@@ -3,6 +3,7 @@ apply plugin: 'realm-android'
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
     defaultConfig {
         applicationId "com.mobss.islamic.namesofAllah"
         minSdkVersion rootProject.ext.minSdkVersion
@@ -28,7 +29,6 @@ android {
         exclude 'META-INF/NOTICE'
         exclude 'META-INF/LICENSE'
     }
-    buildToolsVersion '27.0.3'
 }
 
 dependencies {
